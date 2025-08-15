@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="Photography by Daymoon - A collection of landscapes, urban scenes, and moments.">
+<title>Photography - Daymoon</title>
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <a href="index.html" class="logo">Daymoon</a>
+        <div class="nav-links">
+          <a href="writings.html">Writings</a>
+          <a href="projects.html">Projects</a>
+          <a href="photography.html">Photography</a>
+          <a href="about.html">About</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Photography</h2>
+      <p class="section-intro">A collection of moments captured through my lens.</p>
+      
+      <div class="photo-gallery">
+        <!-- Using existing images from the project -->
+        <div class="photo-item">
+          <img src="images/img1.jpg" alt="Landscape photograph" />
+          <div class="photo-caption">
+            <h3>Landscape View</h3>
+            <p>A serene landscape captured during golden hour.</p>
+          </div>
+        </div>
+        
+        <div class="photo-item">
+          <img src="images/img2.jpg" alt="Urban scene photograph" />
+          <div class="photo-caption">
+            <h3>Urban Scene</h3>
+            <p>The contrast of architecture and nature in an urban setting.</p>
+          </div>
+        </div>
+        
+        <div class="photo-item">
+          <img src="images/background.jpg" alt="Background image" />
+          <div class="photo-caption">
+            <h3>Abstract Patterns</h3>
+            <p>Finding beauty in abstract patterns and textures.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <script>
+    // Simple lightbox functionality
+    document.addEventListener('DOMContentLoaded', () => {
+      const photoItems = document.querySelectorAll('.photo-item img');
+      
+      photoItems.forEach(item => {
+        item.addEventListener('click', () => {
+          // Create lightbox
+          const lightbox = document.createElement('div');
+          lightbox.className = 'lightbox';
+          
+          // Create lightbox image
+          const lightboxImg = document.createElement('img');
+          lightboxImg.src = item.src;
+          
+          // Add close button
+          const closeBtn = document.createElement('span');
+          closeBtn.className = 'lightbox-close';
+          closeBtn.innerHTML = '&times;';
+          closeBtn.addEventListener('click', () => {
+            document.body.removeChild(lightbox);
+          });
+          
+          // Add elements to lightbox
+          lightbox.appendChild(closeBtn);
+          lightbox.appendChild(lightboxImg);
+          
+          // Add lightbox to body
+          document.body.appendChild(lightbox);
+          
+          // Close lightbox when clicking outside the image
+          lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+              document.body.removeChild(lightbox);
+            }
+          });
+        });
+      });
+    });
+  </script>
+</body>
+</html>

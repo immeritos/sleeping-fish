@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="Writings by Daymoon - Articles, essays, and thoughts.">
+<title>Writings - Daymoon</title>
+<link rel="stylesheet" href="css/style.css">
+
+<!-- Showdown.js for Markdown rendering -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/2.1.0/showdown.min.js"></script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-38S46XKC7V"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-38S46XKC7V');
+</script>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <a href="index.html" class="logo">Daymoon</a>
+        <div class="nav-links">
+          <a href="writings.html">Writings</a>
+          <a href="projects.html">Projects</a>
+          <a href="photography.html">Photography</a>
+          <a href="about.html">About</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Writings</h2>
+      <p class="section-intro">A collection of my thoughts, essays, and articles.</p>
+      
+      <div class="writings-container">
+        <div class="article-list">
+          <!-- Articles will be loaded here by JavaScript -->
+        </div>
+        
+        <div class="article-content">
+          <div id="markdown-content">
+            <!-- Selected article content will be rendered here -->
+            <p>Select an article from the list to read.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer removed -->
+
+  <script>
+    // Function to extract title from markdown content
+    function extractTitle(markdown) {
+      const titleMatch = markdown.match(/^# (.*)$/m);
+      return titleMatch ? titleMatch[1] : 'Untitled Article';
+    }
+    
+    // Function to extract date from filename (format: name-YYYY-MM-DD.md)
+    function extractDateFromFilename(filename) {
+      const dateMatch = filename.match(/-?(\d{4}-\d{2}-\d{2})\.md$/);
+      if (dateMatch) {
+        const date = new Date(dateMatch[1]);
+        return date.toLocaleDateString('en-US', {
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric'
+        });
+      }
+      return null;
+    }
+
+    // Function to fetch and list all markdown files from the writings directory
+    async function fetchArticleList() {
+      const listElement = document.querySelector('.article-list');
+      listElement.innerHTML = '<p>Loading articles...</p>';
+      
+      try {
+        // List of markdown files to fetch
+        const markdownFiles = [
+          'minimalism.md',
+          'photography.md',
+          'webdev.md'
+        ];
+        
+        // In a real implementation, you would dynamically fetch the list of files
+        // from a server-side script or API endpoint that scans the writings directory
+        
+        const articlePromises = markdownFiles.map(async (filename) => {
+          try {
+            const response = await fetch(`writings/${filename}`);
+            if (!response.ok) {
+              console.error(`Failed to fetch ${filename}: ${response.status}`);
+              return null;
+            }
+            const content = await response.text();
+            return {
+              filename,
+              title: extractTitle(content),
+              // Extract date from filename or use a default
+            date: extractDateFromFilename(filename) || new Date().toLocaleDateString('en-US', {
+              year: 'numeric',
+              month: 'long',
+              day: 'numeric'
+            })
+            };
+          } catch (error) {
+            console.error(`Error fetching ${filename}:`, error);
+            return null;
+          }
+        });
+        
+        const articles = (await Promise.all(articlePromises)).filter(article => article !== null);
+        
+        if (articles.length === 0) {
+          listElement.innerHTML = '<p>No articles found.</p>';
+          return;
+        }
+        
+        // Clear the loading message
+        listElement.innerHTML = '';
+        
+        // Create article list items
+        articles.forEach(article => {
+          const articleItem = document.createElement('div');
+          articleItem.className = 'article-item';
+          articleItem.innerHTML = `
+            <h3>${article.title}</h3>
+            <p class="article-date">${article.date}</p>
+          `;
+          articleItem.addEventListener('click', () => {
+            window.location.href = `article.html?article=${article.filename}`;
+          });
+          listElement.appendChild(articleItem);
+        });
+        
+        // Display a preview of the first article
+        document.getElementById('markdown-content').innerHTML = `
+          <h2>Welcome to Writings</h2>
+          <p>Select an article from the list to read it in full.</p>
+          <p>You can also click on an article to open it in a dedicated page.</p>
+        `;
+        
+      } catch (error) {
+        console.error('Error fetching article list:', error);
+        listElement.innerHTML = `<p>Error loading articles: ${error.message}</p>`;
+      }
+    }
+
+    // Initialize the page
+    document.addEventListener('DOMContentLoaded', fetchArticleList);
+  </script>
+</body>
+</html>
