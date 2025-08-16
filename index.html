@@ -1,55 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="description" content="Daymoon is a place for writings, projects, photography, and thoughts about life, inspired by rare moments when you see the moon during the day.">
-<title>Daymoon – Writings, Projects, and Photography</title>
-<link rel="stylesheet" href="css/style.css">
-
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-38S46XKC7V"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-38S46XKC7V');
-</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DAY MOON</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Vanta.js Dependencies -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.birds.min.js"></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src=""></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-38S46XKC7V');
+    </script>   
 </head>
-<body>
-  <header>
-    <nav>
-      <a href="index.html" class="logo">Daymoon</a>
-      <a href="writings.html">Writings</a>
-      <a href="projects.html">Projects</a>
-      <a href="photography.html">Photography</a>
-      <a href="about.html">About</a>
-    </nav>
-  </header>
+<body style="margin: 0; padding: 0; background-color: #000000; color: #ffffff;">
+    
+    <!-- Single Unified Section with Navigation + Hero -->
+    <section id="unified-hero" class="unified-section">
+        <!-- Navigation -->
+        <div id="navigation-container" class="navigation-overlay"></div>
+        
+        <!-- Hero Content -->
+        <div class="hero-content">
+            <h1 class="hero-headline">The self is the world.</h1>
+        </div>
+    </section>
+    
+    <!-- Split Hero Section -->
+    <section class="split-hero-section">
+        <div class="split-hero-container">
+            <!-- Text Part - 50% (Now on Left) -->
+            <div class="text-part">
+                <div class="text-content">
+                    <p class="split-hero-text">
+                        Daymoon comes from those rare moments when you see the moon shining in the daytime — simple, quiet, and a little magical.
+                    </p>
+                    
+                    <p class="split-hero-text">
+                        This is where I put the thoughts I'm exploring, the things I'm working on, and the moments I would like to remember.
+                    </p>
+                    
+                    <p class="split-hero-text">
+                        I hope that in sharing them, I can grow a little myself, and it may be helpful to others.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Image Part - 50% (Now on Right) -->
+            <div class="image-part">
+                <img src="images/hero2.jpg" alt="Hero Image" class="hero-image" />
+            </div>
+        </div>
+    </section>
 
-  <!-- Container 1: Hero Section -->
-  <section class="hero">
-    <div class="hero-image">
-      <img src="images/img1.jpg" alt="Daymoon Hero" />
-    </div>
-    </div>
-  </section>
+    <!-- Footer -->
+    <footer style="height: 94px; background-color: #000000;"></footer>
 
-  <!-- Container 2: Text Highlight -->
-  <section class="text-highlight">
-    <p>
-      This is where I put the thoughts I'm exploring, the things I'm working on, and the moments I would like to remember.  
-      I hope that in sharing them, I can grow a little myself, and it may be helpful to others.
-    </p>
-  </section>
-
-  <!-- Container 3: Second Hero Section -->
-  <section class="hero">
-    <div class="hero-image">
-      <img src="images/img2.jpg" alt="Daymoon Visual" />
-    </div>
-  </section>
-
-  <!-- Footer removed -->
+    <script src="js/script.js"></script>
+    <script src="js/template-loader.js"></script>
+    
+    <!-- Updated Vanta.js Birds Effect -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            VANTA.BIRDS({
+                el: "#unified-hero",
+                mouseControls: true,
+                touchControls: true,
+                gyroControls: false,
+                minHeight: 200.00,
+                minWidth: 200.00,
+                scale: 1.00,
+                scaleMobile: 1.00,
+                backgroundColor: 0x000000,
+                color1: 0x0b3e90,
+                color2: 0xdde6fa,
+                colorMode: "lerp",
+                birdSize: 1.50,
+                wingSpan: 20.00,
+                separation: 45.00,
+                alignment: 15.00,
+                cohesion: 35.00,
+                quantity: 3.00
+            });
+        });
+    </script>
 </body>
 </html>

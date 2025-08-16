@@ -1,102 +1,171 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="description" content="Photography by Daymoon - A collection of landscapes, urban scenes, and moments.">
-<title>Photography - Daymoon</title>
-<link rel="stylesheet" href="css/style.css">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photography - Day Moon</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter+Display:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body>
-  <header>
-    <div class="container">
-      <nav>
-        <a href="index.html" class="logo">Daymoon</a>
-        <div class="nav-links">
-          <a href="writings.html">Writings</a>
-          <a href="projects.html">Projects</a>
-          <a href="photography.html">Photography</a>
-          <a href="about.html">About</a>
-        </div>
-      </nav>
-    </div>
-  </header>
+<body class="page-container">
+    <!-- Navigation Container -->
+    <div id="navigation-container"></div>
 
-  <section class="section">
-    <div class="container">
-      <h2 class="section-title">Photography</h2>
-      <p class="section-intro">A collection of moments captured through my lens.</p>
-      
-      <div class="photo-gallery">
-        <!-- Using existing images from the project -->
-        <div class="photo-item">
-          <img src="images/img1.jpg" alt="Landscape photograph" />
-          <div class="photo-caption">
-            <h3>Landscape View</h3>
-            <p>A serene landscape captured during golden hour.</p>
-          </div>
-        </div>
-        
-        <div class="photo-item">
-          <img src="images/img2.jpg" alt="Urban scene photograph" />
-          <div class="photo-caption">
-            <h3>Urban Scene</h3>
-            <p>The contrast of architecture and nature in an urban setting.</p>
-          </div>
-        </div>
-        
-        <div class="photo-item">
-          <img src="images/background.jpg" alt="Background image" />
-          <div class="photo-caption">
-            <h3>Abstract Patterns</h3>
-            <p>Finding beauty in abstract patterns and textures.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+    <!-- Main Content -->
+    <main class="pt-20 min-h-screen">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="text-center mb-16">
+                <h1 class="text-4xl md:text-6xl font-light text-white mb-6">Photography</h1>
+                <p class="text-lg text-gray-300 max-w-2xl mx-auto">Capturing moments and exploring light through the lens.</p>
+            </div>
 
+            <!-- Photography Categories -->
+            <div class="mb-12">
+                <div class="flex flex-wrap justify-center gap-4 mb-8">
+                    <button class="px-6 py-2 text-sm font-medium text-white bg-gray-800 rounded-full hover:bg-gray-700 transition-colors">
+                        All
+                    </button>
+                    <button class="px-6 py-2 text-sm font-medium text-gray-400 hover:text-white transition-colors">
+                        Portraits
+                    </button>
+                    <button class="px-6 py-2 text-sm font-medium text-gray-400 hover:text-white transition-colors">
+                        Landscapes
+                    </button>
+                    <button class="px-6 py-2 text-sm font-medium text-gray-400 hover:text-white transition-colors">
+                        Street
+                    </button>
+                    <button class="px-6 py-2 text-sm font-medium text-gray-400 hover:text-white transition-colors">
+                        Architecture
+                    </button>
+                    <button class="px-6 py-2 text-sm font-medium text-gray-400 hover:text-white transition-colors">
+                        Abstract
+                    </button>
+                </div>
+            </div>
 
-  <script>
-    // Simple lightbox functionality
-    document.addEventListener('DOMContentLoaded', () => {
-      const photoItems = document.querySelectorAll('.photo-item img');
-      
-      photoItems.forEach(item => {
-        item.addEventListener('click', () => {
-          // Create lightbox
-          const lightbox = document.createElement('div');
-          lightbox.className = 'lightbox';
-          
-          // Create lightbox image
-          const lightboxImg = document.createElement('img');
-          lightboxImg.src = item.src;
-          
-          // Add close button
-          const closeBtn = document.createElement('span');
-          closeBtn.className = 'lightbox-close';
-          closeBtn.innerHTML = '&times;';
-          closeBtn.addEventListener('click', () => {
-            document.body.removeChild(lightbox);
-          });
-          
-          // Add elements to lightbox
-          lightbox.appendChild(closeBtn);
-          lightbox.appendChild(lightboxImg);
-          
-          // Add lightbox to body
-          document.body.appendChild(lightbox);
-          
-          // Close lightbox when clicking outside the image
-          lightbox.addEventListener('click', (e) => {
-            if (e.target === lightbox) {
-              document.body.removeChild(lightbox);
-            }
-          });
-        });
-      });
-    });
-  </script>
+            <!-- Photography Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Photo 1 -->
+                <div class="group cursor-pointer">
+                    <div class="aspect-w-4 aspect-h-5 bg-gray-800 rounded-lg overflow-hidden">
+                        <div class="w-full h-80 bg-gradient-to-br from-blue-600 to-purple-600 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
+                            <span class="text-white text-sm opacity-50">Portrait Series</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Photo 2 -->
+                <div class="group cursor-pointer">
+                    <div class="aspect-w-4 aspect-h-3 bg-gray-800 rounded-lg overflow-hidden">
+                        <div class="w-full h-60 bg-gradient-to-br from-green-600 to-teal-600 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
+                            <span class="text-white text-sm opacity-50">Urban Landscape</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Photo 3 -->
+                <div class="group cursor-pointer">
+                    <div class="aspect-w-4 aspect-h-5 bg-gray-800 rounded-lg overflow-hidden">
+                        <div class="w-full h-80 bg-gradient-to-br from-orange-600 to-red-600 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
+                            <span class="text-white text-sm opacity-50">Street Photography</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Photo 4 -->
+                <div class="group cursor-pointer">
+                    <div class="aspect-w-4 aspect-h-3 bg-gray-800 rounded-lg overflow-hidden">
+                        <div class="w-full h-60 bg-gradient-to-br from-pink-600 to-purple-600 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
+                            <span class="text-white text-sm opacity-50">Architecture</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Photo 5 -->
+                <div class="group cursor-pointer">
+                    <div class="aspect-w-4 aspect-h-4 bg-gray-800 rounded-lg overflow-hidden">
+                        <div class="w-full h-64 bg-gradient-to-br from-indigo-600 to-blue-600 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
+                            <span class="text-white text-sm opacity-50">Abstract Forms</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Photo 6 -->
+                <div class="group cursor-pointer">
+                    <div class="aspect-w-4 aspect-h-5 bg-gray-800 rounded-lg overflow-hidden">
+                        <div class="w-full h-80 bg-gradient-to-br from-yellow-600 to-orange-600 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
+                            <span class="text-white text-sm opacity-50">Natural Light</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Photo 7 -->
+                <div class="group cursor-pointer">
+                    <div class="aspect-w-4 aspect-h-3 bg-gray-800 rounded-lg overflow-hidden">
+                        <div class="w-full h-60 bg-gradient-to-br from-purple-600 to-pink-600 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
+                            <span class="text-white text-sm opacity-50">Minimalist</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Photo 8 -->
+                <div class="group cursor-pointer">
+                    <div class="aspect-w-4 aspect-h-4 bg-gray-800 rounded-lg overflow-hidden">
+                        <div class="w-full h-64 bg-gradient-to-br from-teal-600 to-green-600 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
+                            <span class="text-white text-sm opacity-50">Documentary</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Photo 9 -->
+                <div class="group cursor-pointer">
+                    <div class="aspect-w-4 aspect-h-5 bg-gray-800 rounded-lg overflow-hidden">
+                        <div class="w-full h-80 bg-gradient-to-br from-red-600 to-orange-600 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
+                            <span class="text-white text-sm opacity-50">Experimental</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black border-t border-gray-800 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="col-span-1 md:col-span-2">
+                    <h3 class="logo text-white text-xl font-bold mb-4">day moon</h3>
+                    <p class="text-gray-400 mb-4">Creating meaningful digital experiences through thoughtful design and development.</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Navigation</h4>
+                    <ul class="space-y-2">
+                        <li><a href="projects.html" class="nav-link text-gray-400 hover:text-white">Projects</a></li>
+                        <li><a href="writings.html" class="nav-link text-gray-400 hover:text-white">Writings</a></li>
+                        <li><a href="photography.html" class="nav-link text-gray-400 hover:text-white">Photography</a></li>
+                        <li><a href="about.html" class="nav-link text-gray-400 hover:text-white">About</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Connect</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="nav-link text-gray-400 hover:text-white">Email</a></li>
+                        <li><a href="#" class="nav-link text-gray-400 hover:text-white">Twitter</a></li>
+                        <li><a href="#" class="nav-link text-gray-400 hover:text-white">Instagram</a></li>
+                        <li><a href="#" class="nav-link text-gray-400 hover:text-white">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center">
+                <p class="text-gray-400">&copy; 2024 Day Moon. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/template-loader.js"></script>
 </body>
 </html>
