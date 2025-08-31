@@ -14,7 +14,7 @@ body{
   linear-gradient(
     180deg,
     #1a1a1d 0%,
-    #0a2540 70%,
+    #0a2540 65%,
     #8fa9b3 100%
   );
   background-attachment: fixed;  /* PC端滚动时背景不动，有舞台幕布感 */
@@ -26,8 +26,8 @@ img{max-width:100%;height:auto}
 .container{max-width:var(--container);margin:0 auto;padding:0 var(--space-3)}
 
 :root {
-  --condense-y-desktop: 0.8; 
-  --condense-y-mobile: 0.85;  
+  --condense-y-desktop: 0.75; 
+  --condense-y-mobile: 0.8;  
 }
 
 .site-header {
@@ -102,7 +102,7 @@ img{max-width:100%;height:auto}
 
   .brand-name {
     transform: scaleY(var(--condense-y-desktop));
-    font-size: 40px;            /* 关键：突出品牌文字 */
+    font-size: 50px;            /* 关键：突出品牌文字 */
     letter-spacing: 1px;
     margin-left: 12px;
   }
@@ -123,7 +123,7 @@ img{max-width:100%;height:auto}
   }
 
   .nav-desktop a {
-    color: var(--primary);
+    color: rgba(var(--accentrgb), 0.88);
     text-decoration: none;
   }
   .nav-desktop a:hover {
@@ -146,13 +146,14 @@ img{max-width:100%;height:auto}
 .card{
   border-radius:var(--radius);
   padding:var(--space-4);
-  background: linear-gradient(
-    180deg,
-    color-mix(in srgb, var(--primary) 95%, rgba(var(--accentrgb), 0.05)) 0%,
-    color-mix(in srgb, var(--primary) 80%, rgba(var(--accentrgb), 0.12)) 100%
+  background: radial-gradient(
+    circle at center,
+    color-mix(in srgb, var(--primary) 75%, rgba(var(--accentrgb), 0.1)) 0%,
+    color-mix(in srgb, var(--bg) 50%, rgba(var(--accentrgb), 0.3)) 100%
   );
   border: none; /* 去掉明显边框 */
-  box-shadow: none; /* 去掉阴影，融入背景 */
+  box-shadow: 0 0 20px rgba(0,0,0,0.15),
+              0 0 40px rgba(var(--accentrgb), 0.1);
 }
 
 .btn {
@@ -173,7 +174,7 @@ img{max-width:100%;height:auto}
   color: var(--accent);
   text-decoration: none;                   /* 确保悬停也没下划线 */
 }
-.text-link a{color: var(--border); font-weight:600; text-decoration: none}
+.text-link {color: var(--border); font-weight:600; text-decoration: none}
 .text-link:hover {
   text-decoration:underline
 }
@@ -202,7 +203,7 @@ ul.list-plain li{margin:6px 0}
     rgba(10, 24, 44, 0.68); 
   backdrop-filter: blur(6px) saturate(1.2);
   -webkit-backdrop-filter: blur(6px) saturate(1.2); 
-  color: rgba(240,244,248,0.88);      
+  color: rgba(var(--accentrgb), 0.88);    
 }
 .footer-inner{
   display:flex;align-items:center;justify-content:space-between;
@@ -211,7 +212,7 @@ ul.list-plain li{margin:6px 0}
 
 .footer-links a {
   margin-right: 12px;
-  color: rgba(240, 244, 248, 0.7);      /* 默认较浅 */
+  color: rgba(var(--accentrgb), 0.88);     /* 默认较浅 */
   text-decoration: none;
 }
 .footer-links a:hover {
@@ -235,7 +236,6 @@ ul.list-plain li{margin:6px 0}
   transform: scaleY(var(--condense-x-mobile));
   display: inline-block;
   transform-origin: center;   /* 居中压缩更自然 */
-  white-space: nowrap;        /* 避免被压后换行 */
   -webkit-font-smoothing: antialiased; /* 视觉更锐利（Safari/Chromium） */
 }
 
@@ -256,7 +256,6 @@ ul.list-plain li{margin:6px 0}
     transform: scaleY(var(--condense-x-mobile));
     display: inline-block;
     transform-origin: center;   /* 居中压缩更自然 */
-    white-space: nowrap;        /* 避免被压后换行 */
     -webkit-font-smoothing: antialiased; /* 视觉更锐利（Safari/Chromium） */
   }
 }
