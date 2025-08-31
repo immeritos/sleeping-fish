@@ -14,7 +14,7 @@ body{
   linear-gradient(
     180deg,
     #1a1a1d 0%,
-    #0a2540 60%,
+    #0a2540 70%,
     #8fa9b3 100%
   );
   background-attachment: fixed;  /* PC端滚动时背景不动，有舞台幕布感 */
@@ -27,12 +27,14 @@ img{max-width:100%;height:auto}
 
 .site-header {
   padding: 8px 16px;
-  background: rgba(10, 20, 40, 0.6); /* 深蓝半透明，融入背景 */
-  backdrop-filter: blur(10px) saturate(1.2); /* 毛玻璃效果 */
-  -webkit-backdrop-filter: blur(10px) saturate(1.2); 
+  background: 
+  radial-gradient(200px 160px at 30% 80%, rgba(255,255,255,0.06), transparent 70%),
+  rgba(10, 20, 40, 0.68); /* 深蓝半透明，融入背景 */
+  backdrop-filter: blur(6px) saturate(1.2); /* 毛玻璃效果 */
+  -webkit-backdrop-filter: blur(6px) saturate(1.2); 
   border-bottom: 1px solid rgba(255, 255, 255, 0.08); /* 很轻的分隔线 */
 }
-.header-inner{display:flex;align-items:center;justify-content:space-between;min-height:64px}
+.header-inner{display:flex;align-items:center;justify-content:space-between;min-height:80px}
 .brand{display:inline-flex;align-items:center;text-decoration: none;;color:var(--primary)}
 .brand-name {
   font-family: 'Oswald', sans-serif;
@@ -140,6 +142,7 @@ img{max-width:100%;height:auto}
     color-mix(in srgb, var(--primary) 85%, rgba(var(--accentrgb),0.08)) 100%
   );
   box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+  text-decoration: none
 }
 
 .btn {
@@ -207,14 +210,12 @@ ul.list-plain li{margin:6px 0}
 }
 
 
-/* 可调参数：全局压缩比例与字距 */
 :root {
-  --condense-x-desktop: 0.7; /* 桌面：更窄更像参考站 */
-  --condense-x-mobile: 0.75;  /* 移动：稍微放宽一点提升易读性 */
-  --condensed-letter-spacing: 0.1em;
+  --condense-y-desktop: 0.8; 
+  --condense-y-mobile: 0.85;  
 }
 
-/* 导航链接与按钮统一“压扁”处理（正文不受影响） */
+
 .hero-title,
 .hero-subtitle,
 .hero-actions,
@@ -228,7 +229,7 @@ ul.list-plain li{margin:6px 0}
   text-decoration: none;
 
   /* 关键：横向压缩 */
-  transform: scaleX(var(--condense-x-mobile));
+  transform: scaleY(var(--condense-x-mobile));
   display: inline-block;
   transform-origin: center;   /* 居中压缩更自然 */
   white-space: nowrap;        /* 避免被压后换行 */
@@ -244,6 +245,6 @@ ul.list-plain li{margin:6px 0}
   .footer-links,
   .nav-desktop a,
   .btn {
-    transform: scaleX(var(--condense-x-desktop));
+    transform: scaleY(var(--condense-x-desktop));
   }
 }
