@@ -23,7 +23,7 @@ main {
   flex: 1;
 }
 img{max-width:100%;height:auto}
-.container{max-width:var(--container);margin: 0 auto;padding:0 var(--space-2)}
+.container{max-width:var(--container);margin: 0 auto;padding:0 5px}
 
 :root {
   --condense-y-desktop: 0.75; 
@@ -173,7 +173,7 @@ img{max-width:100%;height:auto}
 }
 
 .prose {
-  background: rgba(248,249,251,0.3);
+  background: rgba(248,249,251,0.2);
   box-shadow: 0 8px 24px rgba(0,0,0,0.18); 
               0 2px 8px  rgba(0,0,0,0.16);
   transition: box-shadow .25s ease, transform .25s ease, background .25s ease;
@@ -208,10 +208,12 @@ ul.list-plain li{margin:6px 0}
 }
 
 .footer-links a {
+  margin-right: 12px;
   color: rgba(var(--accentrgb), 0.88);     /* 默认较浅 */
   text-decoration: none;
 }
 .footer-links a:hover {
+  margin-right: 12px;
   color: var(--accent);                 /* 悬停突出，和 header hover 保持一致 */
   text-decoration: none;
 }
