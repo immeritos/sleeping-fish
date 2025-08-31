@@ -13,9 +13,11 @@ body{
   radial-gradient(circle at 70% 80%, rgba(143, 169, 179, 0.12), transparent 60%),
   linear-gradient(
     180deg,
-    #1a1a1d 0%,    /* 深灰 */
-    #0a2540 50%,   /* 深蓝 */
-    #8fa9b3 100%   /* 浅蓝灰 */
+    #1a1a1d 0%,    /* 深灰开始 */
+    #1a1a1d 24%,   /* 深灰占比 ↑ */
+    #0a2540 25%,   /* 过渡到深蓝 */
+    #0a2540 88%,   /* 深蓝占比 ↑，一直到接近底部 */
+    #8fa9b3 100%   /* 最底部少量浅蓝灰（≈12%） */
   );
   background-attachment: fixed;  /* PC端滚动时背景不动，有舞台幕布感 */
 }
@@ -25,11 +27,11 @@ main {
 img{max-width:100%;height:auto}
 .container{max-width:var(--container);margin:0 auto;padding:0 var(--space-3)}
 
-.site-header{
+.site-header {
   padding: 0 24px;
-  background: linear-gradient(180deg, rgba(var(--accentrgb),0.06), transparent), var(--bg);
-  backdrop-filter: saturate(1.2) blur(8px);
-  border-bottom:1px solid var(--border);
+  background: rgba(10, 20, 40, 0.6); /* 深蓝半透明，融入背景 */
+  backdrop-filter: blur(10px) saturate(1.2); /* 毛玻璃效果 */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08); /* 很轻的分隔线 */
 }
 .header-inner{display:flex;align-items:center;justify-content:space-between;min-height:64px}
 .brand{display:inline-flex;align-items:center;text-decoration: none;;color:var(--primary)}
@@ -144,8 +146,8 @@ img{max-width:100%;height:auto}
 
 .btn {
   background: transparent; 
-  color: var(--accent);             
-  border: 1px solid var(--accent);
+  color: var(--primary);             
+  border: 1px solid var(--primary);
   border-radius: 12px;
   font-weight: 600;
   font-size: 16px;           
@@ -156,7 +158,7 @@ img{max-width:100%;height:auto}
   transition: all 0.2s ease;    
 }
 .btn:hover {
-  background: rgba(var(--accentrgb), 0.1); /* 悬停时轻微色块 */
+  background: rgba(var(--primaryrgb), 0.1); /* 悬停时轻微色块 */
   color: var(--accent);
   text-decoration: none;                   /* 确保悬停也没下划线 */
 }
@@ -181,13 +183,31 @@ img{max-width:100%;height:auto}
 .prose a{font-weight:600}
 ul.list-plain{list-style:none;padding-left:0}
 ul.list-plain li{margin:6px 0}
-.site-footer{border-top:1px solid var(--border);padding:var(--space-3) 0;background:rgba(var(--accentrgb),0.04)}
-.footer-inner{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;color:rgba(var(--accentrgb), 0.8)}
-.footer-links a{margin-right:12px;color:rgba(var(--accentrgb), 0.8)}
-.footer-links a:hover {
-  color: rgba(var(--accentrgb), 1);   /* hover 时全不透明，突出效果 */
+.site-footer {
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding: var(--space-3) 0;
+  background: 
+    radial-gradient(200px 160px at 80% 30%, rgba(255,255,255,0.06), transparent 70%),
+    rgba(10, 24, 44, 0.68); 
+  backdrop-filter: blur(6px) saturate(1.2);
+  -webkit-backdrop-filter: blur(6px) saturate(1.2); 
+  color: rgba(240,244,248,0.88);      
+}
+.footer-inner{
+  display:flex;align-items:center;justify-content:space-between;
+  gap: 12px; flex-wrap: wrap;
+}
+
+.footer-links a {
+  margin-right: 12px;
+  color: rgba(240, 244, 248, 0.7);      /* 默认较浅 */
   text-decoration: none;
 }
+.footer-links a:hover {
+  color: var(--accent);                 /* 悬停突出，和 header hover 保持一致 */
+  text-decoration: none;
+}
+
 
 /* 可调参数：全局压缩比例与字距 */
 :root {
