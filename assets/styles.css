@@ -13,20 +13,20 @@ img{max-width:100%;height:auto}
   border-bottom:1px solid var(--border);
 }
 .header-inner{display:inline-flex;align-items:center;justify-content:space-between;min-height:64px}
-.brand{display:inline-flex;align-items:center;text-decoration: none;;color:var(--fg)}
+.brand{display:inline-flex;align-items:center;text-decoration: none;;color:var(--primary)}
 .brand-name {
   font-family: 'Oswald', sans-serif;
   font-weight: 400;  /* Regular 400 */
-  font-size: 20px;   /* 可以根据导航高度调整 */
+  font-size: 30px;   /* 可以根据导航高度调整 */
   letter-spacing: 1px; /* 字母间距，增强现代感 */
   margin-left: 8px;  /* 与 logo 图标保持间距 */
-  color: var(--fg);  /* 继承你的前景色 */
+  color: var(--primary);  /* 继承你的前景色 */
 }
 
 /* 默认：小屏 */
 .nav-desktop { display: none; gap: 16px; align-items: center; }
 .nav-desktop a { padding: 6px 10px; border-radius: 10px; }
-.nav-desktop a[aria-current="page"] { background: rgba(var(--accentrgb), 0.12); }
+.nav-desktop a[aria-current="page"] { background: rgba(var(--accentrgb), 0.8); }
 .nav-desktop a{
   font-weight: 600;        
   letter-spacing: 0.05em;  
@@ -37,30 +37,41 @@ img{max-width:100%;height:auto}
   appearance: none; 
   background: transparent; 
   border: 0; 
-  color: var(--fg);
+  color: var(--muted);
   padding: 8px;
   font-size: 22px; 
   cursor: pointer; 
 }
 
+[hidden] { display: none !important; }
 .nav-mobile {
-  display: flex;
+  display: none;
   flex-direction: column;
   padding: 6px var(--space-3) var(--space-3);
   border-bottom: 1px solid var(--border);
   background: var(--bg);
 }
+.nav-mobile:not([hidden]) {
+  display: flex;
+}
 .nav-mobile a { padding: 8px 6px; border-radius: 10px; }
 
 /* 大于等于 860px：显示桌面导航，隐藏汉堡与移动菜单 */
 @media (min-width: 860px) {
+  .nav-mobile {
+    display: none !important;
+  }
+  .nav-toggle {
+    display: none;
+  }
+  
   .site-header .header-inner {
     min-height: 80px;           /* 关键：高度感 */
     padding-inline: 8px;        /* 可选：稍增内边距，显得更松弛 */
   }
 
   .brand-name {
-    font-size: 30px;            /* 关键：突出品牌文字 */
+    font-size: 40px;            /* 关键：突出品牌文字 */
     letter-spacing: 1px;
     margin-left: 12px;
   }
@@ -88,7 +99,7 @@ img{max-width:100%;height:auto}
 
 
 .hero{padding:var(--space-6) 0}
-.hero-title{font-size:clamp(28px,3.5vw,44px);margin:0 0 var(--space-2)}
+.hero-title{color:var(--primary);font-size:clamp(28px,3.5vw,44px);margin:0 0 var(--space-2)}
 .hero-subtitle{color:var(--muted);margin:0 0 var(--space-4)}
 .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
 
@@ -100,18 +111,26 @@ img{max-width:100%;height:auto}
   border:1px solid var(--border);
   border-radius:var(--radius);
   padding:var(--space-4);
-  background:linear-gradient(180deg, rgba(var(--accentrgb),0.04), rgba(255,255,255,0));
+  background:linear-gradient(
+    180deg, 
+    var(--primary) 0%,
+    color-mix(in srgb, var(--primary) 85%, rgba(var(--accentrgb),0.08)) 100%
+  );
   box-shadow: 0 1px 0 rgba(0,0,0,.03);
 }
-.btn{display:inline-block; padding:10px 14px; border-radius:12px; font-weight:600;
-  background:var(--accent); color:white; border:1px solid color-mix(in oklab, var(--accent), black 10%);}
-.btn:hover{filter:brightness(1.05)}
-.btn-ghost{background:transparent; color:var(--accent); border:1px solid var(--accent);}
-.text-link{font-weight:600}
+
+.btn {
+  background: rgba(var(--accentrgb), 0.1);   /* 轻微透明的 accent 底色 */
+  color: var(--accent);                      /* 文字用 accent */
+  border: 1px solid var(--accent);
+}
+.text-link{color: var(--border); font-weight:600}
 .prose {
-  background: var(--primary);
-  padding: 24px;
-  border-radius: var(--radius);
+  background: linear-gradient(
+    180deg,
+    var(--primary) 0%,                         /* 主体部分冷灰白 */
+    color-mix(in srgb, var(--primary) 90%, rgba(var(--accentrgb),0.05)) 100%
+  );
 }
 .prose h1,.prose h2,.prose h3{line-height:1.25}
 .prose h1{font-size:clamp(28px,3vw,36px)}
@@ -120,21 +139,29 @@ img{max-width:100%;height:auto}
 .prose a{font-weight:600}
 ul.list-plain{list-style:none;padding-left:0}
 ul.list-plain li{margin:6px 0}
-.site-footer{border-top:1px solid var(--border);padding:var(--space-5) 0;background:rgba(var(--accentrgb),0.04)}
-.footer-inner{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
-.footer-links a{margin-right:12px}
+.site-footer{border-top:1px solid var(--border);padding:var(--space-3) 0;background:rgba(var(--accentrgb),0.04)}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;color:rgba(var(--accentrgb), 0.8)}
+.footer-links a{margin-right:12px;color:rgba(var(--accentrgb), 0.8)}
+.footer-links a:hover {
+  color: rgba(var(--accentrgb), 1);   /* hover 时全不透明，突出效果 */
+  text-decoration: underline;
+}
 
 /* 可调参数：全局压缩比例与字距 */
 :root {
-  --condense-x-desktop: 0.85; /* 桌面：更窄更像参考站 */
-  --condense-x-mobile: 0.92;  /* 移动：稍微放宽一点提升易读性 */
-  --condensed-letter-spacing: 0.08em;
+  --condense-x-desktop: 0.7; /* 桌面：更窄更像参考站 */
+  --condense-x-mobile: 0.75;  /* 移动：稍微放宽一点提升易读性 */
+  --condensed-letter-spacing: 0.1em;
 }
 
 /* 导航链接与按钮统一“压扁”处理（正文不受影响） */
+.hero-title
+.hero-subtitle
+.hero-actions
+.footer-inner
+.footer-links
 .nav-desktop a,
-.btn,
-.btn-ghost {
+.btn {
   font-family: var(--font-sans);   /* 仍用你在 theme.css 里配置的 Montserrat */
   font-weight: 600;
   text-transform: uppercase;
@@ -150,9 +177,13 @@ ul.list-plain li{margin:6px 0}
 
 /* 桌面端更“窄”一点，效果更像参考站 */
 @media (min-width: 860px) {
+  .hero-title
+  .hero-subtitle
+  .hero-actions
+  .footer-inner
+  .footer-links
   .nav-desktop a,
-  .btn,
-  .btn-ghost {
+  .btn {
     transform: scaleX(var(--condense-x-desktop));
   }
 }

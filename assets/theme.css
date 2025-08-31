@@ -4,7 +4,8 @@
 
   --bg: #0C1B2A;           
   --fg: #1A1A1A;            
-  --primary: #F5F5F5;     
+  --primary: #F5F5F5;   
+  --primaryrgb: 245, 245, 245;  
   --accent: #F4A300;      
   --accentrgb: 244,163,0; 
   --border: #333333;     
