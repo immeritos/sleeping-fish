@@ -23,7 +23,7 @@ main {
   flex: 1;
 }
 img{max-width:100%;height:auto}
-.container{max-width:var(--container);margin:0 auto;padding:0 var(--space-3)}
+.container{max-width:var(--container);padding:0 var(--space-3)}
 
 :root {
   --condense-y-desktop: 0.65; 
@@ -43,10 +43,6 @@ img{max-width:100%;height:auto}
 .brand{display:flex;align-items:center;text-decoration: none;color:var(--primary)}
 .brand-name {
   display: inline-block;
-  transform: scaleY(var(--condense-y-mobile));
-  transform-origin: center;
-  -webkit-font-smoothing: antialiased;
-  white-space: nowrap;   
   font-family: 'Oswald', sans-serif;
   font-weight: 400;  /* Regular 400 */
   font-size: 30px;   /* 可以根据导航高度调整 */
@@ -101,7 +97,6 @@ img{max-width:100%;height:auto}
   }
 
   .brand-name {
-    transform: scaleY(var(--condense-y-desktop));
     font-size: 40px;            /* 关键：突出品牌文字 */
     letter-spacing: 0.8px;
   }
@@ -150,8 +145,8 @@ img{max-width:100%;height:auto}
     color-mix(in srgb, var(--primary) 90%, rgba(var(--accentrgb), 0.05)) 0%,
     color-mix(in srgb, var(--bg) 85%, rgba(var(--accentrgb), 0.08)) 100%
   );
-  box-shadow: 0 0 16px rgba(0,0,0,0.08),
-              0 0 32px rgba(var(--accentrgb), 0.08);
+  box-shadow: 0 0 10px rgba(40, 40, 40, 0.08),
+              0 0 20px rgba(var(--accentrgb), 0.08);
 }
 
 .btn {
@@ -199,7 +194,7 @@ ul.list-plain li{margin:6px 0}
 
 .site-footer {
   border-top: 1px solid rgba(255,255,255,0.1);
-  padding: var(--space-3) 0;
+  padding: var(--space-3) 12px;
   background: 
     radial-gradient(200px 160px at 80% 30%, rgba(255,255,255,0.06), transparent 70%),
     rgba(10, 24, 44, 0.68); 
@@ -212,7 +207,7 @@ ul.list-plain li{margin:6px 0}
   display:flex;
   align-items:center;
   justify-content:space-between;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
 }
 
 .footer-links a {
