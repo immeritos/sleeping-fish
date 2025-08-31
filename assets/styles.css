@@ -172,14 +172,12 @@ img{max-width:100%;height:auto}
 }
 
 .prose {
-  background: linear-gradient(
-    180deg,
-    var(--primary) 0%,                         /* 主体部分冷灰白 */
-    color-mix(in srgb, var(--primary) 90%, rgba(var(--accentrgb),0.05)) 100%
-  );
+  background: rgba(var(248,249,251), var(0.5));
+  box-shadow: 0 8px 24px rgba(0,0,0,0.18); 
+              0 2px 8px  rgba(0,0,0,0.16);
+  transition: box-shadow .25s ease, transform .25s ease, background .25s ease;
   padding: var(--space-4);
   border-radius: var(--radius);
-  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
 }
 .prose h1,.prose h2,.prose h3{line-height:1.25}
 .prose h1{font-size:clamp(28px,3vw,36px)}
@@ -192,7 +190,7 @@ ul.list-plain li{margin:6px 0}
 
 .site-footer {
   border-top: 1px solid rgba(255,255,255,0.1);
-  padding: var(--space-3) 12px;
+  padding: var(--space-3) 0;
   background: 
     radial-gradient(200px 160px at 80% 30%, rgba(255,255,255,0.06), transparent 70%),
     rgba(10, 24, 40, 0.5); 
