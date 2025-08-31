@@ -141,7 +141,7 @@ img{max-width:100%;height:auto}
   border: none;
   border-radius:var(--radius);
   padding:var(--space-4);
-  background: rgba(var(248,249,251), var(0.88));
+  background: rgba(248,249,251,0.3);
   box-shadow: 0 8px 24px rgba(0,0,0,0.18); 
               0 2px 8px  rgba(0,0,0,0.16);
   transition: box-shadow .25s ease, transform .25s ease, background .25s ease;
@@ -173,7 +173,7 @@ img{max-width:100%;height:auto}
 }
 
 .prose {
-  background: rgba(var(248,249,251), var(0.5));
+  background: rgba(248,249,251,0.5);
   box-shadow: 0 8px 24px rgba(0,0,0,0.18); 
               0 2px 8px  rgba(0,0,0,0.16);
   transition: box-shadow .25s ease, transform .25s ease, background .25s ease;
@@ -221,7 +221,7 @@ ul.list-plain li{margin:6px 0}
 .hero-subtitle,
 .hero-actions,
 .footer-inner,
-.footer-links,
+.text-link,
 .nav-desktop a,
 .btn {
   font-family: var(--font-sans);   /* 仍用你在 theme.css 里配置的 Montserrat */
@@ -240,7 +240,6 @@ ul.list-plain li{margin:6px 0}
   .hero-subtitle,
   .hero-actions,
   .footer-inner,
-  .footer-links,
   .text-link,
   .nav-desktop a,
   .btn {
