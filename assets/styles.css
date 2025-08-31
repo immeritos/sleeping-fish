@@ -229,7 +229,7 @@ ul.list-plain li{margin:6px 0}
 
   /* 关键：横向压缩 */
   transform: scaleY(var(--condense-y-mobile));
-  display: inline-block;
+  display: block;
   transform-origin: center;   /* 居中压缩更自然 */
   -webkit-font-smoothing: antialiased; /* 视觉更锐利（Safari/Chromium） */
 }
@@ -249,7 +249,7 @@ ul.list-plain li{margin:6px 0}
 
     /* 关键：横向压缩 */
     transform: scaleY(var(--condense-y-desktop));
-    display: inline-block;
+    display: block;
     transform-origin: center;   /* 居中压缩更自然 */
     flex-wrap: nowrap
     -webkit-font-smoothing: antialiased; /* 视觉更锐利（Safari/Chromium） */
