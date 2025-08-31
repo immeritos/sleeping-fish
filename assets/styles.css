@@ -13,11 +13,9 @@ body{
   radial-gradient(circle at 70% 80%, rgba(143, 169, 179, 0.12), transparent 60%),
   linear-gradient(
     180deg,
-    #1a1a1d 0%,    /* 深灰开始 */
-    #1a1a1d 24%,   /* 深灰占比 ↑ */
-    #0a2540 25%,   /* 过渡到深蓝 */
-    #0a2540 88%,   /* 深蓝占比 ↑，一直到接近底部 */
-    #8fa9b3 100%   /* 最底部少量浅蓝灰（≈12%） */
+    #1a1a1d 0%,
+    #0a2540 60%,
+    #8fa9b3 100%
   );
   background-attachment: fixed;  /* PC端滚动时背景不动，有舞台幕布感 */
 }
@@ -28,9 +26,10 @@ img{max-width:100%;height:auto}
 .container{max-width:var(--container);margin:0 auto;padding:0 var(--space-3)}
 
 .site-header {
-  padding: 0 24px;
+  padding: 8px 16px;
   background: rgba(10, 20, 40, 0.6); /* 深蓝半透明，融入背景 */
   backdrop-filter: blur(10px) saturate(1.2); /* 毛玻璃效果 */
+  -webkit-backdrop-filter: blur(10px) saturate(1.2); 
   border-bottom: 1px solid rgba(255, 255, 255, 0.08); /* 很轻的分隔线 */
 }
 .header-inner{display:flex;align-items:center;justify-content:space-between;min-height:64px}
@@ -48,7 +47,7 @@ img{max-width:100%;height:auto}
 .nav-desktop { display: none; gap: 16px; align-items: center; }
 .nav-desktop a { padding: 6px 10px; border-radius: 10px; }
 .nav-desktop a{
-  font-weight: 400;        
+  font-weight: 500;        
   letter-spacing: 0.05em;  
   text-transform: uppercase; 
 }
@@ -86,8 +85,7 @@ img{max-width:100%;height:auto}
   }
   
   .site-header .header-inner {
-    min-height: 80px;           /* 关键：高度感 */
-    padding-inline: 8px;        /* 可选：稍增内边距，显得更松弛 */
+    padding: 8px 16px;
   }
 
   .brand-name {
@@ -104,7 +102,7 @@ img{max-width:100%;height:auto}
 
   .nav-desktop a {
     font-size: 20px;            /* 菜单小于 brand-name */
-    font-weight: 400;
+    font-weight: 500;
     letter-spacing: 0.05em;
     text-transform: uppercase;
     padding: 6px 10px;          /* 视觉触达区 */
@@ -180,7 +178,7 @@ img{max-width:100%;height:auto}
 .prose h1{font-size:clamp(28px,3vw,36px)}
 .prose h2{font-size:clamp(22px,2.2vw,28px)}
 .prose p{color:var(--fg)}
-.prose a{font-weight:600}
+.prose a{font-weight:600;text-decoration: none}
 ul.list-plain{list-style:none;padding-left:0}
 ul.list-plain li{margin:6px 0}
 .site-footer {
@@ -217,17 +215,17 @@ ul.list-plain li{margin:6px 0}
 }
 
 /* 导航链接与按钮统一“压扁”处理（正文不受影响） */
-.hero-title
-.hero-subtitle
-.hero-actions
-.footer-inner
-.footer-links
+.hero-title,
+.hero-subtitle,
+.hero-actions,
+.footer-inner,
+.footer-links,
 .nav-desktop a,
 .btn {
   font-family: var(--font-sans);   /* 仍用你在 theme.css 里配置的 Montserrat */
-  font-weight: 600;
   text-transform: uppercase;
   letter-spacing: var(--condensed-letter-spacing);
+  text-decoration: none;
 
   /* 关键：横向压缩 */
   transform: scaleX(var(--condense-x-mobile));
@@ -239,11 +237,11 @@ ul.list-plain li{margin:6px 0}
 
 /* 桌面端更“窄”一点，效果更像参考站 */
 @media (min-width: 860px) {
-  .hero-title
-  .hero-subtitle
-  .hero-actions
-  .footer-inner
-  .footer-links
+  .hero-title,
+  .hero-subtitle,
+  .hero-actions,
+  .footer-inner,
+  .footer-links,
   .nav-desktop a,
   .btn {
     transform: scaleX(var(--condense-x-desktop));
