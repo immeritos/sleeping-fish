@@ -34,7 +34,7 @@ img{max-width:100%;height:auto}
   padding: 8px 16px;
   background: 
   radial-gradient(200px 160px at 28% 80%, rgba(255,255,255,0.06), transparent 70%),
-  rgba(10, 22, 42, 0.68); /* 深蓝半透明，融入背景 */
+  rgba(5, 16, 29, 0.6); /* 深蓝半透明，融入背景 */
   backdrop-filter: blur(6px) saturate(1.2); /* 毛玻璃效果 */
   -webkit-backdrop-filter: blur(6px) saturate(1.2); 
   border-bottom: 1px solid rgba(255, 255, 255, 0.08); /* 很轻的分隔线 */
@@ -148,11 +148,11 @@ img{max-width:100%;height:auto}
   padding:var(--space-4);
   background: radial-gradient(
     circle at center,
-    color-mix(in srgb, var(--primary) 80%, rgba(var(--accentrgb), 0.1)) 0%,
-    color-mix(in srgb, var(--bg) 70%, rgba(var(--accentrgb), 0.2)) 100%
+    color-mix(in srgb, var(--primary) 90%, rgba(var(--accentrgb), 0.05)) 0%,
+    color-mix(in srgb, var(--bg) 85%, rgba(var(--accentrgb), 0.08)) 100%
   );
-  box-shadow: 0 0 20px rgba(0,0,0,0.15),
-              0 0 40px rgba(var(--accentrgb), 0.1);
+  box-shadow: 0 0 20px rgba(0,0,0,0.08),
+              0 0 40px rgba(var(--accentrgb), 0.08);
 }
 
 .btn {
