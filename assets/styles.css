@@ -141,7 +141,7 @@ img{max-width:100%;height:auto}
   border: none;
   border-radius:var(--radius);
   padding:var(--space-4);
-  background: rgba(248,249,251,0.3);
+  background: rgba(248,249,251,0.05);
   box-shadow: 0 8px 24px rgba(0,0,0,0.18); 
               0 2px 8px  rgba(0,0,0,0.16);
   transition: box-shadow .25s ease, transform .25s ease, background .25s ease;
@@ -173,7 +173,7 @@ img{max-width:100%;height:auto}
 }
 
 .prose {
-  background: rgba(248,249,251,0.5);
+  background: rgba(248,249,251,0.3);
   box-shadow: 0 8px 24px rgba(0,0,0,0.18); 
               0 2px 8px  rgba(0,0,0,0.16);
   transition: box-shadow .25s ease, transform .25s ease, background .25s ease;
@@ -183,7 +183,7 @@ img{max-width:100%;height:auto}
 .prose h1,.prose h2,.prose h3{line-height:1.25}
 .prose h1{font-size:clamp(28px,3vw,36px)}
 .prose h2{font-size:clamp(22px,2.2vw,28px)}
-.prose p{color:var(--primary)}
+.prose p{color:var(--fg)}
 .prose a{font-weight:600;text-decoration: none}
 
 ul.list-plain{list-style:none;padding-left:0}
@@ -218,7 +218,6 @@ ul.list-plain li{margin:6px 0}
 
 
 .hero-title,
-.hero-subtitle,
 .hero-actions,
 .footer-inner,
 .text-link,
@@ -237,9 +236,7 @@ ul.list-plain li{margin:6px 0}
 /* 桌面端更“窄”一点，效果更像参考站 */
 @media (min-width: 860px) {
   .hero-title,
-  .hero-subtitle,
   .hero-actions,
-  .footer-inner,
   .text-link,
   .nav-desktop a,
   .btn {
