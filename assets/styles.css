@@ -31,7 +31,7 @@ img{max-width:100%;height:auto}
 }
 
 .site-header {
-  padding: 8px 16px;
+  padding: 8px 12px;
   background: 
   radial-gradient(200px 160px at 28% 80%, rgba(255,255,255,0.06), transparent 70%),
   rgba(5, 16, 29, 0.6); /* 深蓝半透明，融入背景 */
@@ -97,12 +97,12 @@ img{max-width:100%;height:auto}
   }
   
   .site-header .header-inner {
-    padding: 8px 12px;
+    padding: 0;
   }
 
   .brand-name {
     transform: scaleY(var(--condense-y-desktop));
-    font-size: 55px;            /* 关键：突出品牌文字 */
+    font-size: 40px;            /* 关键：突出品牌文字 */
     letter-spacing: 0.8px;
   }
 
@@ -110,7 +110,6 @@ img{max-width:100%;height:auto}
     display: flex;              /* 你已有；这里确保生效 */
     gap: 28px;                  /* 菜单间距更开阔 */
     align-items: center;
-    margin-left: 80px;  
   }
 
   .nav-desktop a {
@@ -151,8 +150,8 @@ img{max-width:100%;height:auto}
     color-mix(in srgb, var(--primary) 90%, rgba(var(--accentrgb), 0.05)) 0%,
     color-mix(in srgb, var(--bg) 85%, rgba(var(--accentrgb), 0.08)) 100%
   );
-  box-shadow: 0 0 20px rgba(0,0,0,0.08),
-              0 0 40px rgba(var(--accentrgb), 0.08);
+  box-shadow: 0 0 16px rgba(0,0,0,0.08),
+              0 0 32px rgba(var(--accentrgb), 0.08);
 }
 
 .btn {
@@ -217,7 +216,6 @@ ul.list-plain li{margin:6px 0}
 }
 
 .footer-links a {
-  margin-right: 12px;
   color: rgba(var(--accentrgb), 0.88);     /* 默认较浅 */
   text-decoration: none;
 }
