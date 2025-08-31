@@ -5,7 +5,7 @@ body{
   flex-direction: column;
   min-height: 100dvh;
   font-family:var(--font-sans);
-  color:var(--fg);
+  color:var(--primary);
   line-height:1.6;
   background: 
 
@@ -166,9 +166,10 @@ img{max-width:100%;height:auto}
   text-decoration: none;                   /* 确保悬停也没下划线 */
 }
 
-.text-link {color: var(--border); font-weight:600; text-decoration: none}
+.text-link {color: var(--muted); font-weight:600; text-decoration: none}
 .text-link:hover {
-  text-decoration:underline
+  color: var(--accent);
+  text-decoration: none
 }
 
 .prose {
@@ -219,8 +220,6 @@ ul.list-plain li{margin:6px 0}
 .hero-title,
 .hero-subtitle,
 .hero-actions,
-.footer-inner,
-.footer-links,
 .nav-desktop a,
 .btn {
   font-family: var(--font-sans);   /* 仍用你在 theme.css 里配置的 Montserrat */
@@ -239,8 +238,6 @@ ul.list-plain li{margin:6px 0}
   .hero-title,
   .hero-subtitle,
   .hero-actions,
-  .footer-inner,
-  .footer-links,
   .nav-desktop a,
   .btn {
     font-family: var(--font-sans);   /* 仍用你在 theme.css 里配置的 Montserrat */
