@@ -25,18 +25,28 @@ main {
 img{max-width:100%;height:auto}
 .container{max-width:var(--container);margin:0 auto;padding:0 var(--space-3)}
 
+:root {
+  --condense-y-desktop: 0.8; 
+  --condense-y-mobile: 0.85;  
+}
+
 .site-header {
   padding: 8px 16px;
   background: 
-  radial-gradient(200px 160px at 30% 80%, rgba(255,255,255,0.06), transparent 70%),
-  rgba(10, 20, 40, 0.68); /* 深蓝半透明，融入背景 */
+  radial-gradient(200px 160px at 25% 80%, rgba(255,255,255,0.06), transparent 70%),
+  rgba(10, 22, 42, 0.68); /* 深蓝半透明，融入背景 */
   backdrop-filter: blur(6px) saturate(1.2); /* 毛玻璃效果 */
   -webkit-backdrop-filter: blur(6px) saturate(1.2); 
   border-bottom: 1px solid rgba(255, 255, 255, 0.08); /* 很轻的分隔线 */
 }
 .header-inner{display:flex;align-items:center;justify-content:space-between;min-height:80px}
-.brand{display:inline-flex;align-items:center;text-decoration: none;;color:var(--primary)}
+.brand{display:flex;align-items:center;text-decoration: none;color:var(--primary)}
 .brand-name {
+  display: inline-block;
+  transform: scaleY(var(--condense-y-mobile));
+  transform-origin: center;
+  -webkit-font-smoothing: antialiased;
+  white-space: nowrap;   
   font-family: 'Oswald', sans-serif;
   font-weight: 400;  /* Regular 400 */
   font-size: 30px;   /* 可以根据导航高度调整 */
@@ -91,6 +101,7 @@ img{max-width:100%;height:auto}
   }
 
   .brand-name {
+    transform: scaleY(var(--condense-y-desktop));
     font-size: 40px;            /* 关键：突出品牌文字 */
     letter-spacing: 1px;
     margin-left: 12px;
@@ -133,16 +144,15 @@ img{max-width:100%;height:auto}
 .grid-3{display:grid;gap:16px}
 @media(min-width: 860px){ .grid-3{grid-template-columns:repeat(3,1fr)} }
 .card{
-  border:1px solid var(--border);
   border-radius:var(--radius);
   padding:var(--space-4);
-  background:linear-gradient(
-    180deg, 
-    var(--primary) 0%,
-    color-mix(in srgb, var(--primary) 85%, rgba(var(--accentrgb),0.08)) 100%
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--primary) 95%, rgba(var(--accentrgb), 0.05)) 0%,
+    color-mix(in srgb, var(--primary) 80%, rgba(var(--accentrgb), 0.12)) 100%
   );
-  box-shadow: 0 4px 8px rgba(0,0,0,0.08);
-  text-decoration: none
+  border: none; /* 去掉明显边框 */
+  box-shadow: none; /* 去掉阴影，融入背景 */
 }
 
 .btn {
@@ -164,7 +174,7 @@ img{max-width:100%;height:auto}
   text-decoration: none;                   /* 确保悬停也没下划线 */
 }
 .text-link a{color: var(--border); font-weight:600; text-decoration: none}
-.text-link a:hover {
+.text-link:hover {
   text-decoration:underline
 }
 .prose {
@@ -210,12 +220,6 @@ ul.list-plain li{margin:6px 0}
 }
 
 
-:root {
-  --condense-y-desktop: 0.8; 
-  --condense-y-mobile: 0.85;  
-}
-
-
 .hero-title,
 .hero-subtitle,
 .hero-actions,
@@ -224,7 +228,6 @@ ul.list-plain li{margin:6px 0}
 .nav-desktop a,
 .btn {
   font-family: var(--font-sans);   /* 仍用你在 theme.css 里配置的 Montserrat */
-  text-transform: uppercase;
   letter-spacing: var(--condensed-letter-spacing);
   text-decoration: none;
 
@@ -245,6 +248,15 @@ ul.list-plain li{margin:6px 0}
   .footer-links,
   .nav-desktop a,
   .btn {
-    transform: scaleY(var(--condense-x-desktop));
+    font-family: var(--font-sans);   /* 仍用你在 theme.css 里配置的 Montserrat */
+    letter-spacing: var(--condensed-letter-spacing);
+    text-decoration: none;
+
+    /* 关键：横向压缩 */
+    transform: scaleY(var(--condense-x-mobile));
+    display: inline-block;
+    transform-origin: center;   /* 居中压缩更自然 */
+    white-space: nowrap;        /* 避免被压后换行 */
+    -webkit-font-smoothing: antialiased; /* 视觉更锐利（Safari/Chromium） */
   }
 }
