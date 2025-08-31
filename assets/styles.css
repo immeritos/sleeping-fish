@@ -5,9 +5,19 @@ body{
   flex-direction: column;
   min-height: 100dvh;
   font-family:var(--font-sans);
-  background:var(--bg);
   color:var(--fg);
-  line-height:1.6
+  line-height:1.6;
+  background: 
+
+  radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.08), transparent 60%),
+  radial-gradient(circle at 70% 80%, rgba(143, 169, 179, 0.12), transparent 60%),
+  linear-gradient(
+    180deg,
+    #1a1a1d 0%,    /* 深灰 */
+    #0a2540 50%,   /* 深蓝 */
+    #8fa9b3 100%   /* 浅蓝灰 */
+  );
+  background-attachment: fixed;  /* PC端滚动时背景不动，有舞台幕布感 */
 }
 main {
   flex: 1;
@@ -35,7 +45,6 @@ img{max-width:100%;height:auto}
 /* 默认：小屏 */
 .nav-desktop { display: none; gap: 16px; align-items: center; }
 .nav-desktop a { padding: 6px 10px; border-radius: 10px; }
-.nav-desktop a[aria-current="page"] { background: rgba(var(--accentrgb), 0.8); }
 .nav-desktop a{
   font-weight: 400;        
   letter-spacing: 0.05em;  
@@ -134,15 +143,24 @@ img{max-width:100%;height:auto}
 }
 
 .btn {
-  background: transparent;   /* 轻微透明的 accent 底色 */
-  color: var(--accent);                      /* 文字用 accent */
+  background: transparent; 
+  color: var(--accent);             
   border: 1px solid var(--accent);
   border-radius: 12px;
   font-weight: 600;
-  padding: 10px 14px;
+  font-size: 16px;           
+  padding: 10px 16px;    
   display: inline-block;
+  text-decoration: none;   
+  cursor: pointer;         
+  transition: all 0.2s ease;    
 }
-.text-link a{color: var(--border); font-weight:600}
+.btn:hover {
+  background: rgba(var(--accentrgb), 0.1); /* 悬停时轻微色块 */
+  color: var(--accent);
+  text-decoration: none;                   /* 确保悬停也没下划线 */
+}
+.text-link a{color: var(--border); font-weight:600; text-decoration: none}
 .text-link a:hover {
   text-decoration:underline
 }
