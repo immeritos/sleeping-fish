@@ -240,7 +240,8 @@ ul.list-plain li{margin:6px 0}
   .hero-subtitle,
   .hero-actions,
   .footer-inner,
-  -footer-links,
+  .footer-links,
+  .text-link,
   .nav-desktop a,
   .btn {
     font-family: var(--font-sans);   /* 仍用你在 theme.css 里配置的 Montserrat */
@@ -250,6 +251,7 @@ ul.list-plain li{margin:6px 0}
     transform: scaleY(var(--condense-y-desktop));
     display: inline-block;
     transform-origin: center;   /* 居中压缩更自然 */
+    flex-wrap: nowrap
     -webkit-font-smoothing: antialiased; /* 视觉更锐利（Safari/Chromium） */
   }
 }
