@@ -23,7 +23,7 @@ main {
   flex: 1;
 }
 img{max-width:100%;height:auto}
-.container{max-width:90%;margin: 0 auto}
+.container{max-width:84%;margin: 0 auto}
 
 :root {
   --condense-y-desktop: 0.75; 
@@ -208,12 +208,10 @@ ul.list-plain li{margin:6px 0}
 }
 
 .footer-links a {
-  margin-right: 12px;
   color: rgba(var(--accentrgb), 0.88);     /* 默认较浅 */
   text-decoration: none;
 }
 .footer-links a:hover {
-  margin-right: 12px;
   color: var(--accent);                 /* 悬停突出，和 header hover 保持一致 */
   text-decoration: none;
 }
@@ -221,7 +219,6 @@ ul.list-plain li{margin:6px 0}
 
 .hero-title,
 .hero-actions,
-.footer-inner,
 .text-link,
 .nav-desktop a,
 .btn {
