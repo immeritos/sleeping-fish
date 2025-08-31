@@ -17,10 +17,29 @@ img{max-width:100%;height:auto}
 .brand-mark{display:inline-grid;place-items:center;width:28px;height:28px;border-radius:50%;background:rgba(var(--accentrgb),0.12)}
 .brand-name{letter-spacing:.5px}
 
-/* Always show the desktop nav */
-.nav-desktop{display:flex;gap:16px;align-items:center}
-.nav-desktop a{padding:6px 10px;border-radius:10px}
-.nav-desktop a[aria-current="page"]{background:rgba(var(--accentrgb),0.12)}
+/* 默认：小屏 */
+.nav-desktop { display: none; gap: 16px; align-items: center; }
+.nav-desktop a { padding: 6px 10px; border-radius: 10px; }
+.nav-desktop a[aria-current="page"] { background: rgba(var(--accentrgb), 0.12); }
+
+.nav-toggle { background: none; border: 0; font-size: 22px; cursor: pointer; }
+
+.nav-mobile {
+  display: flex;
+  flex-direction: column;
+  padding: 6px var(--space-3) var(--space-3);
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+}
+.nav-mobile a { padding: 8px 6px; border-radius: 10px; }
+
+/* 大于等于 860px：显示桌面导航，隐藏汉堡与移动菜单 */
+@media (min-width: 860px) {
+  .nav-desktop { display: flex; }
+  .nav-toggle { display: none; }
+  .nav-mobile { display: none !important; }
+}
+
 
 .hero{padding:var(--space-6) 0}
 .hero-title{font-size:clamp(28px,3.5vw,44px);margin:0 0 var(--space-2)}
