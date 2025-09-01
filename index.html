@@ -50,32 +50,207 @@
 
 
   <main>
-    <section class="hero">
-      <div class="container">
-        <h1 class="hero-title">It's supernatural ...</h1>
-        <p class="hero-subtitle">research / project / writing / photography</p>
+      <!-- ====================== HERO: 静谧滚动相册（模式A） ====================== -->
+    <section class="hero hero-slider" id="hero" aria-label="Featured photos">
+
+      <!-- 视口（承载所有幻灯片），全宽全高 -->
+      <div class="hero-slider__viewport">
+        <!-- Slide 1：建议保留为首屏、用于 LCP（高优先级加载） -->
+        <figure class="hero-slide is-active" id="hero-slide-1" aria-hidden="false">
+          <picture>
+            <img
+              src="/images/1-2000.jpg"
+              srcset="/images/1-1000.jpg 1000w,
+                      /images/1-1600.jpg 1600w,
+                      /images/1-2000.jpg 2000w"
+              sizes="(min-width: 1100px) 1100px, 80vw"
+              alt=""
+              width="2000" height="1500"
+              fetchpriority="high" loading="eager" decoding="async"
+              style="object-position:50% 50%;">
+          </picture>
+
+          <!-- 左下角文案层（建议保持简短） -->
+          <figcaption class="hero-caption">
+            <div class="container">
+              <h1 class="hero-title">It's supernatural ...</h1>
+              <p class="hero-subtitle">research / project / writing / photography</p>
+              <div class="hero-actions">
+                <a class="btn" href="/project.html">View Projects</a>
+                <a class="btn" href="/writing.html">Read Blogs</a>
+              </div>
+            </div>
+          </figcaption>
+        </figure>
+
+        <!-- Slide 2 -->
+        <figure class="hero-slide" id="hero-slide-2" aria-hidden="true">
+          <picture>
+            <img
+              src="/images/2-2000.jpg"
+              srcset="/images/2-1000.jpg 1000w,
+                      /images/2-1600.jpg 1600w,
+                      /images/2-2000.jpg 2000w"
+              sizes="(min-width: 1100px) 1100px, 80vw"
+              alt=""
+              width="2000" height="1500"
+              fetchpriority="high" loading="eager" decoding="async"
+              style="object-position:50% 50%;">
+          </picture>
+          <figcaption class="hero-caption sr-only">
+            <!-- 若为装饰图可留空；若承载信息可写一句，但首页通常留空更干净 -->
+          </figcaption>
+        </figure>
+
+        <!-- Slide 3 -->
+        <figure class="hero-slide" id="hero-slide-3" aria-hidden="true">
+          <picture>
+            <img
+              src="/images/3-2000.jpg"
+              srcset="/images/3-1000.jpg 1000w,
+                      /images/3-1600.jpg 1600w,
+                      /images/3-2000.jpg 2000w"
+              sizes="(min-width: 1100px) 1100px, 80vw"
+              alt=""
+              width="2000" height="1500"
+              fetchpriority="high" loading="eager" decoding="async"
+              style="object-position:50% 50%;">
+          </picture>
+          <figcaption class="hero-caption sr-only"></figcaption>
+        </figure>
       </div>
-    </section>
-    <section class="section">
-      <div class="container grid-3">
-        <article class="card">
-          <h3>Latest Writing</h3>
-          <p>A short intro or a pinned article excerpt.</p>
-          <a class="text-link" href="/writing.html">Go to WRITING →</a>
-        </article>
-        <article class="card">
-          <h3>Recent Projects</h3>
-          <p>Showcase one or two highlights.</p>
-          <a class="text-link" href="/project.html">Go to PROJECT →</a>
-        </article>
-        <article class="card">
-          <h3>Photography</h3>
-          <p>A curated selection of shots.</p>
-          <a class="text-link" href="/photography.html">Go to PHOTOGRAPHY →</a>
-        </article>
+
+        <!-- Slide 4 -->
+        <figure class="hero-slide" id="hero-slide-4" aria-hidden="true">
+          <picture>
+            <img
+              src="/images/4-2000.jpg"
+              srcset="/images/4-1000.jpg 1000w,
+                      /images/4-1600.jpg 1600w,
+                      /images/4-2000.jpg 2000w"
+              sizes="(min-width: 1100px) 1100px, 80vw"
+              alt=""
+              width="2000" height="1500"
+              fetchpriority="high" loading="eager" decoding="async"
+              style="object-position:50% 50%;">
+          </picture>
+          <figcaption class="hero-caption sr-only"></figcaption>
+        </figure>
       </div>
+
+      <!-- 分页圆点（可点击、可聚焦） -->
+      <div class="hero-pagination" role="tablist" aria-label="Hero pagination">
+        <button class="hero-dot is-active" role="tab" aria-selected="true"  aria-controls="hero-slide-1"><span class="sr-only">Slide 1</span></button>
+        <button class="hero-dot"           role="tab" aria-selected="false" aria-controls="hero-slide-2"><span class="sr-only">Slide 2</span></button>
+        <button class="hero-dot"           role="tab" aria-selected="false" aria-controls="hero-slide-3"><span class="sr-only">Slide 3</span></button>
+        <button class="hero-dot"           role="tab" aria-selected="false" aria-controls="hero-slide-4"><span class="sr-only">Slide 4</span></button>
+      </div>
+
+      <!-- ================= 样式（最小增量，可后移到 styles.css） ================= -->
+      <style>
+        .sr-only {
+          position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+          overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+        }
+
+        /* 不再用 vh 定高；只在区块上下留空，使整体更“居中” */
+        .hero.hero-slider {
+          position: relative;
+          padding-block: clamp(16px, 4vw, 40px); /* 上下留白：小屏 16px → 大屏 40px */
+          margin-inline: auto;
+        }
+
+        /* 关键：视口宽度与 4:3 画幅 */
+        .hero-slider__viewport {
+          position: relative;
+          width: clamp(720px, 80vw, 1100px);   /* 适度缩小并居中 */
+          aspect-ratio: var(--hero-aspect, 4/3);
+          margin-inline: auto;                 /* 居中 */
+          overflow: hidden;
+          border-radius: var(--radius, 18px);
+          outline: 1px solid rgba(255,255,255,0.06);
+          box-shadow: 0 8px 24px rgba(0,0,0,0.24), 0 2px 8px rgba(0,0,0,0.18);
+          isolation: isolate;
+          background: #000; /* 防止加载瞬间的空白，且在 contain 时形成信箱黑 */
+        }
+
+        /* 幻灯片绝对覆盖这个“定宽定比”的视口 */
+        .hero-slide {
+          position: absolute; inset: 0;
+          opacity: 0; visibility: hidden;
+          transition: opacity .8s ease, visibility .8s step-end;
+          will-change: opacity;
+        }
+        .hero-slide.is-active {
+          opacity: 1; visibility: visible;
+          transition: opacity .8s ease, visibility 0s;
+        }
+
+        .hero-slide picture, 
+        .hero-slide img {
+          width: 100%; height: 100%;
+          display: block;
+          object-fit: cover; /* 你的图片是 4:3，视口也是 4:3，正常不会裁切；不同尺寸时 cover 保持充满 */
+        }
+
+        /* 底部读性渐变 */
+        .hero-slide::after {
+          content: "";
+          position: absolute; inset: 0;
+          background: linear-gradient(to top, rgba(0,0,0,0.45), rgba(0,0,0,0.10) 40%, rgba(0,0,0,0) 70%);
+          pointer-events: none;
+        }
+
+        /* 文案层：不借助全站 .container，使用内部 padding 以贴合视口宽度 */
+        .hero-caption {
+          position: absolute; inset: auto 0 0 0; /* 锚定在底部 */
+          z-index: 2;
+          color: var(--primary);
+        }
+        .hero-caption-inner {
+          padding: 20px 24px 28px; /* 左右内边距与圆角相协调 */
+        }
+        .hero-title{color:var(--primary);font-size:clamp(24px,3.2vw,44px);margin:0 0 8px}
+        .hero-subtitle{color:var(--muted);margin:0 0 var(--space-3); opacity: .9; }
+        .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+
+        /* 分页圆点：锚定在“视口容器”底部中央 */
+        .hero-pagination {
+          position: absolute;
+          left: 50%; transform: translateX(-50%);
+          bottom: 10px;
+          display: flex; gap: 10px;
+          z-index: 3;
+        }
+        .hero-dot {
+          width: 10px; height: 10px; border-radius: 50%;
+          background: rgba(255,255,255,0.45);
+          border: 1px solid rgba(255,255,255,0.6);
+          display: inline-flex; align-items: center; justify-content: center;
+          cursor: pointer; padding: 0;
+        }
+        .hero-dot.is-active { 
+          background: var(--accent, #F4A300); border-color: var(--accent, #F4A300);
+        }
+        .hero-dot:focus-visible { outline: 2px solid var(--accent, #F4A300); outline-offset: 2px; }
+
+        /* 小屏优化：把纵横比调“扁一点”，避免占太多竖向空间 */
+        @media (max-width: 768px) {
+          .hero-slider__viewport { 
+            width: min(94vw, 720px);
+            aspect-ratio: var(--hero-aspect-mobile, 3/2); /* 移动端默认 3:2，更低矮些 */
+          }
+          .hero-title { font-size: clamp(20px, 6vw, 28px); }
+        }
+
+        /* 尊重“减少动态”偏好 */
+        @media (prefers-reduced-motion: reduce) {
+          .hero-slide { transition: none; }
+        }
+      </style>
     </section>
   </main>
+
 
 
   <footer class="site-footer">
