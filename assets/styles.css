@@ -227,15 +227,34 @@ ul.list-plain li{margin:6px 0}
   flex-wrap: nowrap;
 }
 
-.footer-links a {
-  color: rgba(var(--accentrgb), 0.88);     /* 默认较浅 */
-  text-decoration: none;
-}
-.footer-links a:hover {
-  color: var(--accent);                 /* 悬停突出，和 header hover 保持一致 */
-  text-decoration: none;
+.footer-icons{
+  display:flex;
+  align-items:center;
+  gap: 14px;                  /* 图标间距 */
 }
 
+.icon{
+  width: 22px;                /* 统一尺寸（可调 20–24px） */
+  height: 22px;
+  display:block;
+}
+
+/* 链接颜色用主题 accent；透明度略低，悬停高亮 */
+.icon-link{
+  color: rgba(var(--accentrgb), 0.88);
+  opacity: .95;
+  transition: transform .2s ease, opacity .2s ease, color .2s ease;
+}
+.icon-link:hover{
+  opacity: 1;
+  transform: translateY(-1px);
+  color: rgba(var(--accentrgb), 1);
+}
+.icon-link:focus-visible{
+  outline: 2px solid var(--accent, #F4A300);
+  outline-offset: 3px;
+  border-radius: 8px;         /* 给焦点一个圆角边框 */
+}
 
 .hero-title,
 .hero-actions,
