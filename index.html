@@ -118,7 +118,6 @@
           </picture>
           <figcaption class="hero-caption sr-only"></figcaption>
         </figure>
-      </div>
 
         <!-- Slide 4 -->
         <figure class="hero-slide" id="hero-slide-4" aria-hidden="true">
@@ -171,7 +170,13 @@
           outline: 1px solid rgba(255,255,255,0.06);
           box-shadow: 0 8px 24px rgba(0,0,0,0.24), 0 2px 8px rgba(0,0,0,0.18);
           isolation: isolate;
-          background: #000; /* 防止加载瞬间的空白，且在 contain 时形成信箱黑 */
+          background: linear-gradient(
+            180deg,
+            rgba(12, 27, 42, 0.22),
+            rgba(12, 27, 42, 0.10)
+          );
+          -webkit-backdrop-filter: blur(4px) saturate(1.07);
+          backdrop-filter: blur(4px) saturate(1.07); /* 防止加载瞬间的空白，且在 contain 时形成信箱黑 */
         }
 
         /* 幻灯片绝对覆盖这个“定宽定比”的视口 */
@@ -208,7 +213,7 @@
           color: var(--primary);
         }
         .hero-caption-inner {
-          padding: 20px 24px 28px; /* 左右内边距与圆角相协调 */
+          padding: 20px 24px 28px 16px; /* 左右内边距与圆角相协调 */
         }
         .hero-title{color:var(--primary);font-size:clamp(24px,3.2vw,44px);margin:0 0 8px}
         .hero-subtitle{color:var(--muted);margin:0 0 var(--space-3); opacity: .9; }
