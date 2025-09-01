@@ -63,7 +63,7 @@ img{max-width:100%;height:auto}
   
 .nav-mobile a { padding: 8px 6px; border-radius: 10px; }
 .nav-mobile a {
-  color: rgba(var(--accentrgb), 0.88);
+  color: rgba(var(--accentrgb), 0.8);
   text-decoration: none;
 }  
 .nav-mobile a:hover {
@@ -137,7 +137,7 @@ img{max-width:100%;height:auto}
   }
 
   .nav-desktop a {
-    color: rgba(var(--accentrgb), 0.88);
+    color: rgba(var(--accentrgb), 0.8);
     text-decoration: none;
   }
   .nav-desktop a:hover {
