@@ -156,7 +156,7 @@ img{max-width:100%;height:auto}
 .section{padding:var(--space-6) 0}
 .section.muted{background:linear-gradient(180deg, rgba(var(--accentrgb),0.06), transparent)}
 .grid-3{display:grid;gap:16px}
-@media(min-width: 860px){ .grid-3{grid-template-columns:repeat(3,1fr)} }
+@media(min-width: 860px){ .grid-3{grid-template-columns:repeat(2,1fr)} }
 .card{
   border: none;
   border-radius:var(--radius);
