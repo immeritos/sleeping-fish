@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let index = 0;
     let timer = null;
-    const INTERVAL = 7000; // 6–8s 之间取 7s
+    const INTERVAL = 6000; // 6–8s 之间取 7s
     const prefersReduced = window.matchMedia &&
       window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -92,3 +92,4 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   
 });
+
