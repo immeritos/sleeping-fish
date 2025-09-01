@@ -6,14 +6,14 @@
   --fg: #1A1A1A;            
   --primary: #e0e6f0;   
   --primaryrgb: 224, 230, 240;  
-  --accent: #F4A300;     
-  --accentrgb: 244,163,0; 
+  --accent: #f48600;     
+  --accentrgb: 244, 134, 0; 
   --border: #333333;     
 
   --nav: rgba(12,27,42,0.85);
 
 
-  --muted: #878d99；
+  --muted: #707580；
   --space-1: 5px;
   --space-2: 10px;
   --space-3: 15px;
