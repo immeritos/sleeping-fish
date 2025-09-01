@@ -101,7 +101,7 @@ img{max-width:100%;height:auto}
     text-align: center; 
     font-size: 30px;      
   }
-
+}
 
 /* 大于等于 860px：显示桌面导航，隐藏汉堡与移动菜单 */
 @media (min-width: 860px) {
@@ -162,7 +162,7 @@ img{max-width:100%;height:auto}
   border-radius:var(--radius);
   padding:var(--space-4);
   background: rgba(248,249,251,0.05);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.18); 
+  box-shadow: 0 8px 24px rgba(0,0,0,0.18),
               0 2px 8px  rgba(0,0,0,0.16);
   transition: box-shadow .25s ease, transform .25s ease, background .25s ease;
 }
@@ -194,7 +194,7 @@ img{max-width:100%;height:auto}
 
 .prose {
   background: rgba(248,249,251,0.2);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.18); 
+  box-shadow: 0 8px 24px rgba(0,0,0,0.18),
               0 2px 8px  rgba(0,0,0,0.16);
   transition: box-shadow .25s ease, transform .25s ease, background .25s ease;
   padding: var(--space-4);
@@ -266,7 +266,7 @@ ul.list-plain li{margin:6px 0}
     transform: scaleY(var(--condense-y-desktop));
     display: block;
     transform-origin: center;   /* 居中压缩更自然 */
-    flex-wrap: nowrap
+    flex-wrap: nowrap;
     -webkit-font-smoothing: antialiased; /* 视觉更锐利（Safari/Chromium） */
   }
 }
