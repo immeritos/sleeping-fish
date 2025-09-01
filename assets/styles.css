@@ -25,11 +25,6 @@ main {
 img{max-width:100%;height:auto}
 .container{max-width:84%;margin: 0 auto}
 
-:root {
-  --condense-y-desktop: 0.75; 
-  --condense-y-mobile: 0.8;  
-}
-
 .site-header {
   padding: 8px 0;
   background: 
@@ -82,12 +77,10 @@ img{max-width:100%;height:auto}
   }
   
   .nav-toggle { 
+    background:transparent;
     position:absolute;
     margin: 0; 
-    color: var(--primary);
-    left: 6px;
-    top:50%;
-    transform: translateY(-50%); 
+    color: var(--accent);
     font-size: 30px; 
     z-index:3;
   }
@@ -99,7 +92,7 @@ img{max-width:100%;height:auto}
   }
   .brand-name {
     text-align: center; 
-    font-size: 30px;      
+    font-size: 40px;      
   }
 }
 
@@ -259,30 +252,33 @@ ul.list-plain li{margin:6px 0}
 .hero-title,
 .hero-actions,
 .text-link,
-.nav-mobile a,
 .btn {
-  font-family: var(--font-sans);   /* 仍用你在 theme.css 里配置的 Montserrat */
-  letter-spacing: var(--condensed-letter-spacing);
-
-  /* 关键：横向压缩 */
-  transform: scaleY(var(--condense-y-mobile));
+  transform: scaleY(0.9);
   display: block;
   transform-origin: center;   /* 居中压缩更自然 */
   -webkit-font-smoothing: antialiased; /* 视觉更锐利（Safari/Chromium） */
 }
 
+.nav-mobile a {
+  transform: scaleY(0.85);
+  display: block;
+  transform-origin: center;   /* 居中压缩更自然 */
+  -webkit-font-smoothing: antialiased; /* 视觉更锐利（Safari/Chromium） */
+}
 /* 桌面端更“窄”一点，效果更像参考站 */
 @media (min-width: 860px) {
   .hero-title,
   .hero-actions,
   .text-link,
-  .nav-desktop a,
   .btn {
-    font-family: var(--font-sans);   /* 仍用你在 theme.css 里配置的 Montserrat */
-    letter-spacing: var(--condensed-letter-spacing);
-
-    /* 关键：横向压缩 */
-    transform: scaleY(var(--condense-y-desktop));
+    transform: scaleY(0.85);
+    display: block;
+    transform-origin: center;   /* 居中压缩更自然 */
+    flex-wrap: nowrap;
+    -webkit-font-smoothing: antialiased; /* 视觉更锐利（Safari/Chromium） */
+  }
+  .nav-desktop a {
+    transform: scaleY(0.75);
     display: block;
     transform-origin: center;   /* 居中压缩更自然 */
     flex-wrap: nowrap;
