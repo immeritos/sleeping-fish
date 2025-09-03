@@ -1,12 +1,29 @@
+/* 布局：移动端单列，桌面端左右两列 */
 .profile-split {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
   gap: var(--space-5);
-  align-items: flex-start;
+  align-items: start;
 }
 
-.profile-left {
-  flex: 1;
+@media (min-width: 860px) {
+  .profile-split {
+    grid-template-columns: minmax(280px, 420px) 1fr; /* 左列宽度区间 */
+    column-gap: clamp(24px, 4vw, 48px);
+  }
+}
+
+/* 左侧：粘滞容器 */
+.photo-wrap {
+  position: relative;           /* 供内部视差 transform 使用 */
+}
+
+@media (min-width: 860px) {
+  .photo-wrap {
+    position: sticky;
+    top: clamp(16px, 6vh, 80px); /* 到达这个距离后“钉住” */
+    align-self: start;
+  }
 }
 
 .profile-left img {
@@ -16,15 +33,38 @@
   object-fit: cover;
 }
 
-.profile-right {
-  flex: 1;
-  line-height: 1.6;
-  max-width: 640px; /* 让文字区更舒适 */
+.photo {
+  display: block;
+  width: 100%;
+  max-width: 400px;  
+  height: auto;
+  border-radius: var(--radius);
+  will-change: transform;
+  transform: translateY(0);     /* 初始位移（JS 会轻微修改） */
+  transition: transform 200ms ease-out; /* 轻微缓动，避免生硬抖动 */
 }
 
-@media (min-width: 860px) {
-  .profile-split {
-    flex-direction: row;
-    align-items: center; /* 居中对齐 */
-  }
+/* 右侧文本排版上限，避免行宽过长 */
+.profile-right {
+  line-height: 1.65;
+  max-width: 68ch;              /* 典型舒适行宽 */
+}
+
+/* 名字与副标题 */
+.profile-right h2 {
+  margin: 0 0 var(--space-2);
+  line-height: 1.15;
+}
+
+.profile-right .tagline {
+  font-size: clamp(1rem, 1.6vw, 1.25rem);
+  font-weight: 500;
+  color: rgba(var(--accentrgb), 0.88);
+  letter-spacing: 0.5px;
+  margin: 0 0 var(--space-4);
+}
+
+/* 兼容 prefers-reduced-motion：禁用视差动画 */
+@media (prefers-reduced-motion: reduce) {
+  .photo { transition: none !important; transform: none !important; }
 }
