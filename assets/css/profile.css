@@ -4,6 +4,8 @@
   grid-template-columns: 1fr;
   gap: var(--space-5);
   align-items: start;
+  /* 防止祖先 overflow 破坏粘滞 */
+  overflow: visible;
 }
 
 @media (min-width: 860px) {
@@ -13,18 +15,25 @@
   }
 }
 
+/* 左列作为“粘滞元素” */
+.profile-left {
+  overflow: visible;           /* 显式允许可见溢出，避免粘滞失效 */
+}
+
+@media (min-width: 860px) {
+  .profile-left {
+    position: sticky;          /* 关键：让左列本身粘滞 */
+    top: clamp(16px, 4vh, 80px); /* 到达这个距离后“钉住” */
+    align-self: start;         /* Safari/Grid 兼容：禁止拉伸，按内容高度 */
+    height: fit-content;       /* 防止被 Grid 拉伸导致粘滞计算异常 */
+  }
+}
+
 /* 左侧：粘滞容器 */
 .photo-wrap {
   position: relative;           /* 供内部视差 transform 使用 */
 }
 
-@media (min-width: 860px) {
-  .photo-wrap {
-    position: sticky;
-    top: clamp(16px, 4vh, 80px); /* 到达这个距离后“钉住” */
-    align-self: start;
-  }
-}
 
 .profile-left img {
   width: 100%;
@@ -66,5 +75,6 @@
 @media (prefers-reduced-motion: reduce) {
   .photo { transition: none !important; transform: none !important; }
 }
+
 
 
