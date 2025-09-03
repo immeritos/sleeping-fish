@@ -28,8 +28,7 @@
 
 .profile-left img {
   width: 100%;
-  max-width: 320px; /* 限制头像最大宽度 */
-  border-radius: var(--radius);
+  max-width: 400px; /* 限制头像最大宽度 */
   object-fit: cover;
 }
 
@@ -38,7 +37,6 @@
   width: 100%;
   max-width: 400px;  
   height: auto;
-  border-radius: var(--radius);
   will-change: transform;
   transform: translateY(0);     /* 初始位移（JS 会轻微修改） */
   transition: transform 200ms ease-out; /* 轻微缓动，避免生硬抖动 */
@@ -68,3 +66,4 @@
 @media (prefers-reduced-motion: reduce) {
   .photo { transition: none !important; transform: none !important; }
 }
+
