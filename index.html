@@ -130,103 +130,40 @@
         <button class="hero-dot"           role="tab" aria-selected="false" aria-controls="hero-slide-3"><span class="sr-only">Slide 3</span></button>
         <button class="hero-dot"           role="tab" aria-selected="false" aria-controls="hero-slide-4"><span class="sr-only">Slide 4</span></button>
       </div>
-
-      <!-- ================= 样式（最小增量，可后移到 styles.css） ================= -->
-      <style>
-        .sr-only {
-          position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
-          overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
-        }
-
-        /* 不再用 vh 定高；只在区块上下留空，使整体更“居中” */
-        .hero.hero-slider {
-          position: relative;
-          padding-block: clamp(16px, 4vw, 40px); /* 上下留白：小屏 16px → 大屏 40px */
-          margin-inline: auto;
-        }
-
-        /* 关键：视口宽度与 4:3 画幅 */
-        .hero-slider__viewport {
-          position: relative;
-          width: clamp(720px, 80vw, 1100px);   /* 适度缩小并居中 */
-          aspect-ratio: var(--hero-aspect, 4/3);
-          margin-inline: auto;                 /* 居中 */
-          overflow: hidden;
-          border-radius: var(--radius, 18px);
-          outline: 1px solid rgba(255,255,255,0.06);
-          box-shadow: 0 8px 24px rgba(0,0,0,0.24), 0 2px 8px rgba(0,0,0,0.18);
-          isolation: isolate;
-          background: linear-gradient(
-            180deg,
-            rgba(12, 27, 42, 0.44),
-            rgba(12, 27, 42, 0.20)
-          );
-          -webkit-backdrop-filter: blur(4px) saturate(1.07);
-          backdrop-filter: blur(4px) saturate(1.07); /* 防止加载瞬间的空白，且在 contain 时形成信箱黑 */
-        }
-
-        /* 幻灯片绝对覆盖这个“定宽定比”的视口 */
-        .hero-slide {
-          position: absolute; inset: 0;
-          opacity: 0; visibility: hidden;
-          transition: opacity .8s ease, visibility .8s step-end;
-          will-change: opacity;
-        }
-        .hero-slide.is-active {
-          opacity: 1; visibility: visible;
-          transition: opacity .8s ease, visibility 0s;
-        }
-
-        .hero-slide picture, 
-        .hero-slide img {
-          width: 100%; height: 100%;
-          display: block;
-          object-fit: cover; /* 你的图片是 4:3，视口也是 4:3，正常不会裁切；不同尺寸时 cover 保持充满 */
-        }
-
-        /* 底部读性渐变 */
-        .hero-slide::after {
-          content: "";
-          position: absolute; inset: 0;
-          background: linear-gradient(to top, rgba(0,0,0,0.45), rgba(0,0,0,0.10) 40%, rgba(0,0,0,0) 70%);
-          pointer-events: none;
-        }
-
-        /* 分页圆点：锚定在“视口容器”底部中央 */
-        .hero-pagination {
-          position: absolute;
-          left: 50%; transform: translateX(-50%);
-          bottom: 10px;
-          display: flex; gap: 10px;
-          z-index: 3;
-        }
-        .hero-dot {
-          width: 10px; height: 10px; border-radius: 50%;
-          background: rgba(255,255,255,0.45);
-          border: 1px solid rgba(255,255,255,0.6);
-          display: inline-flex; align-items: center; justify-content: center;
-          cursor: pointer; padding: 0;
-        }
-        .hero-dot.is-active { 
-          background: var(--accent, #F4A300); border-color: var(--accent, #F4A300);
-        }
-        .hero-dot:focus-visible { outline: 2px solid var(--accent, #F4A300); outline-offset: 2px; }
-
-        /* 小屏优化：把纵横比调“扁一点”，避免占太多竖向空间 */
-        @media (max-width: 768px) {
-          .hero-slider__viewport { 
-            width: min(94vw, 720px);
-            aspect-ratio: var(--hero-aspect-mobile, 3/2); /* 移动端默认 3:2，更低矮些 */
-          }
-          .hero-title { font-size: clamp(20px, 6vw, 28px); }
-        }
-
-        /* 尊重“减少动态”偏好 */
-        @media (prefers-reduced-motion: reduce) {
-          .hero-slide { transition: none; }
-        }
-      </style>
     </section>
+
+	<section id="profile" class="section profile-section">
+	  <div class="profile-inner container">
+	    <div class="profile-grid">
+	      <!-- 左侧：文案卡片（会向右“伸出”与图片重叠） -->
+	      <div class="profile-copy reveal">
+	        <h2 class="eyebrow">PROFILE</h2>
+	        <h3 class="title">Hi, I’m Your Name</h3>
+	        <p class="desc">
+	          I’m a frontend-leaning full-stack beginner who loves clean UI,
+	          lightweight interactions, and building static sites with HTML/CSS/JS.
+	          Currently based in …
+	        </p>
+	
+	        <!-- 关键：View more 按钮 -->
+	        <a class="btn view-more" href="/profile.html" aria-label="View more about my profile">
+	          <span>View more</span>
+	          <!-- 小箭头图标（纯SVG，避免外部依赖） -->
+	          <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" class="icon">
+	            <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2"
+	                  stroke-linecap="round" stroke-linejoin="round"/>
+	          </svg>
+	        </a>
+	      </div>
+	
+	      <!-- 右侧：大图（被左侧卡片部分覆盖） -->
+	      <figure class="profile-visual reveal">
+	        <!-- 用你的封面图；建议 1600×1000 或更高，JPG/WebP皆可 -->
+	        <img src="/assets/hero/profile-cover.webp" alt="Portrait or work scene" loading="lazy">
+	      </figure>
+	    </div>
+	  </div>
+	</section>
   </main>
 
 
@@ -244,7 +181,6 @@
           </svg>
         </a>
   
-        <!-- X（Twitter）- 占位符，后续可换官方 LOGO 的 symbol -->
         <a class="icon-link" href="https://x.com/fuyuu1227"
            target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)">
           <svg class="icon" viewBox="0 0 1200 1227" aria-hidden="true">
@@ -252,7 +188,6 @@
           </svg>
         </a>
   
-        <!-- RSS（指向你的 feed 地址） -->
         <a class="icon-link" href="https://www.linkedin.com/in/ye-dai-113a98232"
            target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
           <svg class="icon" viewBox="0 0 382 382" aria-hidden="true">
@@ -291,4 +226,5 @@
 
 </body>
 </html>
+
 
