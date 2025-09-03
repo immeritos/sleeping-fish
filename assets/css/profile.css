@@ -1,0 +1,33 @@
+.profile-split {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  align-items: flex-start;
+}
+
+.profile-left {
+  flex: 1;
+}
+
+.profile-left img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius);
+  object-fit: cover;
+}
+
+.profile-right {
+  flex: 1;
+}
+
+@media (min-width: 860px) {
+  .profile-split {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  .profile-left,
+  .profile-right {
+    flex: 1;
+  }
+}
