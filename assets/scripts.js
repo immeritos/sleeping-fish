@@ -93,3 +93,33 @@ document.addEventListener('DOMContentLoaded', () => {
   
 });
 
+
+(function () {
+  const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('in-view');
+          // 进入一次即可，无需持续观察
+      io.unobserve(e.target);
+    }
+  });
+  }, { threshold: 0.15 });
+
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+})();
+
+  // 站内锚点平滑滚动的 JS 兜底（大多数浏览器已支持 CSS smooth）
+(function () {
+  document.addEventListener('click', function (e) {
+  const link = e.target.closest('a[href^="#"]');
+  if (!link) return;
+  const id = link.getAttribute('href').slice(1);
+  const target = document.getElementById(id);
+  if (target) {
+    e.preventDefault();
+    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+})();
+
+
