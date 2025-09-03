@@ -11,23 +11,20 @@
 
 .profile-left img {
   width: 100%;
-  height: auto;
-  display: block;
+  max-width: 320px; /* 限制头像最大宽度 */
   border-radius: var(--radius);
   object-fit: cover;
 }
 
 .profile-right {
   flex: 1;
+  line-height: 1.6;
+  max-width: 640px; /* 让文字区更舒适 */
 }
 
 @media (min-width: 860px) {
   .profile-split {
     flex-direction: row;
-    align-items: flex-start;
-  }
-  .profile-left,
-  .profile-right {
-    flex: 1;
+    align-items: center; /* 居中对齐 */
   }
 }
