@@ -1,3 +1,8 @@
+.section-profile {
+  padding-block: clamp(40px, 6vw, 96px);    /* 由版块自己提供上下留白 */
+  display: flow-root;                       /* 建立 BFC，彻底避免 margin 折叠 */
+}
+#profile { scroll-margin-top: 80px; }       
 /* 布局：移动端单列，桌面端左右两列 */
 .profile-split {
   display: grid;
@@ -75,6 +80,7 @@
 @media (prefers-reduced-motion: reduce) {
   .photo { transition: none !important; transform: none !important; }
 }
+
 
 
 
