@@ -21,7 +21,7 @@
 @media (min-width: 860px) {
   .photo-wrap {
     position: sticky;
-    top: clamp(16px, 6vh, 80px); /* 到达这个距离后“钉住” */
+    top: clamp(16px, 4vh, 80px); /* 到达这个距离后“钉住” */
     align-self: start;
   }
 }
@@ -66,4 +66,5 @@
 @media (prefers-reduced-motion: reduce) {
   .photo { transition: none !important; transform: none !important; }
 }
+
 
