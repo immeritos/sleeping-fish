@@ -1,0 +1,145 @@
+/* ========== 分屏与“滑动”体验（类似 Fujiikaze 首页感觉） ========== */
+/* 页面整体启用平滑滚动与分屏贴合 */
+html {
+  scroll-behavior: smooth;
+}
+.section {
+  /* 每个分屏至少占满一屏视口高度，形成“滑动切屏”的感觉 */
+  min-height: 100svh; /* 更好的移动端单位 */
+  display: flex;
+  align-items: center;
+  /* 让每屏在滚动时“贴合”到顶端（无需JS库） */
+  scroll-snap-align: start;
+}
+main {
+  /* 如果你的布局允许，也可直接给 body/html 设置：
+     html, body { scroll-snap-type: y mandatory; }
+     这里用 main 更安全： */
+  scroll-snap-type: y mandatory;
+}
+
+/* ========== Profile 分屏布局 ========== */
+.profile-section {
+  position: relative;
+  /* 保持你站点原有的背景，不额外上底色 */
+  padding-block: clamp(48px, 8vh, 96px);
+}
+
+.profile-inner {
+  /* 复用你的 .container 容器宽度，如果你已有 .container，此处可省略 */
+  max-width: min(1200px, 86vw);
+  margin-inline: auto;
+}
+
+.profile-grid {
+  /* 关键：两列布局 + 允许“重叠” */
+  display: grid;
+  grid-template-columns: 1.1fr 1fr; /* 左列略宽 */
+  gap: clamp(16px, 3vw, 48px);
+  align-items: center;
+  position: relative;
+}
+
+/* 右侧大图 */
+.profile-visual {
+  position: relative;
+  z-index: 1; /* 在卡片下方 */
+  overflow: visible; /* 允许上层元素覆盖 */
+}
+.profile-visual img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 20px;
+  object-fit: cover;
+  /* 轻微阴影，让层次更清晰 */
+  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+}
+
+/* 左侧文案卡片（重叠的关键） */
+.profile-copy {
+  position: relative;
+  z-index: 2; /* 高于图片 */
+  /* 通过负外边距“伸入”右侧图片区域，形成重叠 */
+  margin-right: clamp(-12vw, -8vw, -6vw);
+
+  /* 半透明毛玻璃卡片，贴合你的深色系 */
+  background: rgba(12,27,42,0.55); /* 约等于 var(--bg) + 透明度 */
+  backdrop-filter: blur(6px);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: clamp(16px, 3vw, 28px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.35);
+  color: var(--primary);
+}
+
+/* 文案层级与微排版 */
+.profile-copy .eyebrow {
+  letter-spacing: 0.2em;
+  font-size: 0.875rem;
+  opacity: 0.85;
+  margin: 0 0 8px;
+}
+.profile-copy .title {
+  margin: 0 0 8px;
+  font-size: clamp(1.5rem, 2.4vw, 2.25rem);
+  line-height: 1.2;
+}
+.profile-copy .desc {
+  margin: 0 0 20px;
+  color: rgba(229,231,235,0.9); /* 基于 var(--primary) 的次要色 */
+}
+
+/* View more 按钮 */
+.btn.view-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 10px 16px;
+  color: var(--primary);
+  background: rgba(255,255,255,0.04);
+  transition: transform .2s ease, background .2s ease, border-color .2s ease;
+  will-change: transform;
+}
+.btn.view-more .icon {
+  transform: translateX(0);
+  transition: transform .2s ease;
+}
+.btn.view-more:hover {
+  transform: translateY(-1px);
+  background: rgba(255,255,255,0.08);
+  border-color: rgba(255,255,255,0.25);
+}
+.btn.view-more:hover .icon {
+  transform: translateX(4px);
+}
+
+/* 进入视口时的轻量动效（无库） */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity .6s ease, transform .6s ease;
+  will-change: opacity, transform;
+}
+.reveal.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ========== 响应式：窄屏下取消重叠，堆叠排版 ========== */
+@media (max-width: 960px) {
+  .profile-grid {
+    grid-template-columns: 1fr;
+  }
+  .profile-copy {
+    margin-right: 0;        /* 取消“伸入”效果 */
+    order: 2;               /* 文案放到图片下方（也可改成 1 放上方） */
+  }
+  .profile-visual {
+    order: 1;
+  }
+}
