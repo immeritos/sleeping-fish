@@ -1,0 +1,23 @@
+:root{
+  --font-sans: "Montserrat", Arial, Helvetica, sans-serif;
+  --radius: 14px;
+
+  --bg: #0C1B2A;           
+  --fg: #1A1A1A;            
+  --primary: #e0e6f0;   
+  --primaryrgb: 224, 230, 240;  
+  --accent: #f48600;     
+  --accentrgb: 244, 134, 0; 
+  --border: #333333;     
+
+  --nav: rgba(12,27,42,0.85);
+
+
+  --muted: #555961;
+  --space-1: 5px;
+  --space-2: 10px;
+  --space-3: 15px;
+  --space-4: 20px;
+  --space-5: 30px;
+  --space-6: 40px;
+}
