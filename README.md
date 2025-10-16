@@ -7,10 +7,10 @@ A modern personal website
 - **Framework:** Next.js 14 with TypeScript
 - **Styling:** Tailwind CSS
 - **UI Components:** shadcn/ui + Radix UI
-- **Icons:** React Icons
+- **Icons:** Radix Icons
 - **Animation:** Framer Motion
 
-## 🛠️ Getting Started
+## Getting Started
 
 ### Prerequisites
 - Node.js 18+ 
