@@ -1,0 +1,256 @@
+[
+  {
+    "title": "Getting Started with Next.js",
+    "date": "2024-01-15T00:00:00.000Z",
+    "summary": "Learn the basics of Next.js and how to build modern web applications with React.",
+    "body": {
+      "raw": "\n# Getting Started with Next.js\n\nNext.js is a powerful React framework that makes it easy to build production-ready web applications. In this post, we'll explore the key features and benefits of Next.js.\n\n## What is Next.js?\n\nNext.js is a React framework that provides:\n\n- **Server-Side Rendering (SSR)**: Better SEO and performance\n- **Static Site Generation (SSG)**: Pre-rendered pages for optimal speed\n- **API Routes**: Build backend functionality alongside your frontend\n- **File-based Routing**: Intuitive routing system\n- **Built-in CSS Support**: Styled-jsx, CSS modules, and more\n\n## Key Features\n\n### 1. File-based Routing\n\nNext.js uses the file system to define routes. Create a file in the `pages` directory, and it automatically becomes a route.\n\n### 2. API Routes\n\nYou can create API endpoints by adding files to the `pages/api` directory.\n\n### 3. Image Optimization\n\nThe `next/image` component automatically optimizes images for better performance.\n\n## Getting Started\n\nTo create a new Next.js project:\n\n```bash\nnpx create-next-app@latest my-app\ncd my-app\nnpm run dev\n```\n\nThis will start your development server at `http://localhost:3000`.\n\n## Conclusion\n\nNext.js is an excellent choice for building modern web applications. Its powerful features and developer experience make it a popular choice among React developers.\n\nHappy coding!\n",
+      "code": "var Component=(()=>{var p=Object.create;var i=Object.defineProperty;var m=Object.getOwnPropertyDescriptor;var g=Object.getOwnPropertyNames;var u=Object.getPrototypeOf,w=Object.prototype.hasOwnProperty;var x=(n,a)=>()=>(a||n((a={exports:{}}).exports,a),a.exports),f=(n,a)=>{for(var l in a)i(n,l,{get:a[l],enumerable:!0})},s=(n,a,l,r)=>{if(a&&typeof a==\"object\"||typeof a==\"function\")for(let t of g(a))!w.call(n,t)&&t!==l&&i(n,t,{get:()=>a[t],enumerable:!(r=m(a,t))||r.enumerable});return n};var N=(n,a,l)=>(l=n!=null?p(u(n)):{},s(a||!n||!n.__esModule?i(l,\"default\",{value:n,enumerable:!0}):l,n)),v=n=>s(i({},\"__esModule\",{value:!0}),n);var c=x((j,d)=>{d.exports=_jsx_runtime});var k={};f(k,{default:()=>o,frontmatter:()=>b});var e=N(c()),b={title:\"Getting Started with Next.js\",date:\"2024-01-15\",summary:\"Learn the basics of Next.js and how to build modern web applications with React.\"};function h(n){let a={a:\"a\",code:\"code\",h1:\"h1\",h2:\"h2\",h3:\"h3\",li:\"li\",p:\"p\",path:\"path\",pre:\"pre\",span:\"span\",strong:\"strong\",svg:\"svg\",ul:\"ul\",...n.components};return(0,e.jsxs)(e.Fragment,{children:[(0,e.jsxs)(a.h1,{className:\"content-header\",id:\"getting-started-with-nextjs\",children:[(0,e.jsx)(a.a,{\"aria-hidden\":\"true\",href:\"#getting-started-with-nextjs\",tabIndex:\"-1\",children:(0,e.jsx)(e.Fragment,{children:(0,e.jsx)(a.span,{className:\"content-header-link\",children:(0,e.jsxs)(a.svg,{className:\"h-5 linkicon w-5\",fill:\"currentColor\",viewBox:\"0 0 20 20\",xmlns:\"http://www.w3.org/2000/svg\",children:[(0,e.jsx)(a.path,{d:\"M12.232 4.232a2.5 2.5 0 0 1 3.536 3.536l-1.225 1.224a.75.75 0 0 0 1.061 1.06l1.224-1.224a4 4 0 0 0-5.656-5.656l-3 3a4 4 0 0 0 .225 5.865.75.75 0 0 0 .977-1.138 2.5 2.5 0 0 1-.142-3.667l3-3Z\"}),(0,e.jsx)(a.path,{d:\"M11.603 7.963a.75.75 0 0 0-.977 1.138 2.5 2.5 0 0 1 .142 3.667l-3 3a2.5 2.5 0 0 1-3.536-3.536l1.225-1.224a.75.75 0 0 0-1.061-1.06l-1.224 1.224a4 4 0 1 0 5.656 5.656l3-3a4 4 0 0 0-.225-5.865Z\"})]})})})}),\"Getting Started with Next.js\"]}),(0,e.jsx)(a.p,{children:\"Next.js is a powerful React framework that makes it easy to build production-ready web applications. In this post, we'll explore the key features and benefits of Next.js.\"}),(0,e.jsxs)(a.h2,{className:\"content-header\",id:\"what-is-nextjs\",children:[(0,e.jsx)(a.a,{\"aria-hidden\":\"true\",href:\"#what-is-nextjs\",tabIndex:\"-1\",children:(0,e.jsx)(e.Fragment,{children:(0,e.jsx)(a.span,{className:\"content-header-link\",children:(0,e.jsxs)(a.svg,{className:\"h-5 linkicon w-5\",fill:\"currentColor\",viewBox:\"0 0 20 20\",xmlns:\"http://www.w3.org/2000/svg\",children:[(0,e.jsx)(a.path,{d:\"M12.232 4.232a2.5 2.5 0 0 1 3.536 3.536l-1.225 1.224a.75.75 0 0 0 1.061 1.06l1.224-1.224a4 4 0 0 0-5.656-5.656l-3 3a4 4 0 0 0 .225 5.865.75.75 0 0 0 .977-1.138 2.5 2.5 0 0 1-.142-3.667l3-3Z\"}),(0,e.jsx)(a.path,{d:\"M11.603 7.963a.75.75 0 0 0-.977 1.138 2.5 2.5 0 0 1 .142 3.667l-3 3a2.5 2.5 0 0 1-3.536-3.536l1.225-1.224a.75.75 0 0 0-1.061-1.06l-1.224 1.224a4 4 0 1 0 5.656 5.656l3-3a4 4 0 0 0-.225-5.865Z\"})]})})})}),\"What is Next.js?\"]}),(0,e.jsx)(a.p,{children:\"Next.js is a React framework that provides:\"}),(0,e.jsxs)(a.ul,{children:[(0,e.jsxs)(a.li,{children:[(0,e.jsx)(a.strong,{children:\"Server-Side Rendering (SSR)\"}),\": Better SEO and performance\"]}),(0,e.jsxs)(a.li,{children:[(0,e.jsx)(a.strong,{children:\"Static Site Generation (SSG)\"}),\": Pre-rendered pages for optimal speed\"]}),(0,e.jsxs)(a.li,{children:[(0,e.jsx)(a.strong,{children:\"API Routes\"}),\": Build backend functionality alongside your frontend\"]}),(0,e.jsxs)(a.li,{children:[(0,e.jsx)(a.strong,{children:\"File-based Routing\"}),\": Intuitive routing system\"]}),(0,e.jsxs)(a.li,{children:[(0,e.jsx)(a.strong,{children:\"Built-in CSS Support\"}),\": Styled-jsx, CSS modules, and more\"]})]}),(0,e.jsxs)(a.h2,{className:\"content-header\",id:\"key-features\",children:[(0,e.jsx)(a.a,{\"aria-hidden\":\"true\",href:\"#key-features\",tabIndex:\"-1\",children:(0,e.jsx)(e.Fragment,{children:(0,e.jsx)(a.span,{className:\"content-header-link\",children:(0,e.jsxs)(a.svg,{className:\"h-5 linkicon w-5\",fill:\"currentColor\",viewBox:\"0 0 20 20\",xmlns:\"http://www.w3.org/2000/svg\",children:[(0,e.jsx)(a.path,{d:\"M12.232 4.232a2.5 2.5 0 0 1 3.536 3.536l-1.225 1.224a.75.75 0 0 0 1.061 1.06l1.224-1.224a4 4 0 0 0-5.656-5.656l-3 3a4 4 0 0 0 .225 5.865.75.75 0 0 0 .977-1.138 2.5 2.5 0 0 1-.142-3.667l3-3Z\"}),(0,e.jsx)(a.path,{d:\"M11.603 7.963a.75.75 0 0 0-.977 1.138 2.5 2.5 0 0 1 .142 3.667l-3 3a2.5 2.5 0 0 1-3.536-3.536l1.225-1.224a.75.75 0 0 0-1.061-1.06l-1.224 1.224a4 4 0 1 0 5.656 5.656l3-3a4 4 0 0 0-.225-5.865Z\"})]})})})}),\"Key Features\"]}),(0,e.jsxs)(a.h3,{className:\"content-header\",id:\"1-file-based-routing\",children:[(0,e.jsx)(a.a,{\"aria-hidden\":\"true\",href:\"#1-file-based-routing\",tabIndex:\"-1\",children:(0,e.jsx)(e.Fragment,{children:(0,e.jsx)(a.span,{className:\"content-header-link\",children:(0,e.jsxs)(a.svg,{className:\"h-5 linkicon w-5\",fill:\"currentColor\",viewBox:\"0 0 20 20\",xmlns:\"http://www.w3.org/2000/svg\",children:[(0,e.jsx)(a.path,{d:\"M12.232 4.232a2.5 2.5 0 0 1 3.536 3.536l-1.225 1.224a.75.75 0 0 0 1.061 1.06l1.224-1.224a4 4 0 0 0-5.656-5.656l-3 3a4 4 0 0 0 .225 5.865.75.75 0 0 0 .977-1.138 2.5 2.5 0 0 1-.142-3.667l3-3Z\"}),(0,e.jsx)(a.path,{d:\"M11.603 7.963a.75.75 0 0 0-.977 1.138 2.5 2.5 0 0 1 .142 3.667l-3 3a2.5 2.5 0 0 1-3.536-3.536l1.225-1.224a.75.75 0 0 0-1.061-1.06l-1.224 1.224a4 4 0 1 0 5.656 5.656l3-3a4 4 0 0 0-.225-5.865Z\"})]})})})}),\"1. File-based Routing\"]}),(0,e.jsxs)(a.p,{children:[\"Next.js uses the file system to define routes. Create a file in the \",(0,e.jsx)(a.code,{children:\"pages\"}),\" directory, and it automatically becomes a route.\"]}),(0,e.jsxs)(a.h3,{className:\"content-header\",id:\"2-api-routes\",children:[(0,e.jsx)(a.a,{\"aria-hidden\":\"true\",href:\"#2-api-routes\",tabIndex:\"-1\",children:(0,e.jsx)(e.Fragment,{children:(0,e.jsx)(a.span,{className:\"content-header-link\",children:(0,e.jsxs)(a.svg,{className:\"h-5 linkicon w-5\",fill:\"currentColor\",viewBox:\"0 0 20 20\",xmlns:\"http://www.w3.org/2000/svg\",children:[(0,e.jsx)(a.path,{d:\"M12.232 4.232a2.5 2.5 0 0 1 3.536 3.536l-1.225 1.224a.75.75 0 0 0 1.061 1.06l1.224-1.224a4 4 0 0 0-5.656-5.656l-3 3a4 4 0 0 0 .225 5.865.75.75 0 0 0 .977-1.138 2.5 2.5 0 0 1-.142-3.667l3-3Z\"}),(0,e.jsx)(a.path,{d:\"M11.603 7.963a.75.75 0 0 0-.977 1.138 2.5 2.5 0 0 1 .142 3.667l-3 3a2.5 2.5 0 0 1-3.536-3.536l1.225-1.224a.75.75 0 0 0-1.061-1.06l-1.224 1.224a4 4 0 1 0 5.656 5.656l3-3a4 4 0 0 0-.225-5.865Z\"})]})})})}),\"2. API Routes\"]}),(0,e.jsxs)(a.p,{children:[\"You can create API endpoints by adding files to the \",(0,e.jsx)(a.code,{children:\"pages/api\"}),\" directory.\"]}),(0,e.jsxs)(a.h3,{className:\"content-header\",id:\"3-image-optimization\",children:[(0,e.jsx)(a.a,{\"aria-hidden\":\"true\",href:\"#3-image-optimization\",tabIndex:\"-1\",children:(0,e.jsx)(e.Fragment,{children:(0,e.jsx)(a.span,{className:\"content-header-link\",children:(0,e.jsxs)(a.svg,{className:\"h-5 linkicon w-5\",fill:\"currentColor\",viewBox:\"0 0 20 20\",xmlns:\"http://www.w3.org/2000/svg\",children:[(0,e.jsx)(a.path,{d:\"M12.232 4.232a2.5 2.5 0 0 1 3.536 3.536l-1.225 1.224a.75.75 0 0 0 1.061 1.06l1.224-1.224a4 4 0 0 0-5.656-5.656l-3 3a4 4 0 0 0 .225 5.865.75.75 0 0 0 .977-1.138 2.5 2.5 0 0 1-.142-3.667l3-3Z\"}),(0,e.jsx)(a.path,{d:\"M11.603 7.963a.75.75 0 0 0-.977 1.138 2.5 2.5 0 0 1 .142 3.667l-3 3a2.5 2.5 0 0 1-3.536-3.536l1.225-1.224a.75.75 0 0 0-1.061-1.06l-1.224 1.224a4 4 0 1 0 5.656 5.656l3-3a4 4 0 0 0-.225-5.865Z\"})]})})})}),\"3. Image Optimization\"]}),(0,e.jsxs)(a.p,{children:[\"The \",(0,e.jsx)(a.code,{children:\"next/image\"}),\" component automatically optimizes images for better performance.\"]}),(0,e.jsxs)(a.h2,{className:\"content-header\",id:\"getting-started\",children:[(0,e.jsx)(a.a,{\"aria-hidden\":\"true\",href:\"#getting-started\",tabIndex:\"-1\",children:(0,e.jsx)(e.Fragment,{children:(0,e.jsx)(a.span,{className:\"content-header-link\",children:(0,e.jsxs)(a.svg,{className:\"h-5 linkicon w-5\",fill:\"currentColor\",viewBox:\"0 0 20 20\",xmlns:\"http://www.w3.org/2000/svg\",children:[(0,e.jsx)(a.path,{d:\"M12.232 4.232a2.5 2.5 0 0 1 3.536 3.536l-1.225 1.224a.75.75 0 0 0 1.061 1.06l1.224-1.224a4 4 0 0 0-5.656-5.656l-3 3a4 4 0 0 0 .225 5.865.75.75 0 0 0 .977-1.138 2.5 2.5 0 0 1-.142-3.667l3-3Z\"}),(0,e.jsx)(a.path,{d:\"M11.603 7.963a.75.75 0 0 0-.977 1.138 2.5 2.5 0 0 1 .142 3.667l-3 3a2.5 2.5 0 0 1-3.536-3.536l1.225-1.224a.75.75 0 0 0-1.061-1.06l-1.224 1.224a4 4 0 1 0 5.656 5.656l3-3a4 4 0 0 0-.225-5.865Z\"})]})})})}),\"Getting Started\"]}),(0,e.jsx)(a.p,{children:\"To create a new Next.js project:\"}),(0,e.jsx)(a.pre,{className:\"language-bash\",children:(0,e.jsxs)(a.code,{className:\"language-bash code-highlight\",children:[(0,e.jsx)(a.span,{className:\"code-line\",children:`npx create-next-app@latest my-app\n`}),(0,e.jsxs)(a.span,{className:\"code-line\",children:[(0,e.jsx)(a.span,{className:\"token builtin class-name\",children:\"cd\"}),` my-app\n`]}),(0,e.jsxs)(a.span,{className:\"code-line\",children:[(0,e.jsx)(a.span,{className:\"token function\",children:\"npm\"}),` run dev\n`]})]})}),(0,e.jsxs)(a.p,{children:[\"This will start your development server at \",(0,e.jsx)(a.code,{children:\"http://localhost:3000\"}),\".\"]}),(0,e.jsxs)(a.h2,{className:\"content-header\",id:\"conclusion\",children:[(0,e.jsx)(a.a,{\"aria-hidden\":\"true\",href:\"#conclusion\",tabIndex:\"-1\",children:(0,e.jsx)(e.Fragment,{children:(0,e.jsx)(a.span,{className:\"content-header-link\",children:(0,e.jsxs)(a.svg,{className:\"h-5 linkicon w-5\",fill:\"currentColor\",viewBox:\"0 0 20 20\",xmlns:\"http://www.w3.org/2000/svg\",children:[(0,e.jsx)(a.path,{d:\"M12.232 4.232a2.5 2.5 0 0 1 3.536 3.536l-1.225 1.224a.75.75 0 0 0 1.061 1.06l1.224-1.224a4 4 0 0 0-5.656-5.656l-3 3a4 4 0 0 0 .225 5.865.75.75 0 0 0 .977-1.138 2.5 2.5 0 0 1-.142-3.667l3-3Z\"}),(0,e.jsx)(a.path,{d:\"M11.603 7.963a.75.75 0 0 0-.977 1.138 2.5 2.5 0 0 1 .142 3.667l-3 3a2.5 2.5 0 0 1-3.536-3.536l1.225-1.224a.75.75 0 0 0-1.061-1.06l-1.224 1.224a4 4 0 1 0 5.656 5.656l3-3a4 4 0 0 0-.225-5.865Z\"})]})})})}),\"Conclusion\"]}),(0,e.jsx)(a.p,{children:\"Next.js is an excellent choice for building modern web applications. Its powerful features and developer experience make it a popular choice among React developers.\"}),(0,e.jsx)(a.p,{children:\"Happy coding!\"})]})}function o(n={}){let{wrapper:a}=n.components||{};return a?(0,e.jsx)(a,{...n,children:(0,e.jsx)(h,{...n})}):h(n)}return v(k);})();\n;return Component;"
+    },
+    "_id": "blog/getting-started-with-nextjs.mdx",
+    "_raw": {
+      "sourceFilePath": "blog/getting-started-with-nextjs.mdx",
+      "sourceFileName": "getting-started-with-nextjs.mdx",
+      "sourceFileDir": "blog",
+      "contentType": "mdx",
+      "flattenedPath": "blog/getting-started-with-nextjs"
+    },
+    "type": "Blog",
+    "readingTime": {
+      "text": "1 min read",
+      "minutes": 0.985,
+      "time": 59100,
+      "words": 197
+    },
+    "slug": "getting-started-with-nextjs",
+    "path": "blog/getting-started-with-nextjs",
+    "filePath": "blog/getting-started-with-nextjs.mdx",
+    "toc": [
+      {
+        "value": "Getting Started with Next.js",
+        "url": "#getting-started-with-nextjs",
+        "depth": 1
+      },
+      {
+        "value": "What is Next.js?",
+        "url": "#what-is-nextjs",
+        "depth": 2
+      },
+      {
+        "value": "Key Features",
+        "url": "#key-features",
+        "depth": 2
+      },
+      {
+        "value": "1. File-based Routing",
+        "url": "#1-file-based-routing",
+        "depth": 3
+      },
+      {
+        "value": "2. API Routes",
+        "url": "#2-api-routes",
+        "depth": 3
+      },
+      {
+        "value": "3. Image Optimization",
+        "url": "#3-image-optimization",
+        "depth": 3
+      },
+      {
+        "value": "Getting Started",
+        "url": "#getting-started",
+        "depth": 2
+      },
+      {
+        "value": "Conclusion",
+        "url": "#conclusion",
+        "depth": 2
+      }
+    ],
+    "structuredData": {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "Getting Started with Next.js",
+      "datePublished": "2024-01-15T00:00:00.000Z",
+      "dateModified": "2024-01-15T00:00:00.000Z",
+      "description": "Learn the basics of Next.js and how to build modern web applications with React.",
+      "image": "/static/images/twitter-card.png",
+      "url": "https://your-domain.com/blog/getting-started-with-nextjs",
+      "author": {
+        "@type": "Person",
+        "name": "Your Name"
+      }
+    }
+  },
+  {
+    "title": "Photography Tips for Beginners",
+    "date": "2024-01-20T00:00:00.000Z",
+    "summary": "Essential photography tips to help you capture better photos and improve your skills.",
+    "body": {
+      "raw": "\n# Photography Tips for Beginners\n\nPhotography is an art form that combines technical knowledge with creative vision. Here are some essential tips to help you get started on your photography journey.\n\n## Understanding Your Camera\n\n### 1. Learn the Exposure Triangle\n\nThe exposure triangle consists of three key elements:\n\n- **Aperture**: Controls depth of field and light intake\n- **Shutter Speed**: Controls motion blur and light intake\n- **ISO**: Controls sensor sensitivity and image noise\n\n### 2. Master Manual Mode\n\nWhile automatic modes are convenient, learning manual mode gives you complete control over your images.\n\n## Composition Techniques\n\n### Rule of Thirds\n\nDivide your frame into nine equal parts using two horizontal and two vertical lines. Place your subject along these lines or at their intersections.\n\n### Leading Lines\n\nUse natural or man-made lines to guide the viewer's eye through your image.\n\n### Framing\n\nUse elements in your environment to frame your subject and draw attention to it.\n\n## Lighting Tips\n\n### Golden Hour\n\nThe hour after sunrise and before sunset provides the most flattering natural light.\n\n### Avoid Harsh Midday Sun\n\nDirect sunlight at noon creates harsh shadows and blown-out highlights.\n\n## Practice Makes Perfect\n\nThe best way to improve your photography is to practice regularly. Take your camera everywhere and experiment with different techniques.\n\n## Conclusion\n\nPhotography is a journey of continuous learning. Start with these basics and gradually develop your own style and techniques.\n\nRemember: the best camera is the one you have with you!\n",
+      "code": "var Component=(()=>{var p=Object.create;var i=Object.defineProperty;var m=Object.getOwnPropertyDescriptor;var u=Object.getOwnPropertyNames;var g=Object.getPrototypeOf,w=Object.prototype.hasOwnProperty;var v=(n,a)=>()=>(a||n((a={exports:{}}).exports,a),a.exports),f=(n,a)=>{for(var l in a)i(n,l,{get:a[l],enumerable:!0})},h=(n,a,l,t)=>{if(a&&typeof a==\"object\"||typeof a==\"function\")for(let r of u(a))!w.call(n,r)&&r!==l&&i(n,r,{get:()=>a[r],enumerable:!(t=m(a,r))||t.enumerable});return n};var x=(n,a,l)=>(l=n!=null?p(g(n)):{},h(a||!n||!n.__esModule?i(l,\"default\",{value:n,enumerable:!0}):l,n)),y=n=>h(i({},\"__esModule\",{value:!0}),n);var o=v((b,s)=>{s.exports=_jsx_runtime});var k={};f(k,{default:()=>c,frontmatter:()=>N});var e=x(o()),N={title:\"Photography Tips for Beginners\",date:\"2024-01-20\",summary:\"Essential photography tips to help you capture better photos and improve your skills.\"};function d(n){let a={a:\"a\",h1:\"h1\",h2:\"h2\",h3:\"h3\",li:\"li\",p:\"p\",path:\"path\",span:\"span\",strong:\"strong\",svg:\"svg\",ul:\"ul\",...n.components};return(0,e.jsxs)(e.Fragment,{children:[(0,e.jsxs)(a.h1,{className:\"content-header\",id:\"photography-tips-for-beginners\",children:[(0,e.jsx)(a.a,{\"aria-hidden\":\"true\",href:\"#photography-tips-for-beginners\",tabIndex:\"-1\",children:(0,e.jsx)(e.Fragment,{children:(0,e.jsx)(a.span,{className:\"content-header-link\",children:(0,e.jsxs)(a.svg,{className:\"h-5 linkicon w-5\",fill:\"currentColor\",viewBox:\"0 0 20 20\",xmlns:\"http://www.w3.org/2000/svg\",children:[(0,e.jsx)(a.path,{d:\"M12.232 4.232a2.5 2.5 0 0 1 3.536 3.536l-1.225 1.224a.75.75 0 0 0 1.061 1.06l1.224-1.224a4 4 0 0 0-5.656-5.656l-3 3a4 4 0 0 0 .225 5.865.75.75 0 0 0 .977-1.138 2.5 2.5 0 0 1-.142-3.667l3-3Z\"}),(0,e.jsx)(a.path,{d:\"M11.603 7.963a.75.75 0 0 0-.977 1.138 2.5 2.5 0 0 1 .142 3.667l-3 3a2.5 2.5 0 0 1-3.536-3.536l1.225-1.224a.75.75 0 0 0-1.061-1.06l-1.224 1.224a4 4 0 1 0 5.656 5.656l3-3a4 4 0 0 0-.225-5.865Z\"})]})})})}),\"Photography Tips for Beginners\"]}),(0,e.jsx)(a.p,{children:\"Photography is an art form that combines technical knowledge with creative vision. Here are some essential tips to help you get started on your photography journey.\"}),(0,e.jsxs)(a.h2,{className:\"content-header\",id:\"understanding-your-camera\",children:[(0,e.jsx)(a.a,{\"aria-hidden\":\"true\",href:\"#understanding-your-camera\",tabIndex:\"-1\",children:(0,e.jsx)(e.Fragment,{children:(0,e.jsx)(a.span,{className:\"content-header-link\",children:(0,e.jsxs)(a.svg,{className:\"h-5 linkicon w-5\",fill:\"currentColor\",viewBox:\"0 0 20 20\",xmlns:\"http://www.w3.org/2000/svg\",children:[(0,e.jsx)(a.path,{d:\"M12.232 4.232a2.5 2.5 0 0 1 3.536 3.536l-1.225 1.224a.75.75 0 0 0 1.061 1.06l1.224-1.224a4 4 0 0 0-5.656-5.656l-3 3a4 4 0 0 0 .225 5.865.75.75 0 0 0 .977-1.138 2.5 2.5 0 0 1-.142-3.667l3-3Z\"}),(0,e.jsx)(a.path,{d:\"M11.603 7.963a.75.75 0 0 0-.977 1.138 2.5 2.5 0 0 1 .142 3.667l-3 3a2.5 2.5 0 0 1-3.536-3.536l1.225-1.224a.75.75 0 0 0-1.061-1.06l-1.224 1.224a4 4 0 1 0 5.656 5.656l3-3a4 4 0 0 0-.225-5.865Z\"})]})})})}),\"Understanding Your Camera\"]}),(0,e.jsxs)(a.h3,{className:\"content-header\",id:\"1-learn-the-exposure-triangle\",children:[(0,e.jsx)(a.a,{\"aria-hidden\":\"true\",href:\"#1-learn-the-exposure-triangle\",tabIndex:\"-1\",children:(0,e.jsx)(e.Fragment,{children:(0,e.jsx)(a.span,{className:\"content-header-link\",children:(0,e.jsxs)(a.svg,{className:\"h-5 linkicon w-5\",fill:\"currentColor\",viewBox:\"0 0 20 20\",xmlns:\"http://www.w3.org/2000/svg\",children:[(0,e.jsx)(a.path,{d:\"M12.232 4.232a2.5 2.5 0 0 1 3.536 3.536l-1.225 1.224a.75.75 0 0 0 1.061 1.06l1.224-1.224a4 4 0 0 0-5.656-5.656l-3 3a4 4 0 0 0 .225 5.865.75.75 0 0 0 .977-1.138 2.5 2.5 0 0 1-.142-3.667l3-3Z\"}),(0,e.jsx)(a.path,{d:\"M11.603 7.963a.75.75 0 0 0-.977 1.138 2.5 2.5 0 0 1 .142 3.667l-3 3a2.5 2.5 0 0 1-3.536-3.536l1.225-1.224a.75.75 0 0 0-1.061-1.06l-1.224 1.224a4 4 0 1 0 5.656 5.656l3-3a4 4 0 0 0-.225-5.865Z\"})]})})})}),\"1. Learn the Exposure Triangle\"]}),(0,e.jsx)(a.p,{children:\"The exposure triangle consists of three key elements:\"}),(0,e.jsxs)(a.ul,{children:[(0,e.jsxs)(a.li,{children:[(0,e.jsx)(a.strong,{children:\"Aperture\"}),\": Controls depth of field and light intake\"]}),(0,e.jsxs)(a.li,{children:[(0,e.jsx)(a.strong,{children:\"Shutter Speed\"}),\": Controls motion blur and light intake\"]}),(0,e.jsxs)(a.li,{children:[(0,e.jsx)(a.strong,{children:\"ISO\"}),\": Controls sensor sensitivity and image noise\"]})]}),(0,e.jsxs)(a.h3,{className:\"content-header\",id:\"2-master-manual-mode\",children:[(0,e.jsx)(a.a,{\"aria-hidden\":\"true\",href:\"#2-master-manual-mode\",tabIndex:\"-1\",children:(0,e.jsx)(e.Fragment,{children:(0,e.jsx)(a.span,{className:\"content-header-link\",children:(0,e.jsxs)(a.svg,{className:\"h-5 linkicon w-5\",fill:\"currentColor\",viewBox:\"0 0 20 20\",xmlns:\"http://www.w3.org/2000/svg\",children:[(0,e.jsx)(a.path,{d:\"M12.232 4.232a2.5 2.5 0 0 1 3.536 3.536l-1.225 1.224a.75.75 0 0 0 1.061 1.06l1.224-1.224a4 4 0 0 0-5.656-5.656l-3 3a4 4 0 0 0 .225 5.865.75.75 0 0 0 .977-1.138 2.5 2.5 0 0 1-.142-3.667l3-3Z\"}),(0,e.jsx)(a.path,{d:\"M11.603 7.963a.75.75 0 0 0-.977 1.138 2.5 2.5 0 0 1 .142 3.667l-3 3a2.5 2.5 0 0 1-3.536-3.536l1.225-1.224a.75.75 0 0 0-1.061-1.06l-1.224 1.224a4 4 0 1 0 5.656 5.656l3-3a4 4 0 0 0-.225-5.865Z\"})]})})})}),\"2. Master Manual Mode\"]}),(0,e.jsx)(a.p,{children:\"While automatic modes are convenient, learning manual mode gives you complete control over your images.\"}),(0,e.jsxs)(a.h2,{className:\"content-header\",id:\"composition-techniques\",children:[(0,e.jsx)(a.a,{\"aria-hidden\":\"true\",href:\"#composition-techniques\",tabIndex:\"-1\",children:(0,e.jsx)(e.Fragment,{children:(0,e.jsx)(a.span,{className:\"content-header-link\",children:(0,e.jsxs)(a.svg,{className:\"h-5 linkicon w-5\",fill:\"currentColor\",viewBox:\"0 0 20 20\",xmlns:\"http://www.w3.org/2000/svg\",children:[(0,e.jsx)(a.path,{d:\"M12.232 4.232a2.5 2.5 0 0 1 3.536 3.536l-1.225 1.224a.75.75 0 0 0 1.061 1.06l1.224-1.224a4 4 0 0 0-5.656-5.656l-3 3a4 4 0 0 0 .225 5.865.75.75 0 0 0 .977-1.138 2.5 2.5 0 0 1-.142-3.667l3-3Z\"}),(0,e.jsx)(a.path,{d:\"M11.603 7.963a.75.75 0 0 0-.977 1.138 2.5 2.5 0 0 1 .142 3.667l-3 3a2.5 2.5 0 0 1-3.536-3.536l1.225-1.224a.75.75 0 0 0-1.061-1.06l-1.224 1.224a4 4 0 1 0 5.656 5.656l3-3a4 4 0 0 0-.225-5.865Z\"})]})})})}),\"Composition Techniques\"]}),(0,e.jsxs)(a.h3,{className:\"content-header\",id:\"rule-of-thirds\",children:[(0,e.jsx)(a.a,{\"aria-hidden\":\"true\",href:\"#rule-of-thirds\",tabIndex:\"-1\",children:(0,e.jsx)(e.Fragment,{children:(0,e.jsx)(a.span,{className:\"content-header-link\",children:(0,e.jsxs)(a.svg,{className:\"h-5 linkicon w-5\",fill:\"currentColor\",viewBox:\"0 0 20 20\",xmlns:\"http://www.w3.org/2000/svg\",children:[(0,e.jsx)(a.path,{d:\"M12.232 4.232a2.5 2.5 0 0 1 3.536 3.536l-1.225 1.224a.75.75 0 0 0 1.061 1.06l1.224-1.224a4 4 0 0 0-5.656-5.656l-3 3a4 4 0 0 0 .225 5.865.75.75 0 0 0 .977-1.138 2.5 2.5 0 0 1-.142-3.667l3-3Z\"}),(0,e.jsx)(a.path,{d:\"M11.603 7.963a.75.75 0 0 0-.977 1.138 2.5 2.5 0 0 1 .142 3.667l-3 3a2.5 2.5 0 0 1-3.536-3.536l1.225-1.224a.75.75 0 0 0-1.061-1.06l-1.224 1.224a4 4 0 1 0 5.656 5.656l3-3a4 4 0 0 0-.225-5.865Z\"})]})})})}),\"Rule of Thirds\"]}),(0,e.jsx)(a.p,{children:\"Divide your frame into nine equal parts using two horizontal and two vertical lines. Place your subject along these lines or at their intersections.\"}),(0,e.jsxs)(a.h3,{className:\"content-header\",id:\"leading-lines\",children:[(0,e.jsx)(a.a,{\"aria-hidden\":\"true\",href:\"#leading-lines\",tabIndex:\"-1\",children:(0,e.jsx)(e.Fragment,{children:(0,e.jsx)(a.span,{className:\"content-header-link\",children:(0,e.jsxs)(a.svg,{className:\"h-5 linkicon w-5\",fill:\"currentColor\",viewBox:\"0 0 20 20\",xmlns:\"http://www.w3.org/2000/svg\",children:[(0,e.jsx)(a.path,{d:\"M12.232 4.232a2.5 2.5 0 0 1 3.536 3.536l-1.225 1.224a.75.75 0 0 0 1.061 1.06l1.224-1.224a4 4 0 0 0-5.656-5.656l-3 3a4 4 0 0 0 .225 5.865.75.75 0 0 0 .977-1.138 2.5 2.5 0 0 1-.142-3.667l3-3Z\"}),(0,e.jsx)(a.path,{d:\"M11.603 7.963a.75.75 0 0 0-.977 1.138 2.5 2.5 0 0 1 .142 3.667l-3 3a2.5 2.5 0 0 1-3.536-3.536l1.225-1.224a.75.75 0 0 0-1.061-1.06l-1.224 1.224a4 4 0 1 0 5.656 5.656l3-3a4 4 0 0 0-.225-5.865Z\"})]})})})}),\"Leading Lines\"]}),(0,e.jsx)(a.p,{children:\"Use natural or man-made lines to guide the viewer's eye through your image.\"}),(0,e.jsxs)(a.h3,{className:\"content-header\",id:\"framing\",children:[(0,e.jsx)(a.a,{\"aria-hidden\":\"true\",href:\"#framing\",tabIndex:\"-1\",children:(0,e.jsx)(e.Fragment,{children:(0,e.jsx)(a.span,{className:\"content-header-link\",children:(0,e.jsxs)(a.svg,{className:\"h-5 linkicon w-5\",fill:\"currentColor\",viewBox:\"0 0 20 20\",xmlns:\"http://www.w3.org/2000/svg\",children:[(0,e.jsx)(a.path,{d:\"M12.232 4.232a2.5 2.5 0 0 1 3.536 3.536l-1.225 1.224a.75.75 0 0 0 1.061 1.06l1.224-1.224a4 4 0 0 0-5.656-5.656l-3 3a4 4 0 0 0 .225 5.865.75.75 0 0 0 .977-1.138 2.5 2.5 0 0 1-.142-3.667l3-3Z\"}),(0,e.jsx)(a.path,{d:\"M11.603 7.963a.75.75 0 0 0-.977 1.138 2.5 2.5 0 0 1 .142 3.667l-3 3a2.5 2.5 0 0 1-3.536-3.536l1.225-1.224a.75.75 0 0 0-1.061-1.06l-1.224 1.224a4 4 0 1 0 5.656 5.656l3-3a4 4 0 0 0-.225-5.865Z\"})]})})})}),\"Framing\"]}),(0,e.jsx)(a.p,{children:\"Use elements in your environment to frame your subject and draw attention to it.\"}),(0,e.jsxs)(a.h2,{className:\"content-header\",id:\"lighting-tips\",children:[(0,e.jsx)(a.a,{\"aria-hidden\":\"true\",href:\"#lighting-tips\",tabIndex:\"-1\",children:(0,e.jsx)(e.Fragment,{children:(0,e.jsx)(a.span,{className:\"content-header-link\",children:(0,e.jsxs)(a.svg,{className:\"h-5 linkicon w-5\",fill:\"currentColor\",viewBox:\"0 0 20 20\",xmlns:\"http://www.w3.org/2000/svg\",children:[(0,e.jsx)(a.path,{d:\"M12.232 4.232a2.5 2.5 0 0 1 3.536 3.536l-1.225 1.224a.75.75 0 0 0 1.061 1.06l1.224-1.224a4 4 0 0 0-5.656-5.656l-3 3a4 4 0 0 0 .225 5.865.75.75 0 0 0 .977-1.138 2.5 2.5 0 0 1-.142-3.667l3-3Z\"}),(0,e.jsx)(a.path,{d:\"M11.603 7.963a.75.75 0 0 0-.977 1.138 2.5 2.5 0 0 1 .142 3.667l-3 3a2.5 2.5 0 0 1-3.536-3.536l1.225-1.224a.75.75 0 0 0-1.061-1.06l-1.224 1.224a4 4 0 1 0 5.656 5.656l3-3a4 4 0 0 0-.225-5.865Z\"})]})})})}),\"Lighting Tips\"]}),(0,e.jsxs)(a.h3,{className:\"content-header\",id:\"golden-hour\",children:[(0,e.jsx)(a.a,{\"aria-hidden\":\"true\",href:\"#golden-hour\",tabIndex:\"-1\",children:(0,e.jsx)(e.Fragment,{children:(0,e.jsx)(a.span,{className:\"content-header-link\",children:(0,e.jsxs)(a.svg,{className:\"h-5 linkicon w-5\",fill:\"currentColor\",viewBox:\"0 0 20 20\",xmlns:\"http://www.w3.org/2000/svg\",children:[(0,e.jsx)(a.path,{d:\"M12.232 4.232a2.5 2.5 0 0 1 3.536 3.536l-1.225 1.224a.75.75 0 0 0 1.061 1.06l1.224-1.224a4 4 0 0 0-5.656-5.656l-3 3a4 4 0 0 0 .225 5.865.75.75 0 0 0 .977-1.138 2.5 2.5 0 0 1-.142-3.667l3-3Z\"}),(0,e.jsx)(a.path,{d:\"M11.603 7.963a.75.75 0 0 0-.977 1.138 2.5 2.5 0 0 1 .142 3.667l-3 3a2.5 2.5 0 0 1-3.536-3.536l1.225-1.224a.75.75 0 0 0-1.061-1.06l-1.224 1.224a4 4 0 1 0 5.656 5.656l3-3a4 4 0 0 0-.225-5.865Z\"})]})})})}),\"Golden Hour\"]}),(0,e.jsx)(a.p,{children:\"The hour after sunrise and before sunset provides the most flattering natural light.\"}),(0,e.jsxs)(a.h3,{className:\"content-header\",id:\"avoid-harsh-midday-sun\",children:[(0,e.jsx)(a.a,{\"aria-hidden\":\"true\",href:\"#avoid-harsh-midday-sun\",tabIndex:\"-1\",children:(0,e.jsx)(e.Fragment,{children:(0,e.jsx)(a.span,{className:\"content-header-link\",children:(0,e.jsxs)(a.svg,{className:\"h-5 linkicon w-5\",fill:\"currentColor\",viewBox:\"0 0 20 20\",xmlns:\"http://www.w3.org/2000/svg\",children:[(0,e.jsx)(a.path,{d:\"M12.232 4.232a2.5 2.5 0 0 1 3.536 3.536l-1.225 1.224a.75.75 0 0 0 1.061 1.06l1.224-1.224a4 4 0 0 0-5.656-5.656l-3 3a4 4 0 0 0 .225 5.865.75.75 0 0 0 .977-1.138 2.5 2.5 0 0 1-.142-3.667l3-3Z\"}),(0,e.jsx)(a.path,{d:\"M11.603 7.963a.75.75 0 0 0-.977 1.138 2.5 2.5 0 0 1 .142 3.667l-3 3a2.5 2.5 0 0 1-3.536-3.536l1.225-1.224a.75.75 0 0 0-1.061-1.06l-1.224 1.224a4 4 0 1 0 5.656 5.656l3-3a4 4 0 0 0-.225-5.865Z\"})]})})})}),\"Avoid Harsh Midday Sun\"]}),(0,e.jsx)(a.p,{children:\"Direct sunlight at noon creates harsh shadows and blown-out highlights.\"}),(0,e.jsxs)(a.h2,{className:\"content-header\",id:\"practice-makes-perfect\",children:[(0,e.jsx)(a.a,{\"aria-hidden\":\"true\",href:\"#practice-makes-perfect\",tabIndex:\"-1\",children:(0,e.jsx)(e.Fragment,{children:(0,e.jsx)(a.span,{className:\"content-header-link\",children:(0,e.jsxs)(a.svg,{className:\"h-5 linkicon w-5\",fill:\"currentColor\",viewBox:\"0 0 20 20\",xmlns:\"http://www.w3.org/2000/svg\",children:[(0,e.jsx)(a.path,{d:\"M12.232 4.232a2.5 2.5 0 0 1 3.536 3.536l-1.225 1.224a.75.75 0 0 0 1.061 1.06l1.224-1.224a4 4 0 0 0-5.656-5.656l-3 3a4 4 0 0 0 .225 5.865.75.75 0 0 0 .977-1.138 2.5 2.5 0 0 1-.142-3.667l3-3Z\"}),(0,e.jsx)(a.path,{d:\"M11.603 7.963a.75.75 0 0 0-.977 1.138 2.5 2.5 0 0 1 .142 3.667l-3 3a2.5 2.5 0 0 1-3.536-3.536l1.225-1.224a.75.75 0 0 0-1.061-1.06l-1.224 1.224a4 4 0 1 0 5.656 5.656l3-3a4 4 0 0 0-.225-5.865Z\"})]})})})}),\"Practice Makes Perfect\"]}),(0,e.jsx)(a.p,{children:\"The best way to improve your photography is to practice regularly. Take your camera everywhere and experiment with different techniques.\"}),(0,e.jsxs)(a.h2,{className:\"content-header\",id:\"conclusion\",children:[(0,e.jsx)(a.a,{\"aria-hidden\":\"true\",href:\"#conclusion\",tabIndex:\"-1\",children:(0,e.jsx)(e.Fragment,{children:(0,e.jsx)(a.span,{className:\"content-header-link\",children:(0,e.jsxs)(a.svg,{className:\"h-5 linkicon w-5\",fill:\"currentColor\",viewBox:\"0 0 20 20\",xmlns:\"http://www.w3.org/2000/svg\",children:[(0,e.jsx)(a.path,{d:\"M12.232 4.232a2.5 2.5 0 0 1 3.536 3.536l-1.225 1.224a.75.75 0 0 0 1.061 1.06l1.224-1.224a4 4 0 0 0-5.656-5.656l-3 3a4 4 0 0 0 .225 5.865.75.75 0 0 0 .977-1.138 2.5 2.5 0 0 1-.142-3.667l3-3Z\"}),(0,e.jsx)(a.path,{d:\"M11.603 7.963a.75.75 0 0 0-.977 1.138 2.5 2.5 0 0 1 .142 3.667l-3 3a2.5 2.5 0 0 1-3.536-3.536l1.225-1.224a.75.75 0 0 0-1.061-1.06l-1.224 1.224a4 4 0 1 0 5.656 5.656l3-3a4 4 0 0 0-.225-5.865Z\"})]})})})}),\"Conclusion\"]}),(0,e.jsx)(a.p,{children:\"Photography is a journey of continuous learning. Start with these basics and gradually develop your own style and techniques.\"}),(0,e.jsx)(a.p,{children:\"Remember: the best camera is the one you have with you!\"})]})}function c(n={}){let{wrapper:a}=n.components||{};return a?(0,e.jsx)(a,{...n,children:(0,e.jsx)(d,{...n})}):d(n)}return y(k);})();\n;return Component;"
+    },
+    "_id": "blog/photography-tips.mdx",
+    "_raw": {
+      "sourceFilePath": "blog/photography-tips.mdx",
+      "sourceFileName": "photography-tips.mdx",
+      "sourceFileDir": "blog",
+      "contentType": "mdx",
+      "flattenedPath": "blog/photography-tips"
+    },
+    "type": "Blog",
+    "readingTime": {
+      "text": "2 min read",
+      "minutes": 1.24,
+      "time": 74400,
+      "words": 248
+    },
+    "slug": "photography-tips",
+    "path": "blog/photography-tips",
+    "filePath": "blog/photography-tips.mdx",
+    "toc": [
+      {
+        "value": "Photography Tips for Beginners",
+        "url": "#photography-tips-for-beginners",
+        "depth": 1
+      },
+      {
+        "value": "Understanding Your Camera",
+        "url": "#understanding-your-camera",
+        "depth": 2
+      },
+      {
+        "value": "1. Learn the Exposure Triangle",
+        "url": "#1-learn-the-exposure-triangle",
+        "depth": 3
+      },
+      {
+        "value": "2. Master Manual Mode",
+        "url": "#2-master-manual-mode",
+        "depth": 3
+      },
+      {
+        "value": "Composition Techniques",
+        "url": "#composition-techniques",
+        "depth": 2
+      },
+      {
+        "value": "Rule of Thirds",
+        "url": "#rule-of-thirds",
+        "depth": 3
+      },
+      {
+        "value": "Leading Lines",
+        "url": "#leading-lines",
+        "depth": 3
+      },
+      {
+        "value": "Framing",
+        "url": "#framing",
+        "depth": 3
+      },
+      {
+        "value": "Lighting Tips",
+        "url": "#lighting-tips",
+        "depth": 2
+      },
+      {
+        "value": "Golden Hour",
+        "url": "#golden-hour",
+        "depth": 3
+      },
+      {
+        "value": "Avoid Harsh Midday Sun",
+        "url": "#avoid-harsh-midday-sun",
+        "depth": 3
+      },
+      {
+        "value": "Practice Makes Perfect",
+        "url": "#practice-makes-perfect",
+        "depth": 2
+      },
+      {
+        "value": "Conclusion",
+        "url": "#conclusion",
+        "depth": 2
+      }
+    ],
+    "structuredData": {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "Photography Tips for Beginners",
+      "datePublished": "2024-01-20T00:00:00.000Z",
+      "dateModified": "2024-01-20T00:00:00.000Z",
+      "description": "Essential photography tips to help you capture better photos and improve your skills.",
+      "image": "/static/images/twitter-card.png",
+      "url": "https://your-domain.com/blog/photography-tips",
+      "author": {
+        "@type": "Person",
+        "name": "Your Name"
+      }
+    }
+  },
+  {
+    "title": "Welcome to My Blog",
+    "date": "2024-01-01T00:00:00.000Z",
+    "summary": "This is the first post on my personal blog. Welcome!",
+    "body": {
+      "raw": "\n# Welcome to My Blog\n\nThis is my first blog post! I'm excited to share my thoughts and experiences with you.\n\n## What You Can Expect\n\nIn this blog, I'll be writing about:\n\n- **Technology**: My experiences with web development, programming, and new technologies\n- **Photography**: Tips, techniques, and stories behind my photos\n- **Life**: Personal reflections and experiences\n\n## Getting Started\n\nThis blog is built with Next.js and uses MDX for content. You can create new posts by adding `.mdx` files to the `data/blog/` directory.\n\n### Features\n\n- **Markdown Support**: Write in Markdown with MDX components\n- **Syntax Highlighting**: Code blocks with syntax highlighting\n- **Responsive Design**: Works great on all devices\n- **Dark Mode**: Automatic dark/light mode switching\n\nThanks for reading, and I hope you enjoy the content!\n",
+      "code": "var Component=(()=>{var g=Object.create;var i=Object.defineProperty;var p=Object.getOwnPropertyDescriptor;var m=Object.getOwnPropertyNames;var w=Object.getPrototypeOf,u=Object.prototype.hasOwnProperty;var x=(t,e)=>()=>(e||t((e={exports:{}}).exports,e),e.exports),f=(t,e)=>{for(var l in e)i(t,l,{get:e[l],enumerable:!0})},o=(t,e,l,r)=>{if(e&&typeof e==\"object\"||typeof e==\"function\")for(let a of m(e))!u.call(t,a)&&a!==l&&i(t,a,{get:()=>e[a],enumerable:!(r=p(e,a))||r.enumerable});return t};var y=(t,e,l)=>(l=t!=null?g(w(t)):{},o(e||!t||!t.__esModule?i(l,\"default\",{value:t,enumerable:!0}):l,t)),M=t=>o(i({},\"__esModule\",{value:!0}),t);var s=x((N,h)=>{h.exports=_jsx_runtime});var v={};f(v,{default:()=>d,frontmatter:()=>b});var n=y(s()),b={title:\"Welcome to My Blog\",date:\"2024-01-01\",summary:\"This is the first post on my personal blog. Welcome!\"};function c(t){let e={a:\"a\",code:\"code\",h1:\"h1\",h2:\"h2\",h3:\"h3\",li:\"li\",p:\"p\",path:\"path\",span:\"span\",strong:\"strong\",svg:\"svg\",ul:\"ul\",...t.components};return(0,n.jsxs)(n.Fragment,{children:[(0,n.jsxs)(e.h1,{className:\"content-header\",id:\"welcome-to-my-blog\",children:[(0,n.jsx)(e.a,{\"aria-hidden\":\"true\",href:\"#welcome-to-my-blog\",tabIndex:\"-1\",children:(0,n.jsx)(n.Fragment,{children:(0,n.jsx)(e.span,{className:\"content-header-link\",children:(0,n.jsxs)(e.svg,{className:\"h-5 linkicon w-5\",fill:\"currentColor\",viewBox:\"0 0 20 20\",xmlns:\"http://www.w3.org/2000/svg\",children:[(0,n.jsx)(e.path,{d:\"M12.232 4.232a2.5 2.5 0 0 1 3.536 3.536l-1.225 1.224a.75.75 0 0 0 1.061 1.06l1.224-1.224a4 4 0 0 0-5.656-5.656l-3 3a4 4 0 0 0 .225 5.865.75.75 0 0 0 .977-1.138 2.5 2.5 0 0 1-.142-3.667l3-3Z\"}),(0,n.jsx)(e.path,{d:\"M11.603 7.963a.75.75 0 0 0-.977 1.138 2.5 2.5 0 0 1 .142 3.667l-3 3a2.5 2.5 0 0 1-3.536-3.536l1.225-1.224a.75.75 0 0 0-1.061-1.06l-1.224 1.224a4 4 0 1 0 5.656 5.656l3-3a4 4 0 0 0-.225-5.865Z\"})]})})})}),\"Welcome to My Blog\"]}),(0,n.jsx)(e.p,{children:\"This is my first blog post! I'm excited to share my thoughts and experiences with you.\"}),(0,n.jsxs)(e.h2,{className:\"content-header\",id:\"what-you-can-expect\",children:[(0,n.jsx)(e.a,{\"aria-hidden\":\"true\",href:\"#what-you-can-expect\",tabIndex:\"-1\",children:(0,n.jsx)(n.Fragment,{children:(0,n.jsx)(e.span,{className:\"content-header-link\",children:(0,n.jsxs)(e.svg,{className:\"h-5 linkicon w-5\",fill:\"currentColor\",viewBox:\"0 0 20 20\",xmlns:\"http://www.w3.org/2000/svg\",children:[(0,n.jsx)(e.path,{d:\"M12.232 4.232a2.5 2.5 0 0 1 3.536 3.536l-1.225 1.224a.75.75 0 0 0 1.061 1.06l1.224-1.224a4 4 0 0 0-5.656-5.656l-3 3a4 4 0 0 0 .225 5.865.75.75 0 0 0 .977-1.138 2.5 2.5 0 0 1-.142-3.667l3-3Z\"}),(0,n.jsx)(e.path,{d:\"M11.603 7.963a.75.75 0 0 0-.977 1.138 2.5 2.5 0 0 1 .142 3.667l-3 3a2.5 2.5 0 0 1-3.536-3.536l1.225-1.224a.75.75 0 0 0-1.061-1.06l-1.224 1.224a4 4 0 1 0 5.656 5.656l3-3a4 4 0 0 0-.225-5.865Z\"})]})})})}),\"What You Can Expect\"]}),(0,n.jsx)(e.p,{children:\"In this blog, I'll be writing about:\"}),(0,n.jsxs)(e.ul,{children:[(0,n.jsxs)(e.li,{children:[(0,n.jsx)(e.strong,{children:\"Technology\"}),\": My experiences with web development, programming, and new technologies\"]}),(0,n.jsxs)(e.li,{children:[(0,n.jsx)(e.strong,{children:\"Photography\"}),\": Tips, techniques, and stories behind my photos\"]}),(0,n.jsxs)(e.li,{children:[(0,n.jsx)(e.strong,{children:\"Life\"}),\": Personal reflections and experiences\"]})]}),(0,n.jsxs)(e.h2,{className:\"content-header\",id:\"getting-started\",children:[(0,n.jsx)(e.a,{\"aria-hidden\":\"true\",href:\"#getting-started\",tabIndex:\"-1\",children:(0,n.jsx)(n.Fragment,{children:(0,n.jsx)(e.span,{className:\"content-header-link\",children:(0,n.jsxs)(e.svg,{className:\"h-5 linkicon w-5\",fill:\"currentColor\",viewBox:\"0 0 20 20\",xmlns:\"http://www.w3.org/2000/svg\",children:[(0,n.jsx)(e.path,{d:\"M12.232 4.232a2.5 2.5 0 0 1 3.536 3.536l-1.225 1.224a.75.75 0 0 0 1.061 1.06l1.224-1.224a4 4 0 0 0-5.656-5.656l-3 3a4 4 0 0 0 .225 5.865.75.75 0 0 0 .977-1.138 2.5 2.5 0 0 1-.142-3.667l3-3Z\"}),(0,n.jsx)(e.path,{d:\"M11.603 7.963a.75.75 0 0 0-.977 1.138 2.5 2.5 0 0 1 .142 3.667l-3 3a2.5 2.5 0 0 1-3.536-3.536l1.225-1.224a.75.75 0 0 0-1.061-1.06l-1.224 1.224a4 4 0 1 0 5.656 5.656l3-3a4 4 0 0 0-.225-5.865Z\"})]})})})}),\"Getting Started\"]}),(0,n.jsxs)(e.p,{children:[\"This blog is built with Next.js and uses MDX for content. You can create new posts by adding \",(0,n.jsx)(e.code,{children:\".mdx\"}),\" files to the \",(0,n.jsx)(e.code,{children:\"data/blog/\"}),\" directory.\"]}),(0,n.jsxs)(e.h3,{className:\"content-header\",id:\"features\",children:[(0,n.jsx)(e.a,{\"aria-hidden\":\"true\",href:\"#features\",tabIndex:\"-1\",children:(0,n.jsx)(n.Fragment,{children:(0,n.jsx)(e.span,{className:\"content-header-link\",children:(0,n.jsxs)(e.svg,{className:\"h-5 linkicon w-5\",fill:\"currentColor\",viewBox:\"0 0 20 20\",xmlns:\"http://www.w3.org/2000/svg\",children:[(0,n.jsx)(e.path,{d:\"M12.232 4.232a2.5 2.5 0 0 1 3.536 3.536l-1.225 1.224a.75.75 0 0 0 1.061 1.06l1.224-1.224a4 4 0 0 0-5.656-5.656l-3 3a4 4 0 0 0 .225 5.865.75.75 0 0 0 .977-1.138 2.5 2.5 0 0 1-.142-3.667l3-3Z\"}),(0,n.jsx)(e.path,{d:\"M11.603 7.963a.75.75 0 0 0-.977 1.138 2.5 2.5 0 0 1 .142 3.667l-3 3a2.5 2.5 0 0 1-3.536-3.536l1.225-1.224a.75.75 0 0 0-1.061-1.06l-1.224 1.224a4 4 0 1 0 5.656 5.656l3-3a4 4 0 0 0-.225-5.865Z\"})]})})})}),\"Features\"]}),(0,n.jsxs)(e.ul,{children:[(0,n.jsxs)(e.li,{children:[(0,n.jsx)(e.strong,{children:\"Markdown Support\"}),\": Write in Markdown with MDX components\"]}),(0,n.jsxs)(e.li,{children:[(0,n.jsx)(e.strong,{children:\"Syntax Highlighting\"}),\": Code blocks with syntax highlighting\"]}),(0,n.jsxs)(e.li,{children:[(0,n.jsx)(e.strong,{children:\"Responsive Design\"}),\": Works great on all devices\"]}),(0,n.jsxs)(e.li,{children:[(0,n.jsx)(e.strong,{children:\"Dark Mode\"}),\": Automatic dark/light mode switching\"]})]}),(0,n.jsx)(e.p,{children:\"Thanks for reading, and I hope you enjoy the content!\"})]})}function d(t={}){let{wrapper:e}=t.components||{};return e?(0,n.jsx)(e,{...t,children:(0,n.jsx)(c,{...t})}):c(t)}return M(v);})();\n;return Component;"
+    },
+    "_id": "blog/welcome.mdx",
+    "_raw": {
+      "sourceFilePath": "blog/welcome.mdx",
+      "sourceFileName": "welcome.mdx",
+      "sourceFileDir": "blog",
+      "contentType": "mdx",
+      "flattenedPath": "blog/welcome"
+    },
+    "type": "Blog",
+    "readingTime": {
+      "text": "1 min read",
+      "minutes": 0.65,
+      "time": 39000,
+      "words": 130
+    },
+    "slug": "welcome",
+    "path": "blog/welcome",
+    "filePath": "blog/welcome.mdx",
+    "toc": [
+      {
+        "value": "Welcome to My Blog",
+        "url": "#welcome-to-my-blog",
+        "depth": 1
+      },
+      {
+        "value": "What You Can Expect",
+        "url": "#what-you-can-expect",
+        "depth": 2
+      },
+      {
+        "value": "Getting Started",
+        "url": "#getting-started",
+        "depth": 2
+      },
+      {
+        "value": "Features",
+        "url": "#features",
+        "depth": 3
+      }
+    ],
+    "structuredData": {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "Welcome to My Blog",
+      "datePublished": "2024-01-01T00:00:00.000Z",
+      "dateModified": "2024-01-01T00:00:00.000Z",
+      "description": "This is the first post on my personal blog. Welcome!",
+      "image": "/static/images/twitter-card.png",
+      "url": "https://your-domain.com/blog/welcome",
+      "author": {
+        "@type": "Person",
+        "name": "Your Name"
+      }
+    }
+  }
+]

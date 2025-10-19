@@ -14,6 +14,7 @@ import {
   NavigationMenuList,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu"
+import { ThemeToggle } from "@/components/theme-toggle"
 
 export function Navigation() {
   const pathname = usePathname()
@@ -76,9 +77,9 @@ export function Navigation() {
                 </Link>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <Link href="/writings" legacyBehavior passHref>
+                <Link href="/blog" legacyBehavior passHref>
                   <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                    Writings
+                    Blog
                   </NavigationMenuLink>
                 </Link>
               </NavigationMenuItem>
@@ -100,12 +101,14 @@ export function Navigation() {
           </NavigationMenu>
         </div>
 
-        {/* Desktop spacer to balance the layout */}
-        <div className="hidden md:flex w-[100px]">
+        {/* Desktop Theme Toggle */}
+        <div className="hidden md:flex w-[100px] justify-end">
+          <ThemeToggle />
         </div>
 
-        {/* Mobile Menu Button - Right aligned */}
-        <div className="flex md:hidden ml-auto">
+        {/* Mobile Menu Button and Theme Toggle - Right aligned */}
+        <div className="flex md:hidden ml-auto items-center space-x-2">
+          <ThemeToggle />
           <button
             className="inline-flex items-center justify-center rounded-md p-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50"
             onClick={toggleMobileMenu}
@@ -134,11 +137,11 @@ export function Navigation() {
                 Projects
               </MobileNavLink>
               <MobileNavLink
-                href="/writings"
+                href="/blog"
                 pathname={pathname}
                 onClick={closeMobileMenu}
               >
-                Writings
+                Blog
               </MobileNavLink>
               <MobileNavLink
                 href="/photography"

@@ -1,9 +1,10 @@
 # Custom
 note/
 note.md
-nextjs-blog/
 portfolio-template/
 reference 
+nextjs-blog/
+tailwind-nextjs-starter-blog-main/
 
 # Dependencies
 node_modules/
