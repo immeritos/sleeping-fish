@@ -29,7 +29,7 @@ export function PhotoSeriesClient({ series }: PhotoSeriesClientProps) {
 
   return (
     <div className="h-screen flex flex-col pt-20">
-      {/* Main Photo Display - Fixed spacing, responsive photo size */}
+      {/* Main Photo Display - Centered between navigation and thumbnails */}
       <div className="flex-1 flex items-center justify-center px-4">
         <div className="flex items-center justify-center gap-8 w-full">
           {/* Left Arrow - Fixed size */}
@@ -42,7 +42,7 @@ export function PhotoSeriesClient({ series }: PhotoSeriesClientProps) {
           </button>
 
           {/* Square Container - Centered and responsive to window height */}
-          <div className="aspect-square max-h-[60vh] max-w-[60vh] min-w-[300px] min-h-[300px] flex items-center justify-center overflow-hidden">
+          <div className="aspect-square max-h-[70vh] max-w-[70vh] min-w-[350px] min-h-[350px] flex items-center justify-center overflow-hidden">
             <div className="w-full h-full flex items-center justify-center">
               <Image
                 src={currentPhoto.imageUrl}
@@ -50,6 +50,7 @@ export function PhotoSeriesClient({ series }: PhotoSeriesClientProps) {
                 width={800}
                 height={800}
                 className="max-w-full max-h-full object-contain"
+                quality={100}
                 priority
               />
             </div>
@@ -66,16 +67,16 @@ export function PhotoSeriesClient({ series }: PhotoSeriesClientProps) {
         </div>
       </div>
 
-      {/* Thumbnail Gallery - No scroll on small heights */}
-      <div className="flex gap-1 overflow-x-auto pb-8 pt-4 justify-center px-4 flex-shrink-0 max-h-[20vh] scrollbar-hide">
+      {/* Thumbnail Gallery - Fixed at bottom with consistent spacing */}
+      <div className="flex gap-1 overflow-x-auto pb-8 pt-8 justify-center px-4 flex-shrink-0 max-h-[20vh] scrollbar-hide">
         {series.photos.map((photo, index) => (
           <button
             key={photo.id}
             onClick={() => goToPhoto(index)}
-            className={`flex-shrink-0 w-16 h-16 overflow-hidden border-2 transition-all ${
+            className={`flex-shrink-0 w-16 h-16 overflow-hidden transition-all ${
               index === currentPhotoIndex
-                ? 'border-primary'
-                : 'border-border hover:border-muted-foreground'
+                ? 'opacity-100'
+                : 'opacity-50 hover:opacity-75'
             }`}
           >
             <Image
@@ -84,6 +85,7 @@ export function PhotoSeriesClient({ series }: PhotoSeriesClientProps) {
               width={64}
               height={64}
               className="w-full h-full object-cover"
+              quality={75}
             />
           </button>
         ))}

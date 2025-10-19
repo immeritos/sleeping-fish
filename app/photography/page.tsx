@@ -17,6 +17,8 @@ export default async function PhotographyPage() {
                 alt={series.title}
                 fill
                 className="object-cover"
+                quality={100}
+                sizes="(max-width: 768px) 33vw, (max-width: 1200px) 25vw, 20vw"
               />
             </div>
           </Link>
