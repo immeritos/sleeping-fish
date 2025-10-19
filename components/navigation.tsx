@@ -4,7 +4,7 @@ import * as React from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { usePathname } from "next/navigation"
-import { HamburgerMenuIcon, Cross1Icon } from "@radix-ui/react-icons"
+import { HamburgerMenuIcon, Cross1Icon, SunIcon, MoonIcon } from "@radix-ui/react-icons"
 
 import { cn } from "@/lib/utils"
 import {
@@ -29,7 +29,7 @@ export function Navigation() {
   }
 
   return (
-    <header className="fixed top-0 z-50 w-full border-b bg-background">
+    <header className="fixed top-0 z-50 w-full bg-background">
       <div className="container flex h-14 items-center">
         {/* Logo/Brand - Desktop */}
         <div className="hidden md:flex">
@@ -41,7 +41,7 @@ export function Navigation() {
               height={24}
               className="h-6 w-6"
             />
-            <div className="font-bold flex flex-col leading-tight text-center">
+            <div className="font-medium flex flex-col leading-tight text-center" style={{ fontSize: '10px' }}>
               <span>Day</span>
               <span>Moon</span>
             </div>
@@ -58,7 +58,7 @@ export function Navigation() {
               height={24}
               className="h-6 w-6"
             />
-            <div className="font-bold flex flex-col leading-tight text-center">
+            <div className="font-medium flex flex-col leading-tight text-center" style={{ fontSize: '10px' }}>
               <span>Day</span>
               <span>Moon</span>
             </div>
@@ -110,7 +110,7 @@ export function Navigation() {
         <div className="flex md:hidden ml-auto items-center space-x-2">
           <ThemeToggle />
           <button
-            className="inline-flex items-center justify-center rounded-md p-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50"
+            className="inline-flex items-center justify-center rounded-md p-2 text-sm font-normal transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50"
             onClick={toggleMobileMenu}
             aria-expanded={isMobileMenuOpen}
             aria-label="Toggle navigation menu"
@@ -126,7 +126,7 @@ export function Navigation() {
 
       {/* Mobile Navigation */}
       {isMobileMenuOpen && (
-        <div className="border-t md:hidden">
+        <div className="md:hidden">
           <div className="container py-4">
             <nav className="flex flex-col space-y-3">
               <MobileNavLink
@@ -178,7 +178,7 @@ function MobileNavLink({ href, pathname, children, onClick }: MobileNavLinkProps
       href={href}
       onClick={onClick}
       className={cn(
-        "group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50",
+        "group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-normal transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50",
         pathname === href ? "bg-accent/50" : ""
       )}
     >

@@ -21,7 +21,7 @@ export default function PostSimple({ content, next, prev, children }: LayoutProp
         <div className="pt-20">
           <header className="mb-8">
             <div className="text-center">
-              <h1 className="text-2xl font-medium text-foreground mb-2">{title}</h1>
+              <h1 className="text-2xl font-normal text-foreground mb-2" style={{ fontFamily: "'Times New Roman', serif" }}>{title}</h1>
               <time dateTime={date} className="text-sm text-muted-foreground">
                 {formatDate(date, siteMetadata.locale)}
               </time>
