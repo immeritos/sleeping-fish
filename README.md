@@ -2,6 +2,11 @@
 
 A modern personal website 
 
+## Features
+- **Minimal Design** - Clean, focused user experience
+- **Responsive Layout** - Optimized for all screen sizes
+- **Fast Performance** - Built with Next.js 14 and optimized images
+
 ## Tech Stack
 
 - **Framework:** Next.js 14 with TypeScript
