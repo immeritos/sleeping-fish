@@ -75,10 +75,10 @@
       "dateModified": "2024-01-15T00:00:00.000Z",
       "description": "Learn the basics of Next.js and how to build modern web applications with React.",
       "image": "/static/images/twitter-card.png",
-      "url": "https://your-domain.com/blog/getting-started-with-nextjs",
+      "url": "https://daymoon.it.com/blog/getting-started-with-nextjs",
       "author": {
         "@type": "Person",
-        "name": "Your Name"
+        "name": "Daymoon"
       }
     }
   },
@@ -183,10 +183,10 @@
       "dateModified": "2024-01-20T00:00:00.000Z",
       "description": "Essential photography tips to help you capture better photos and improve your skills.",
       "image": "/static/images/twitter-card.png",
-      "url": "https://your-domain.com/blog/photography-tips",
+      "url": "https://daymoon.it.com/blog/photography-tips",
       "author": {
         "@type": "Person",
-        "name": "Your Name"
+        "name": "Daymoon"
       }
     }
   },
@@ -246,10 +246,10 @@
       "dateModified": "2024-01-01T00:00:00.000Z",
       "description": "This is the first post on my personal blog. Welcome!",
       "image": "/static/images/twitter-card.png",
-      "url": "https://your-domain.com/blog/welcome",
+      "url": "https://daymoon.it.com/blog/welcome",
       "author": {
         "@type": "Person",
-        "name": "Your Name"
+        "name": "Daymoon"
       }
     }
   }

@@ -74,10 +74,10 @@
     "dateModified": "2024-01-15T00:00:00.000Z",
     "description": "Learn the basics of Next.js and how to build modern web applications with React.",
     "image": "/static/images/twitter-card.png",
-    "url": "https://your-domain.com/blog/getting-started-with-nextjs",
+    "url": "https://daymoon.it.com/blog/getting-started-with-nextjs",
     "author": {
       "@type": "Person",
-      "name": "Your Name"
+      "name": "Daymoon"
     }
   }
 }

@@ -1,31 +1,5 @@
 [
   {
-    "title": "Example Project",
-    "description": "A brief description of your project. What it does and why it matters.",
-    "date": "2024-01-01T00:00:00.000Z",
-    "coverImage": "/projects/example-cover.jpg",
-    "href": "https://github.com/yourusername/project",
-    "tags": [
-      "Next.js",
-      "TypeScript",
-      "Tailwind CSS"
-    ],
-    "body": {
-      "raw": "\n# Example Project\n\nAdd more details about your project here using Markdown.\n\n## Features\n\n- Feature 1\n- Feature 2\n- Feature 3\n\n## Technologies Used\n\nThis project uses Next.js, TypeScript, and Tailwind CSS.\n\n",
-      "code": "var Component=(()=>{var p=Object.create;var r=Object.defineProperty;var u=Object.getOwnPropertyDescriptor;var m=Object.getOwnPropertyNames;var x=Object.getPrototypeOf,w=Object.prototype.hasOwnProperty;var g=(t,e)=>()=>(e||t((e={exports:{}}).exports,e),e.exports),j=(t,e)=>{for(var n in e)r(t,n,{get:e[n],enumerable:!0})},c=(t,e,n,i)=>{if(e&&typeof e==\"object\"||typeof e==\"function\")for(let l of m(e))!w.call(t,l)&&l!==n&&r(t,l,{get:()=>e[l],enumerable:!(i=u(e,l))||i.enumerable});return t};var f=(t,e,n)=>(n=t!=null?p(x(t)):{},c(e||!t||!t.__esModule?r(n,\"default\",{value:t,enumerable:!0}):n,t)),v=t=>c(r({},\"__esModule\",{value:!0}),t);var h=g((y,s)=>{s.exports=_jsx_runtime});var M={};j(M,{default:()=>d,frontmatter:()=>N});var a=f(h()),N={title:\"Example Project\",description:\"A brief description of your project. What it does and why it matters.\",date:\"2024-01-01\",coverImage:\"/projects/example-cover.jpg\",href:\"https://github.com/yourusername/project\",tags:[\"Next.js\",\"TypeScript\",\"Tailwind CSS\"]};function o(t){let e={a:\"a\",h1:\"h1\",h2:\"h2\",li:\"li\",p:\"p\",path:\"path\",span:\"span\",svg:\"svg\",ul:\"ul\",...t.components};return(0,a.jsxs)(a.Fragment,{children:[(0,a.jsxs)(e.h1,{className:\"content-header\",id:\"example-project\",children:[(0,a.jsx)(e.a,{\"aria-hidden\":\"true\",href:\"#example-project\",tabIndex:\"-1\",children:(0,a.jsx)(a.Fragment,{children:(0,a.jsx)(e.span,{className:\"content-header-link\",children:(0,a.jsxs)(e.svg,{className:\"h-5 linkicon w-5\",fill:\"currentColor\",viewBox:\"0 0 20 20\",xmlns:\"http://www.w3.org/2000/svg\",children:[(0,a.jsx)(e.path,{d:\"M12.232 4.232a2.5 2.5 0 0 1 3.536 3.536l-1.225 1.224a.75.75 0 0 0 1.061 1.06l1.224-1.224a4 4 0 0 0-5.656-5.656l-3 3a4 4 0 0 0 .225 5.865.75.75 0 0 0 .977-1.138 2.5 2.5 0 0 1-.142-3.667l3-3Z\"}),(0,a.jsx)(e.path,{d:\"M11.603 7.963a.75.75 0 0 0-.977 1.138 2.5 2.5 0 0 1 .142 3.667l-3 3a2.5 2.5 0 0 1-3.536-3.536l1.225-1.224a.75.75 0 0 0-1.061-1.06l-1.224 1.224a4 4 0 1 0 5.656 5.656l3-3a4 4 0 0 0-.225-5.865Z\"})]})})})}),\"Example Project\"]}),(0,a.jsx)(e.p,{children:\"Add more details about your project here using Markdown.\"}),(0,a.jsxs)(e.h2,{className:\"content-header\",id:\"features\",children:[(0,a.jsx)(e.a,{\"aria-hidden\":\"true\",href:\"#features\",tabIndex:\"-1\",children:(0,a.jsx)(a.Fragment,{children:(0,a.jsx)(e.span,{className:\"content-header-link\",children:(0,a.jsxs)(e.svg,{className:\"h-5 linkicon w-5\",fill:\"currentColor\",viewBox:\"0 0 20 20\",xmlns:\"http://www.w3.org/2000/svg\",children:[(0,a.jsx)(e.path,{d:\"M12.232 4.232a2.5 2.5 0 0 1 3.536 3.536l-1.225 1.224a.75.75 0 0 0 1.061 1.06l1.224-1.224a4 4 0 0 0-5.656-5.656l-3 3a4 4 0 0 0 .225 5.865.75.75 0 0 0 .977-1.138 2.5 2.5 0 0 1-.142-3.667l3-3Z\"}),(0,a.jsx)(e.path,{d:\"M11.603 7.963a.75.75 0 0 0-.977 1.138 2.5 2.5 0 0 1 .142 3.667l-3 3a2.5 2.5 0 0 1-3.536-3.536l1.225-1.224a.75.75 0 0 0-1.061-1.06l-1.224 1.224a4 4 0 1 0 5.656 5.656l3-3a4 4 0 0 0-.225-5.865Z\"})]})})})}),\"Features\"]}),(0,a.jsxs)(e.ul,{children:[(0,a.jsx)(e.li,{children:\"Feature 1\"}),(0,a.jsx)(e.li,{children:\"Feature 2\"}),(0,a.jsx)(e.li,{children:\"Feature 3\"})]}),(0,a.jsxs)(e.h2,{className:\"content-header\",id:\"technologies-used\",children:[(0,a.jsx)(e.a,{\"aria-hidden\":\"true\",href:\"#technologies-used\",tabIndex:\"-1\",children:(0,a.jsx)(a.Fragment,{children:(0,a.jsx)(e.span,{className:\"content-header-link\",children:(0,a.jsxs)(e.svg,{className:\"h-5 linkicon w-5\",fill:\"currentColor\",viewBox:\"0 0 20 20\",xmlns:\"http://www.w3.org/2000/svg\",children:[(0,a.jsx)(e.path,{d:\"M12.232 4.232a2.5 2.5 0 0 1 3.536 3.536l-1.225 1.224a.75.75 0 0 0 1.061 1.06l1.224-1.224a4 4 0 0 0-5.656-5.656l-3 3a4 4 0 0 0 .225 5.865.75.75 0 0 0 .977-1.138 2.5 2.5 0 0 1-.142-3.667l3-3Z\"}),(0,a.jsx)(e.path,{d:\"M11.603 7.963a.75.75 0 0 0-.977 1.138 2.5 2.5 0 0 1 .142 3.667l-3 3a2.5 2.5 0 0 1-3.536-3.536l1.225-1.224a.75.75 0 0 0-1.061-1.06l-1.224 1.224a4 4 0 1 0 5.656 5.656l3-3a4 4 0 0 0-.225-5.865Z\"})]})})})}),\"Technologies Used\"]}),(0,a.jsx)(e.p,{children:\"This project uses Next.js, TypeScript, and Tailwind CSS.\"})]})}function d(t={}){let{wrapper:e}=t.components||{};return e?(0,a.jsx)(e,{...t,children:(0,a.jsx)(o,{...t})}):o(t)}return v(M);})();\n;return Component;"
-    },
-    "_id": "projects/example-project.mdx",
-    "_raw": {
-      "sourceFilePath": "projects/example-project.mdx",
-      "sourceFileName": "example-project.mdx",
-      "sourceFileDir": "projects",
-      "contentType": "mdx",
-      "flattenedPath": "projects/example-project"
-    },
-    "type": "Project",
-    "slug": "example-project"
-  },
-  {
     "title": "Another Project",
     "description": "Another example project showcasing different technologies and approaches.",
     "date": "2024-02-15T00:00:00.000Z",
@@ -50,5 +24,31 @@
     },
     "type": "Project",
     "slug": "another-project"
+  },
+  {
+    "title": "Example Project",
+    "description": "A brief description of your project. What it does and why it matters.",
+    "date": "2024-01-01T00:00:00.000Z",
+    "coverImage": "/projects/example-cover.jpg",
+    "href": "https://github.com/yourusername/project",
+    "tags": [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS"
+    ],
+    "body": {
+      "raw": "\n# Example Project\n\nAdd more details about your project here using Markdown.\n\n## Features\n\n- Feature 1\n- Feature 2\n- Feature 3\n\n## Technologies Used\n\nThis project uses Next.js, TypeScript, and Tailwind CSS.\n\n",
+      "code": "var Component=(()=>{var p=Object.create;var r=Object.defineProperty;var u=Object.getOwnPropertyDescriptor;var m=Object.getOwnPropertyNames;var x=Object.getPrototypeOf,w=Object.prototype.hasOwnProperty;var g=(t,e)=>()=>(e||t((e={exports:{}}).exports,e),e.exports),j=(t,e)=>{for(var n in e)r(t,n,{get:e[n],enumerable:!0})},c=(t,e,n,i)=>{if(e&&typeof e==\"object\"||typeof e==\"function\")for(let l of m(e))!w.call(t,l)&&l!==n&&r(t,l,{get:()=>e[l],enumerable:!(i=u(e,l))||i.enumerable});return t};var f=(t,e,n)=>(n=t!=null?p(x(t)):{},c(e||!t||!t.__esModule?r(n,\"default\",{value:t,enumerable:!0}):n,t)),v=t=>c(r({},\"__esModule\",{value:!0}),t);var h=g((y,s)=>{s.exports=_jsx_runtime});var M={};j(M,{default:()=>d,frontmatter:()=>N});var a=f(h()),N={title:\"Example Project\",description:\"A brief description of your project. What it does and why it matters.\",date:\"2024-01-01\",coverImage:\"/projects/example-cover.jpg\",href:\"https://github.com/yourusername/project\",tags:[\"Next.js\",\"TypeScript\",\"Tailwind CSS\"]};function o(t){let e={a:\"a\",h1:\"h1\",h2:\"h2\",li:\"li\",p:\"p\",path:\"path\",span:\"span\",svg:\"svg\",ul:\"ul\",...t.components};return(0,a.jsxs)(a.Fragment,{children:[(0,a.jsxs)(e.h1,{className:\"content-header\",id:\"example-project\",children:[(0,a.jsx)(e.a,{\"aria-hidden\":\"true\",href:\"#example-project\",tabIndex:\"-1\",children:(0,a.jsx)(a.Fragment,{children:(0,a.jsx)(e.span,{className:\"content-header-link\",children:(0,a.jsxs)(e.svg,{className:\"h-5 linkicon w-5\",fill:\"currentColor\",viewBox:\"0 0 20 20\",xmlns:\"http://www.w3.org/2000/svg\",children:[(0,a.jsx)(e.path,{d:\"M12.232 4.232a2.5 2.5 0 0 1 3.536 3.536l-1.225 1.224a.75.75 0 0 0 1.061 1.06l1.224-1.224a4 4 0 0 0-5.656-5.656l-3 3a4 4 0 0 0 .225 5.865.75.75 0 0 0 .977-1.138 2.5 2.5 0 0 1-.142-3.667l3-3Z\"}),(0,a.jsx)(e.path,{d:\"M11.603 7.963a.75.75 0 0 0-.977 1.138 2.5 2.5 0 0 1 .142 3.667l-3 3a2.5 2.5 0 0 1-3.536-3.536l1.225-1.224a.75.75 0 0 0-1.061-1.06l-1.224 1.224a4 4 0 1 0 5.656 5.656l3-3a4 4 0 0 0-.225-5.865Z\"})]})})})}),\"Example Project\"]}),(0,a.jsx)(e.p,{children:\"Add more details about your project here using Markdown.\"}),(0,a.jsxs)(e.h2,{className:\"content-header\",id:\"features\",children:[(0,a.jsx)(e.a,{\"aria-hidden\":\"true\",href:\"#features\",tabIndex:\"-1\",children:(0,a.jsx)(a.Fragment,{children:(0,a.jsx)(e.span,{className:\"content-header-link\",children:(0,a.jsxs)(e.svg,{className:\"h-5 linkicon w-5\",fill:\"currentColor\",viewBox:\"0 0 20 20\",xmlns:\"http://www.w3.org/2000/svg\",children:[(0,a.jsx)(e.path,{d:\"M12.232 4.232a2.5 2.5 0 0 1 3.536 3.536l-1.225 1.224a.75.75 0 0 0 1.061 1.06l1.224-1.224a4 4 0 0 0-5.656-5.656l-3 3a4 4 0 0 0 .225 5.865.75.75 0 0 0 .977-1.138 2.5 2.5 0 0 1-.142-3.667l3-3Z\"}),(0,a.jsx)(e.path,{d:\"M11.603 7.963a.75.75 0 0 0-.977 1.138 2.5 2.5 0 0 1 .142 3.667l-3 3a2.5 2.5 0 0 1-3.536-3.536l1.225-1.224a.75.75 0 0 0-1.061-1.06l-1.224 1.224a4 4 0 1 0 5.656 5.656l3-3a4 4 0 0 0-.225-5.865Z\"})]})})})}),\"Features\"]}),(0,a.jsxs)(e.ul,{children:[(0,a.jsx)(e.li,{children:\"Feature 1\"}),(0,a.jsx)(e.li,{children:\"Feature 2\"}),(0,a.jsx)(e.li,{children:\"Feature 3\"})]}),(0,a.jsxs)(e.h2,{className:\"content-header\",id:\"technologies-used\",children:[(0,a.jsx)(e.a,{\"aria-hidden\":\"true\",href:\"#technologies-used\",tabIndex:\"-1\",children:(0,a.jsx)(a.Fragment,{children:(0,a.jsx)(e.span,{className:\"content-header-link\",children:(0,a.jsxs)(e.svg,{className:\"h-5 linkicon w-5\",fill:\"currentColor\",viewBox:\"0 0 20 20\",xmlns:\"http://www.w3.org/2000/svg\",children:[(0,a.jsx)(e.path,{d:\"M12.232 4.232a2.5 2.5 0 0 1 3.536 3.536l-1.225 1.224a.75.75 0 0 0 1.061 1.06l1.224-1.224a4 4 0 0 0-5.656-5.656l-3 3a4 4 0 0 0 .225 5.865.75.75 0 0 0 .977-1.138 2.5 2.5 0 0 1-.142-3.667l3-3Z\"}),(0,a.jsx)(e.path,{d:\"M11.603 7.963a.75.75 0 0 0-.977 1.138 2.5 2.5 0 0 1 .142 3.667l-3 3a2.5 2.5 0 0 1-3.536-3.536l1.225-1.224a.75.75 0 0 0-1.061-1.06l-1.224 1.224a4 4 0 1 0 5.656 5.656l3-3a4 4 0 0 0-.225-5.865Z\"})]})})})}),\"Technologies Used\"]}),(0,a.jsx)(e.p,{children:\"This project uses Next.js, TypeScript, and Tailwind CSS.\"})]})}function d(t={}){let{wrapper:e}=t.components||{};return e?(0,a.jsx)(e,{...t,children:(0,a.jsx)(o,{...t})}):o(t)}return v(M);})();\n;return Component;"
+    },
+    "_id": "projects/example-project.mdx",
+    "_raw": {
+      "sourceFilePath": "projects/example-project.mdx",
+      "sourceFileName": "example-project.mdx",
+      "sourceFileDir": "projects",
+      "contentType": "mdx",
+      "flattenedPath": "projects/example-project"
+    },
+    "type": "Project",
+    "slug": "example-project"
   }
 ]

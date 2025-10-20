@@ -1,12 +1,12 @@
 /** @type {import("pliny/config").PlinyConfig } */
 const siteMetadata = {
-  title: 'Personal Website',
-  author: 'Your Name',
-  headerTitle: 'Personal Website',
+  title: 'Daymoon',
+  author: 'Daymoon',
+  headerTitle: 'Daymoon',
   description: 'A personal website with blog and photography',
   language: 'en-us',
   theme: 'system', // system, dark or light
-  siteUrl: 'https://your-domain.com',
+  siteUrl: 'https://daymoon.it.com',
   siteRepo: 'https://github.com/yourusername/personal-website',
   siteLogo: `${process.env.BASE_PATH || ''}/static/images/logo.png`,
   socialBanner: `${process.env.BASE_PATH || ''}/static/images/twitter-card.png`,

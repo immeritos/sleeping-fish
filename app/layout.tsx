@@ -3,12 +3,14 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import { Navigation } from '@/components/navigation'
 import { ThemeProvider } from '@/components/theme-provider'
+import siteMetadata from '@/data/siteMetadata'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Personal Website - shadcn/ui Navigation',
-  description: 'A modern personal website with elegant navigation using shadcn/ui',
+  metadataBase: new URL(siteMetadata.siteUrl),
+  title: 'Daymoon',
+  description: 'A personal website with blog and photography',
 }
 
 export default function RootLayout({

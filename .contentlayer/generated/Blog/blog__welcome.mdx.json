@@ -54,10 +54,10 @@
     "dateModified": "2024-01-01T00:00:00.000Z",
     "description": "This is the first post on my personal blog. Welcome!",
     "image": "/static/images/twitter-card.png",
-    "url": "https://your-domain.com/blog/welcome",
+    "url": "https://daymoon.it.com/blog/welcome",
     "author": {
       "@type": "Person",
-      "name": "Your Name"
+      "name": "Daymoon"
     }
   }
 }
