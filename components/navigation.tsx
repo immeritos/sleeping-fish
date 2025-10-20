@@ -34,13 +34,23 @@ export function Navigation() {
         {/* Logo/Brand - Desktop */}
         <div className="hidden md:flex">
           <Link href="/" className="flex items-center space-x-2">
-            <Image
-              src="/placeholder.svg"
-              alt="Logo"
-              width={24}
-              height={24}
-              className="h-6 w-6"
-            />
+            <svg 
+              width="24" 
+              height="24" 
+              viewBox="0 0 64 64" 
+              fill="none" 
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6 text-foreground"
+            >
+              {/* Thin Outer Circle */}
+              <circle cx="32" cy="32" r="30" stroke="currentColor" strokeWidth="1" fill="none"/>
+              
+              {/* Mountain */}
+              <polygon points="12,44 32,18 52,44" fill="currentColor"/>
+              
+              {/* Moon */}
+              <circle cx="45" cy="18" r="4" fill="currentColor"/>
+            </svg>
             <div className="font-medium flex flex-col leading-tight text-center" style={{ fontSize: '10px' }}>
               <span>Day</span>
               <span>Moon</span>
@@ -51,13 +61,23 @@ export function Navigation() {
         {/* Logo/Brand - Mobile */}
         <div className="flex md:hidden">
           <Link href="/" className="flex items-center space-x-2">
-            <Image
-              src="/placeholder.svg"
-              alt="Logo"
-              width={24}
-              height={24}
-              className="h-6 w-6"
-            />
+            <svg 
+              width="24" 
+              height="24" 
+              viewBox="0 0 64 64" 
+              fill="none" 
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6 text-foreground"
+            >
+              {/* Thin Outer Circle */}
+              <circle cx="32" cy="32" r="30" stroke="currentColor" strokeWidth="1" fill="none"/>
+              
+              {/* Mountain */}
+              <polygon points="12,44 32,18 52,44" fill="currentColor"/>
+              
+              {/* Moon */}
+              <circle cx="45" cy="18" r="4" fill="currentColor"/>
+            </svg>
             <div className="font-medium flex flex-col leading-tight text-center" style={{ fontSize: '10px' }}>
               <span>Day</span>
               <span>Moon</span>
