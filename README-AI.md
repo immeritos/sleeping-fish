@@ -25,20 +25,32 @@ This document provides comprehensive context for AI assistants working on this p
 
 ### Blog System (Contentlayer2 + MDX)
 - **MDX Processing:** Uses Contentlayer2 for content management
-- **Dynamic Routing:** `[[...slug]]` pattern for flexible blog URLs
+- **Dynamic Routing:** `[...slug]` pattern for flexible blog URLs
 - **No Author System:** Simplified for personal website (single author)
 - **No Tag System:** Removed for minimal design
 - **No Search:** Removed for simplicity
 - **Typography:** Times New Roman serif for blog titles
+- **No Title on List Page:** "All Posts" title removed for minimal design
+
+### Projects System (Contentlayer2 + MDX)
+- **MDX Processing:** Same Contentlayer2 system as blog
+- **Dynamic Routing:** `[...slug]` pattern matching blog structure
+- **Grid Layout:** 2-column layout on desktop, 1-column on mobile
+- **Cover Images:** 16:9 aspect ratio hero images
+- **Frontmatter Fields:** title, description, date, coverImage, href, tags, draft
+- **Static Generation:** Pre-generates all project routes at build time
 
 ### Routing Structure
 ```
 /                              # Landing page
-/about                         # About page
-/blog                          # Blog listing
+/about                         # About page with footer
+/blog                          # Blog listing (no title)
 /blog/[...slug]                # Individual blog posts
+/blog/page/[page]              # Blog pagination
 /photography/                  # Main gallery (3x3 grid)
-/photography/[seriesId]/       # Individual series pages
+/photography/[...slug]/        # Individual series pages
+/projects/                     # Projects grid (2 columns)
+/projects/[...slug]/           # Individual project pages
 ```
 
 ### Component Architecture
@@ -47,6 +59,8 @@ This document provides comprehensive context for AI assistants working on this p
 - **Separation:** Clean split between server/client responsibilities
 - **Theme System:** next-themes with dark/light mode support
 - **Navigation:** Fixed header with theme toggle and responsive design
+- **Layout Components:** Moved to `/components/layouts/` for better organization
+- **Footer:** Minimal footer component, only displayed on About page
 
 ## 🎨 Design Patterns & Constraints
 
@@ -63,10 +77,12 @@ This document provides comprehensive context for AI assistants working on this p
 - **NEVER use:** `font-bold`, `font-extrabold`, `font-semibold`, `font-black`
 
 ### Layout Principles
-- **Fixed Navigation:** `fixed top-0` with `pt-20` offset for content
+- **Fixed Navigation:** `fixed top-0` with `pt-20 pb-16` offset for content
+- **Consistent Padding:** All pages use `pt-20 pb-16` for uniform spacing
+- **Centered Layouts:** `max-w-2xl` (about), `max-w-3xl` (blog), `max-w-4xl` (home, photography, projects)
+- **No Container Class:** Removed to avoid conflicts with max-width
 - **No Scroll on Series Pages:** `h-screen flex flex-col` layout
 - **Square Photo Containers:** `aspect-square` with responsive sizing
-- **Consistent Spacing:** `gap-8` between elements, `pt-20` for navigation offset
 - **Theme Support:** Dark/light mode with CSS variables
 
 ### Photo Series Page Layout
@@ -92,16 +108,24 @@ This document provides comprehensive context for AI assistants working on this p
 
 **Photography System:**
 - **`/app/photography/page.tsx`** - Main gallery with 3-column grid, minimal design
-- **`/app/photography/[seriesId]/page.tsx`** - Server component for static generation
-- **`/app/photography/[seriesId]/photo-series-client.tsx`** - Client component for interactivity
+- **`/app/photography/[...slug]/page.tsx`** - Server component for static generation
+- **`/app/photography/[...slug]/photo-series-client.tsx`** - Client component for interactivity
 - **`/lib/photography.ts`** - Core photo system logic and file scanning
 
 **Blog System:**
-- **`/app/blog/page.tsx`** - Blog listing page with minimal design
+- **`/app/blog/page.tsx`** - Blog listing page (no title, minimal design)
 - **`/app/blog/[...slug]/page.tsx`** - Individual blog post pages
-- **`/layouts/ListLayout.tsx`** - Blog list layout (no search, no tags)
-- **`/layouts/PostSimple.tsx`** - Simple blog post layout with Times New Roman titles
-- **`/contentlayer.config.ts`** - MDX processing configuration (no authors, no tags)
+- **`/app/blog/page/[page]/page.tsx`** - Blog pagination pages
+- **`/components/layouts/ListLayout.tsx`** - Blog list layout (no search, no tags)
+- **`/components/layouts/PostSimple.tsx`** - Simple blog post layout with Times New Roman titles
+- **`/contentlayer.config.ts`** - MDX processing configuration (Blog + Project types)
+
+**Projects System:**
+- **`/app/projects/page.tsx`** - Projects grid (2 columns, centered layout)
+- **`/app/projects/[...slug]/page.tsx`** - Individual project detail pages
+- **`/components/ProjectCard.tsx`** - Project card component with 16:9 cover images
+- **`/data/projects/*.mdx`** - Project content files
+- **`/public/projects/`** - Project cover images
 
 **Navigation & Theme:**
 - **`/components/navigation.tsx`** - Fixed navigation with theme toggle
@@ -109,8 +133,13 @@ This document provides comprehensive context for AI assistants working on this p
 - **`/components/theme-provider.tsx`** - next-themes provider wrapper
 
 **Pages:**
-- **`/app/page.tsx`** - Landing page with increased spacing (`py-24`)
-- **`/app/about/page.tsx`** - About page with "Daymoon" content, left-aligned
+- **`/app/page.tsx`** - Landing page with consistent spacing (`pt-20 pb-16`)
+- **`/app/about/page.tsx`** - About page with portrait, social icons, bio, and footer
+- **`/app/layout.tsx`** - Root layout with metadataBase configuration
+
+**Shared Components:**
+- **`/components/Footer.tsx`** - Minimal footer ("© 2025 Daymoon. All rights reserved.")
+- **`/components/blog/SectionContainer.tsx`** - Blog container with consistent padding
 
 ### Styling Approach
 - **Tailwind CSS:** Utility-first styling with custom configuration
@@ -166,10 +195,12 @@ This document provides comprehensive context for AI assistants working on this p
 ### File Organization
 - **Photos:** Organized in `public/photography/[series-name]/` with covers in `covers/`
 - **Blog Content:** MDX files in `data/blog/`
+- **Project Content:** MDX files in `data/projects/`
+- **Project Images:** Cover images in `public/projects/`
 - **Components:** Reusable UI in `components/`, page-specific in `app/`
 - **Utilities:** Shared logic in `lib/`
 - **Types:** Define interfaces for all data structures
-- **Layouts:** Blog layouts in `layouts/` directory
+- **Layouts:** Blog layouts in `components/layouts/` directory
 
 ## 🎯 User Preferences & Constraints
 
@@ -196,29 +227,41 @@ This document provides comprehensive context for AI assistants working on this p
 
 ## 🔄 Recent Changes & Context
 
-### Latest Updates
-- **Blog System Integration** - Added Contentlayer2 + MDX for blog functionality
-- **Dark Theme Implementation** - Added next-themes with toggle button
-- **Typography Overhaul** - Times New Roman for headings, removed all bold fonts
-- **Navigation Updates** - Added theme toggle, removed border, consistent font weights
-- **About Page Redesign** - "Daymoon" content with left-aligned text
-- **Spacing Improvements** - Increased padding on landing and about pages
-- **Font Weight Consistency** - All components now use font-normal or font-medium
-- **Text Alignment** - Left-aligned for better readability
+### Latest Major Updates
+- **Projects Section** - Full Contentlayer integration with MDX, 2-column grid layout
+- **About Page Redesign** - Portrait image, social icons (GitHub, LinkedIn, Email), minimal footer
+- **Routing Consistency** - Photography changed from `[seriesId]` to `[...slug]` pattern
+- **Layout Refactor** - Moved `/layouts/` to `/components/layouts/` for better organization
+- **Spacing Standardization** - All pages use `pt-20 pb-16` with consistent max-widths
+- **Footer Component** - Minimal footer only on About page
+- **Vercel Deployment Fixes** - ESLint downgrade (v9→v8), TypeScript config updates
+- **Metadata Configuration** - Added metadataBase (daymoon.it.com) for social sharing
+- **Blog List Update** - Removed "All Posts" title for minimal design
+
+### Build & Deployment
+- **Site URL:** https://daymoon.it.com
+- **Build Status:** ✅ All 20 pages generate successfully
+- **ESLint:** v8.57.0 (compatible with Next.js 14)
+- **TypeScript:** moduleResolution set to "node" for better compatibility
+- **No Warnings:** metadataBase properly configured
 
 ### Current State
-- Photography system fully functional with cover images
-- Blog system with MDX processing and minimal design
+- Photography system with `[...slug]` routing (6 series)
+- Blog system with MDX processing (3 posts)
+- Projects system with MDX processing (2 projects)
 - Dark/light theme toggle working
 - Typography system with Times New Roman headings
 - Navigation with theme toggle and consistent styling
-- All user requirements met for minimal, elegant design
+- About page with portrait, social links, and footer
+- All pages with consistent spacing and centering
+- Production-ready build with no warnings
 
 ### Key Dependencies
 - **next-themes** - Theme management
-- **contentlayer2** - MDX processing
-- **@radix-ui/react-icons** - Icon system
+- **contentlayer2** - MDX processing for blog and projects
+- **@radix-ui/react-icons** - Icon system (GitHub, LinkedIn, Email, Theme, Chevrons)
 - **lucide-react** - Additional icons
-- **pliny** - Contentlayer utilities
+- **pliny** - Contentlayer utilities and MDX rendering
+- **next** - v14.2.33
 
 This documentation should provide comprehensive context for any AI assistant working on this project.
