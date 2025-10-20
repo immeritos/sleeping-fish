@@ -7,8 +7,8 @@ export default function Home() {
           <span className="text-primary"> Personal Website</span>
         </h1>
         <p className="mt-6 text-lg leading-8 text-gray-600 dark:text-gray-300">
-          This is a modern personal website built with Next.js, TypeScript, and shadcn/ui.
-          The navigation component showcases elegant dropdown menus and smooth animations.
+          Explore my projects, photography, and thoughts. A space where I share the work I&apos;m creating, 
+          the moments I&apos;m capturing, and the ideas I&apos;m exploring.
         </p>
         <div className="mt-10 flex items-center justify-center gap-x-6">
           <a

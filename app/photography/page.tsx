@@ -7,8 +7,8 @@ export default async function PhotographyPage() {
 
   return (
     <div className="mx-auto px-4 pt-20 pb-16">
-      {/* Main Gallery Grid - 3 photos per row, square, minimal spacing */}
-      <div className="grid grid-cols-3 gap-1 max-w-4xl mx-auto">
+      {/* Main Gallery Grid - 3 photos per row, square, 6px spacing */}
+      <div className="grid grid-cols-3 gap-1.5 max-w-4xl mx-auto">
         {photoSeries.map((series) => (
           <Link key={series.id} href={`/photography/${series.id}`}>
             <div className="aspect-square relative overflow-hidden hover:opacity-80 transition-opacity duration-200">
