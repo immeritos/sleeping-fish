@@ -24,21 +24,21 @@ export function PhotoSeriesClient({ series }: PhotoSeriesClientProps) {
   }
 
   return (
-    <div className="h-screen flex flex-col pt-20">
+    <div className="h-screen flex flex-col pt-20 overflow-hidden">
       {/* Main Photo Display - Centered between navigation and thumbnails */}
-      <div className="flex-1 flex items-center justify-center px-4">
-        <div className="flex items-center justify-center gap-8 w-full">
+      <div className="flex-1 flex items-center justify-center px-4 min-h-0">
+        <div className="flex items-center justify-center gap-4 md:gap-8 w-full h-full">
           {/* Left Arrow - Fixed size */}
           <button
             onClick={goToPrevious}
-            className="w-24 h-24 flex items-center justify-center text-muted-foreground hover:text-foreground transition-colors flex-shrink-0"
+            className="w-12 h-12 md:w-16 md:h-16 flex items-center justify-center text-muted-foreground hover:text-foreground transition-colors flex-shrink-0"
             aria-label="Previous photo"
           >
             <ChevronLeftIcon className="h-6 w-6" />
           </button>
 
-          {/* Square Container - Centered and responsive to window height */}
-          <div className="aspect-square max-h-[70vh] max-w-[70vh] min-w-[350px] min-h-[350px] flex items-center justify-center overflow-hidden">
+          {/* Square Container - Centered and responsive to available space */}
+          <div className="aspect-square max-h-full max-w-full flex items-center justify-center overflow-hidden">
             <div className="w-full h-full flex items-center justify-center">
               <Image
                 src={currentPhoto.imageUrl}
@@ -55,7 +55,7 @@ export function PhotoSeriesClient({ series }: PhotoSeriesClientProps) {
           {/* Right Arrow - Fixed size */}
           <button
             onClick={goToNext}
-            className="w-24 h-24 flex items-center justify-center text-muted-foreground hover:text-foreground transition-colors flex-shrink-0"
+            className="w-12 h-12 md:w-16 md:h-16 flex items-center justify-center text-muted-foreground hover:text-foreground transition-colors flex-shrink-0"
             aria-label="Next photo"
           >
             <ChevronRightIcon className="h-6 w-6" />
@@ -64,7 +64,7 @@ export function PhotoSeriesClient({ series }: PhotoSeriesClientProps) {
       </div>
 
       {/* Thumbnail Gallery - Fixed at bottom with consistent spacing */}
-      <div className="flex gap-1 overflow-x-auto pb-8 pt-8 justify-center px-4 flex-shrink-0 max-h-[20vh] scrollbar-hide">
+      <div className="flex gap-1 overflow-x-auto pb-6 pt-6 justify-center px-4 flex-shrink-0 scrollbar-hide">
         {series.photos.map((photo, index) => (
           <button
             key={photo.id}
