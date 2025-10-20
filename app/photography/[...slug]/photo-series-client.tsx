@@ -11,7 +11,7 @@ interface PhotoSeriesClientProps {
 
 export function PhotoSeriesClient({ series }: PhotoSeriesClientProps) {
   const [currentPhotoIndex, setCurrentPhotoIndex] = useState(0)
-  
+
   const currentPhoto = series.photos[currentPhotoIndex]
   const totalPhotos = series.photos.length
 
@@ -21,10 +21,6 @@ export function PhotoSeriesClient({ series }: PhotoSeriesClientProps) {
 
   const goToNext = () => {
     setCurrentPhotoIndex((prev) => (prev + 1) % totalPhotos)
-  }
-
-  const goToPhoto = (index: number) => {
-    setCurrentPhotoIndex(index)
   }
 
   return (
@@ -72,11 +68,9 @@ export function PhotoSeriesClient({ series }: PhotoSeriesClientProps) {
         {series.photos.map((photo, index) => (
           <button
             key={photo.id}
-            onClick={() => goToPhoto(index)}
+            onClick={() => setCurrentPhotoIndex(index)}
             className={`flex-shrink-0 w-16 h-16 overflow-hidden transition-all ${
-              index === currentPhotoIndex
-                ? 'opacity-100'
-                : 'opacity-50 hover:opacity-75'
+              index === currentPhotoIndex ? 'opacity-100' : 'opacity-50 hover:opacity-75'
             }`}
           >
             <Image

@@ -30,6 +30,23 @@ export type Blog = {
   filePath: string
   toc: json
   structuredData: json
+}
+
+export type Project = {
+  /** File path relative to `contentDirPath` */
+  _id: string
+  _raw: Local.RawDocumentData
+  type: 'Project'
+  title: string
+  description: string
+  date: IsoDateTimeString
+  coverImage: string
+  href?: string | undefined
+  tags?: string[] | undefined
+  draft?: boolean | undefined
+  /** MDX file body */
+  body: MDX
+  slug: string
 }  
 
 /** Nested types */
@@ -40,8 +57,8 @@ export type Blog = {
 export type AllTypes = DocumentTypes | NestedTypes
 export type AllTypeNames = DocumentTypeNames | NestedTypeNames
 
-export type DocumentTypes = Blog
-export type DocumentTypeNames = 'Blog'
+export type DocumentTypes = Blog | Project
+export type DocumentTypeNames = 'Blog' | 'Project'
 
 export type NestedTypes = never
 export type NestedTypeNames = never
@@ -49,6 +66,7 @@ export type NestedTypeNames = never
 export type DataExports = {
   allDocuments: DocumentTypes[]
   allBlogs: Blog[]
+  allProjects: Project[]
 }
 
 
@@ -69,6 +87,7 @@ declare global {
 
 export type DocumentTypeMap = {
   Blog: Blog
+  Project: Project
 }
 
 export type NestedTypeMap = {

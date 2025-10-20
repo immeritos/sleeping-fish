@@ -111,10 +111,31 @@ export const Blog = defineDocumentType(() => ({
   },
 }))
 
+export const Project = defineDocumentType(() => ({
+  name: 'Project',
+  filePathPattern: 'projects/**/*.mdx',
+  contentType: 'mdx',
+  fields: {
+    title: { type: 'string', required: true },
+    description: { type: 'string', required: true },
+    date: { type: 'date', required: true },
+    coverImage: { type: 'string', required: true },
+    href: { type: 'string' },
+    tags: { type: 'list', of: { type: 'string' } },
+    draft: { type: 'boolean' },
+  },
+  computedFields: {
+    slug: {
+      type: 'string',
+      resolve: (doc) => doc._raw.flattenedPath.replace(/^projects\//, ''),
+    },
+  },
+}))
+
 
 export default makeSource({
   contentDirPath: 'data',
-  documentTypes: [Blog],
+  documentTypes: [Blog, Project],
   mdx: {
     cwd: process.cwd(),
     remarkPlugins: [

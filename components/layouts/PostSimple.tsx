@@ -18,7 +18,7 @@ export default function PostSimple({ content, next, prev, children }: LayoutProp
   return (
     <SectionContainer>
       <article>
-        <div className="pt-20">
+        <div>
           <header className="mb-8">
             <div className="text-center">
               <h1 className="text-2xl font-normal text-foreground mb-2" style={{ fontFamily: "'Times New Roman', serif" }}>{title}</h1>

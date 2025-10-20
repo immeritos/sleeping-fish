@@ -6,7 +6,7 @@ export default async function PhotographyPage() {
   const photoSeries = await getAllPhotoSeries()
 
   return (
-    <div className="container mx-auto px-4 pt-20 pb-16">
+    <div className="mx-auto px-4 pt-20 pb-16">
       {/* Main Gallery Grid - 3 photos per row, square, minimal spacing */}
       <div className="grid grid-cols-3 gap-1 max-w-4xl mx-auto">
         {photoSeries.map((series) => (
