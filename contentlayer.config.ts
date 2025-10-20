@@ -61,7 +61,7 @@ const computedFields: ComputedFields = {
 
 // Tag functionality removed
 
-function createSearchIndex(allBlogs) {
+function createSearchIndex(allBlogs: any[]) {
   if (
     siteMetadata?.search?.provider === 'kbar' &&
     siteMetadata.search.kbarConfig.searchDocumentsPath

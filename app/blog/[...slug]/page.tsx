@@ -1,6 +1,7 @@
 import 'css/prism.css'
 import 'katex/dist/katex.css'
 
+import React from 'react'
 import PageTitle from '@/components/blog/PageTitle'
 import { components } from '@/components/MDXComponents'
 import { MDXLayoutRenderer } from 'pliny/mdx-components'
@@ -15,7 +16,7 @@ import { notFound } from 'next/navigation'
 const defaultLayout = 'PostSimple'
 const layouts = {
   PostSimple,
-}
+} as Record<string, React.ComponentType<any>>
 
 export async function generateMetadata(props: {
   params: Promise<{ slug: string[] }>
