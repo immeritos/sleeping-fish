@@ -1,9 +1,10 @@
 import Image from 'next/image'
 import { GitHubLogoIcon, LinkedInLogoIcon, EnvelopeClosedIcon } from '@radix-ui/react-icons'
+import Footer from '@/components/Footer'
 
 export default function About() {
   return (
-    <div className="mx-auto px-4 pt-20 pb-16 max-w-2xl">
+    <div className="mx-auto px-4 pt-20 max-w-2xl">
       <div className="flex flex-col items-center space-y-8">
         {/* Portrait */}
         <Image
@@ -50,6 +51,7 @@ export default function About() {
           </p>
         </div>
       </div>
+      <Footer />
     </div>
   )
 }
