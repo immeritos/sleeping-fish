@@ -1,0 +1,73 @@
+{
+  "title": "Podcast Planning",
+  "date": "2025-10-01T00:00:00.000Z",
+  "summary": "Planning for a weekly podcast covering reflections, AI insights, and conversations with friends.",
+  "body": {
+    "raw": "\n## Plan \nTime: Weekly – weekends  \nGear: earphones, windproof mic \n\n## Content Ideas\n- Weekly catch-up and reflections  \n- LLM Enginners' Handbook – learnings from AI and large language models  \n- Interview with friends – explore personal or professional topics  \n\n---\n\n## Personal Podcast Sharing\n### Tech & Career\n- Data Talks – e.g. learn in public, share data insights\n- Stella and Amy's Podcast – e.g. perception is reality, about the PR industry and how narratives shape reputation\n\n### Business & Society\n- Acquired – stories about business, investment, and company building  \n- All In – pro-business, right wing perspectives; e.g. hostile attitudes toward homelessness / women\n- The China–Africa Podcast – interesting host and thoughtful discussions  \n\n### Culture & Storytelling\n- Audiobook: Born a Crime – Trevor Noah's memoir  \n- This American Life – personal stories and reflections on everyday life \n- The Teacher's Pet - Australia crime series  \n",
+    "code": "var Component=(()=>{var p=Object.create;var i=Object.defineProperty;var u=Object.getOwnPropertyDescriptor;var m=Object.getOwnPropertyNames;var w=Object.getPrototypeOf,g=Object.prototype.hasOwnProperty;var f=(n,e)=>()=>(e||n((e={exports:{}}).exports,e),e.exports),v=(n,e)=>{for(var l in e)i(n,l,{get:e[l],enumerable:!0})},t=(n,e,l,s)=>{if(e&&typeof e==\"object\"||typeof e==\"function\")for(let r of m(e))!g.call(n,r)&&r!==l&&i(n,r,{get:()=>e[r],enumerable:!(s=u(e,r))||s.enumerable});return n};var x=(n,e,l)=>(l=n!=null?p(w(n)):{},t(e||!n||!n.__esModule?i(l,\"default\",{value:n,enumerable:!0}):l,n)),b=n=>t(i({},\"__esModule\",{value:!0}),n);var c=f((M,h)=>{h.exports=_jsx_runtime});var N={};v(N,{default:()=>o,frontmatter:()=>k});var a=x(c()),k={title:\"Podcast Planning\",date:\"2025-10\",summary:\"Planning for a weekly podcast covering reflections, AI insights, and conversations with friends.\"};function d(n){let e={a:\"a\",br:\"br\",h2:\"h2\",h3:\"h3\",hr:\"hr\",li:\"li\",p:\"p\",path:\"path\",span:\"span\",svg:\"svg\",ul:\"ul\",...n.components};return(0,a.jsxs)(a.Fragment,{children:[(0,a.jsxs)(e.h2,{className:\"content-header\",id:\"plan\",children:[(0,a.jsx)(e.a,{\"aria-hidden\":\"true\",href:\"#plan\",tabIndex:\"-1\",children:(0,a.jsx)(a.Fragment,{children:(0,a.jsx)(e.span,{className:\"content-header-link\",children:(0,a.jsxs)(e.svg,{className:\"h-5 linkicon w-5\",fill:\"currentColor\",viewBox:\"0 0 20 20\",xmlns:\"http://www.w3.org/2000/svg\",children:[(0,a.jsx)(e.path,{d:\"M12.232 4.232a2.5 2.5 0 0 1 3.536 3.536l-1.225 1.224a.75.75 0 0 0 1.061 1.06l1.224-1.224a4 4 0 0 0-5.656-5.656l-3 3a4 4 0 0 0 .225 5.865.75.75 0 0 0 .977-1.138 2.5 2.5 0 0 1-.142-3.667l3-3Z\"}),(0,a.jsx)(e.path,{d:\"M11.603 7.963a.75.75 0 0 0-.977 1.138 2.5 2.5 0 0 1 .142 3.667l-3 3a2.5 2.5 0 0 1-3.536-3.536l1.225-1.224a.75.75 0 0 0-1.061-1.06l-1.224 1.224a4 4 0 1 0 5.656 5.656l3-3a4 4 0 0 0-.225-5.865Z\"})]})})})}),\"Plan\"]}),(0,a.jsxs)(e.p,{children:[\"Time: Weekly \\u2013 weekends\",(0,a.jsx)(e.br,{}),\"Gear: earphones, windproof mic\"]}),(0,a.jsxs)(e.h2,{className:\"content-header\",id:\"content-ideas\",children:[(0,a.jsx)(e.a,{\"aria-hidden\":\"true\",href:\"#content-ideas\",tabIndex:\"-1\",children:(0,a.jsx)(a.Fragment,{children:(0,a.jsx)(e.span,{className:\"content-header-link\",children:(0,a.jsxs)(e.svg,{className:\"h-5 linkicon w-5\",fill:\"currentColor\",viewBox:\"0 0 20 20\",xmlns:\"http://www.w3.org/2000/svg\",children:[(0,a.jsx)(e.path,{d:\"M12.232 4.232a2.5 2.5 0 0 1 3.536 3.536l-1.225 1.224a.75.75 0 0 0 1.061 1.06l1.224-1.224a4 4 0 0 0-5.656-5.656l-3 3a4 4 0 0 0 .225 5.865.75.75 0 0 0 .977-1.138 2.5 2.5 0 0 1-.142-3.667l3-3Z\"}),(0,a.jsx)(e.path,{d:\"M11.603 7.963a.75.75 0 0 0-.977 1.138 2.5 2.5 0 0 1 .142 3.667l-3 3a2.5 2.5 0 0 1-3.536-3.536l1.225-1.224a.75.75 0 0 0-1.061-1.06l-1.224 1.224a4 4 0 1 0 5.656 5.656l3-3a4 4 0 0 0-.225-5.865Z\"})]})})})}),\"Content Ideas\"]}),(0,a.jsxs)(e.ul,{children:[(0,a.jsx)(e.li,{children:\"Weekly catch-up and reflections\"}),(0,a.jsx)(e.li,{children:\"LLM Enginners' Handbook \\u2013 learnings from AI and large language models\"}),(0,a.jsx)(e.li,{children:\"Interview with friends \\u2013 explore personal or professional topics\"})]}),(0,a.jsx)(e.hr,{}),(0,a.jsxs)(e.h2,{className:\"content-header\",id:\"personal-podcast-sharing\",children:[(0,a.jsx)(e.a,{\"aria-hidden\":\"true\",href:\"#personal-podcast-sharing\",tabIndex:\"-1\",children:(0,a.jsx)(a.Fragment,{children:(0,a.jsx)(e.span,{className:\"content-header-link\",children:(0,a.jsxs)(e.svg,{className:\"h-5 linkicon w-5\",fill:\"currentColor\",viewBox:\"0 0 20 20\",xmlns:\"http://www.w3.org/2000/svg\",children:[(0,a.jsx)(e.path,{d:\"M12.232 4.232a2.5 2.5 0 0 1 3.536 3.536l-1.225 1.224a.75.75 0 0 0 1.061 1.06l1.224-1.224a4 4 0 0 0-5.656-5.656l-3 3a4 4 0 0 0 .225 5.865.75.75 0 0 0 .977-1.138 2.5 2.5 0 0 1-.142-3.667l3-3Z\"}),(0,a.jsx)(e.path,{d:\"M11.603 7.963a.75.75 0 0 0-.977 1.138 2.5 2.5 0 0 1 .142 3.667l-3 3a2.5 2.5 0 0 1-3.536-3.536l1.225-1.224a.75.75 0 0 0-1.061-1.06l-1.224 1.224a4 4 0 1 0 5.656 5.656l3-3a4 4 0 0 0-.225-5.865Z\"})]})})})}),\"Personal Podcast Sharing\"]}),(0,a.jsxs)(e.h3,{className:\"content-header\",id:\"tech--career\",children:[(0,a.jsx)(e.a,{\"aria-hidden\":\"true\",href:\"#tech--career\",tabIndex:\"-1\",children:(0,a.jsx)(a.Fragment,{children:(0,a.jsx)(e.span,{className:\"content-header-link\",children:(0,a.jsxs)(e.svg,{className:\"h-5 linkicon w-5\",fill:\"currentColor\",viewBox:\"0 0 20 20\",xmlns:\"http://www.w3.org/2000/svg\",children:[(0,a.jsx)(e.path,{d:\"M12.232 4.232a2.5 2.5 0 0 1 3.536 3.536l-1.225 1.224a.75.75 0 0 0 1.061 1.06l1.224-1.224a4 4 0 0 0-5.656-5.656l-3 3a4 4 0 0 0 .225 5.865.75.75 0 0 0 .977-1.138 2.5 2.5 0 0 1-.142-3.667l3-3Z\"}),(0,a.jsx)(e.path,{d:\"M11.603 7.963a.75.75 0 0 0-.977 1.138 2.5 2.5 0 0 1 .142 3.667l-3 3a2.5 2.5 0 0 1-3.536-3.536l1.225-1.224a.75.75 0 0 0-1.061-1.06l-1.224 1.224a4 4 0 1 0 5.656 5.656l3-3a4 4 0 0 0-.225-5.865Z\"})]})})})}),\"Tech & Career\"]}),(0,a.jsxs)(e.ul,{children:[(0,a.jsx)(e.li,{children:\"Data Talks \\u2013 e.g. learn in public, share data insights\"}),(0,a.jsx)(e.li,{children:\"Stella and Amy's Podcast \\u2013 e.g. perception is reality, about the PR industry and how narratives shape reputation\"})]}),(0,a.jsxs)(e.h3,{className:\"content-header\",id:\"business--society\",children:[(0,a.jsx)(e.a,{\"aria-hidden\":\"true\",href:\"#business--society\",tabIndex:\"-1\",children:(0,a.jsx)(a.Fragment,{children:(0,a.jsx)(e.span,{className:\"content-header-link\",children:(0,a.jsxs)(e.svg,{className:\"h-5 linkicon w-5\",fill:\"currentColor\",viewBox:\"0 0 20 20\",xmlns:\"http://www.w3.org/2000/svg\",children:[(0,a.jsx)(e.path,{d:\"M12.232 4.232a2.5 2.5 0 0 1 3.536 3.536l-1.225 1.224a.75.75 0 0 0 1.061 1.06l1.224-1.224a4 4 0 0 0-5.656-5.656l-3 3a4 4 0 0 0 .225 5.865.75.75 0 0 0 .977-1.138 2.5 2.5 0 0 1-.142-3.667l3-3Z\"}),(0,a.jsx)(e.path,{d:\"M11.603 7.963a.75.75 0 0 0-.977 1.138 2.5 2.5 0 0 1 .142 3.667l-3 3a2.5 2.5 0 0 1-3.536-3.536l1.225-1.224a.75.75 0 0 0-1.061-1.06l-1.224 1.224a4 4 0 1 0 5.656 5.656l3-3a4 4 0 0 0-.225-5.865Z\"})]})})})}),\"Business & Society\"]}),(0,a.jsxs)(e.ul,{children:[(0,a.jsx)(e.li,{children:\"Acquired \\u2013 stories about business, investment, and company building\"}),(0,a.jsx)(e.li,{children:\"All In \\u2013 pro-business, right wing perspectives; e.g. hostile attitudes toward homelessness / women\"}),(0,a.jsx)(e.li,{children:\"The China\\u2013Africa Podcast \\u2013 interesting host and thoughtful discussions\"})]}),(0,a.jsxs)(e.h3,{className:\"content-header\",id:\"culture--storytelling\",children:[(0,a.jsx)(e.a,{\"aria-hidden\":\"true\",href:\"#culture--storytelling\",tabIndex:\"-1\",children:(0,a.jsx)(a.Fragment,{children:(0,a.jsx)(e.span,{className:\"content-header-link\",children:(0,a.jsxs)(e.svg,{className:\"h-5 linkicon w-5\",fill:\"currentColor\",viewBox:\"0 0 20 20\",xmlns:\"http://www.w3.org/2000/svg\",children:[(0,a.jsx)(e.path,{d:\"M12.232 4.232a2.5 2.5 0 0 1 3.536 3.536l-1.225 1.224a.75.75 0 0 0 1.061 1.06l1.224-1.224a4 4 0 0 0-5.656-5.656l-3 3a4 4 0 0 0 .225 5.865.75.75 0 0 0 .977-1.138 2.5 2.5 0 0 1-.142-3.667l3-3Z\"}),(0,a.jsx)(e.path,{d:\"M11.603 7.963a.75.75 0 0 0-.977 1.138 2.5 2.5 0 0 1 .142 3.667l-3 3a2.5 2.5 0 0 1-3.536-3.536l1.225-1.224a.75.75 0 0 0-1.061-1.06l-1.224 1.224a4 4 0 1 0 5.656 5.656l3-3a4 4 0 0 0-.225-5.865Z\"})]})})})}),\"Culture & Storytelling\"]}),(0,a.jsxs)(e.ul,{children:[(0,a.jsx)(e.li,{children:\"Audiobook: Born a Crime \\u2013 Trevor Noah's memoir\"}),(0,a.jsx)(e.li,{children:\"This American Life \\u2013 personal stories and reflections on everyday life\"}),(0,a.jsx)(e.li,{children:\"The Teacher's Pet - Australia crime series\"})]})]})}function o(n={}){let{wrapper:e}=n.components||{};return e?(0,a.jsx)(e,{...n,children:(0,a.jsx)(d,{...n})}):d(n)}return b(N);})();\n;return Component;"
+  },
+  "_id": "blog/podcast-planning.mdx",
+  "_raw": {
+    "sourceFilePath": "blog/podcast-planning.mdx",
+    "sourceFileName": "podcast-planning.mdx",
+    "sourceFileDir": "blog",
+    "contentType": "mdx",
+    "flattenedPath": "blog/podcast-planning"
+  },
+  "type": "Blog",
+  "readingTime": {
+    "text": "1 min read",
+    "minutes": 0.755,
+    "time": 45300,
+    "words": 151
+  },
+  "slug": "podcast-planning",
+  "path": "blog/podcast-planning",
+  "filePath": "blog/podcast-planning.mdx",
+  "toc": [
+    {
+      "value": "Plan",
+      "url": "#plan",
+      "depth": 2
+    },
+    {
+      "value": "Content Ideas",
+      "url": "#content-ideas",
+      "depth": 2
+    },
+    {
+      "value": "Personal Podcast Sharing",
+      "url": "#personal-podcast-sharing",
+      "depth": 2
+    },
+    {
+      "value": "Tech & Career",
+      "url": "#tech--career",
+      "depth": 3
+    },
+    {
+      "value": "Business & Society",
+      "url": "#business--society",
+      "depth": 3
+    },
+    {
+      "value": "Culture & Storytelling",
+      "url": "#culture--storytelling",
+      "depth": 3
+    }
+  ],
+  "structuredData": {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Podcast Planning",
+    "datePublished": "2025-10-01T00:00:00.000Z",
+    "dateModified": "2025-10-01T00:00:00.000Z",
+    "description": "Planning for a weekly podcast covering reflections, AI insights, and conversations with friends.",
+    "image": "/static/images/twitter-card.png",
+    "url": "https://daymoon.it.com/blog/podcast-planning",
+    "author": {
+      "@type": "Person",
+      "name": "Daymoon"
+    }
+  }
+}
