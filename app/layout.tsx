@@ -11,6 +11,9 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteMetadata.siteUrl),
   title: 'Daymoon',
   description: 'A personal website with blog and photography',
+  icons: {
+    icon: '/logo.svg',
+  },
 }
 
 export default function RootLayout({
