@@ -1,14 +1,13 @@
 export default function Home() {
   return (
-    <div className="mx-auto px-4 pt-20 pb-16">
+    <div className="mx-auto px-8 pt-32 pb-16">
       <div className="max-w-4xl mx-auto text-center">
-        <h1 className="text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-6xl">
+        <h1 className="text-3xl font-semibold tracking-tight text-gray-900 dark:text-white sm:text-5xl">
           Welcome to My
           <span className="text-primary"> Personal Website</span>
         </h1>
-        <p className="mt-6 text-lg leading-8 text-gray-600 dark:text-gray-300">
-          Explore my projects, photography, and thoughts. A space where I share the work I&apos;m creating, 
-          the moments I&apos;m capturing, and the ideas I&apos;m exploring.
+        <p className="mt-6 text-lg leading-8 text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          This is where I put the thoughts I&apos;m exploring, the things I&apos;m working on, and the moments I would like to remember.
         </p>
         <div className="mt-10 flex items-center justify-center gap-x-6">
           <a
@@ -18,7 +17,7 @@ export default function Home() {
             View Projects
           </a>
           <a href="/about" className="text-sm font-semibold leading-6 text-gray-900 dark:text-white">
-            Learn more <span aria-hidden="true">→</span>
+            About <span aria-hidden="true">→</span>
           </a>
         </div>
       </div>
