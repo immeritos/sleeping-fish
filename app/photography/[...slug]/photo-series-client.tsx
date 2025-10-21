@@ -27,7 +27,7 @@ export function PhotoSeriesClient({ series }: PhotoSeriesClientProps) {
     <div className="h-screen flex flex-col pt-20 overflow-hidden">
       {/* Main Photo Display - Centered between navigation and thumbnails */}
       <div className="flex-1 flex items-center justify-center px-4 min-h-0">
-        <div className="flex items-center justify-center gap-2 md:gap-8 w-full h-full">
+        <div className="flex items-center justify-center gap-1 md:gap-8 w-full h-full">
           {/* Left Arrow - Fixed size */}
           <button
             onClick={goToPrevious}
@@ -64,7 +64,13 @@ export function PhotoSeriesClient({ series }: PhotoSeriesClientProps) {
       </div>
 
       {/* Thumbnail Gallery - Fixed at bottom with consistent spacing */}
-      <div className="flex gap-1 overflow-x-auto pb-6 pt-6 justify-center px-4 flex-shrink-0 scrollbar-hide" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitScrollbar: { display: 'none' } }}>
+      <div className="flex gap-1 overflow-x-auto pb-6 pt-6 justify-center px-4 flex-shrink-0 scrollbar-hide" style={{ 
+        scrollbarWidth: 'none', 
+        msOverflowStyle: 'none', 
+        WebkitOverflowScrolling: 'touch',
+        overflowX: 'auto',
+        overflowY: 'hidden'
+      }}>
         {series.photos.map((photo, index) => (
           <button
             key={photo.id}
