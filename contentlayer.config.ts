@@ -148,16 +148,16 @@ export default makeSource({
     ],
     rehypePlugins: [
       rehypeSlug,
-      [
-        rehypeAutolinkHeadings,
-        {
-          behavior: 'prepend',
-          headingProperties: {
-            className: ['content-header'],
-          },
-          content: icon,
-        },
-      ],
+      // [
+      //   rehypeAutolinkHeadings,
+      //   {
+      //     behavior: 'prepend',
+      //     headingProperties: {
+      //       className: ['content-header'],
+      //     },
+      //     content: icon,
+      //   },
+      // ],
       rehypeKatex,
       rehypeKatexNoTranslate,
       [rehypeCitation, { path: path.join(root, 'data') }],
