@@ -91,28 +91,28 @@ export function Navigation() {
             <NavigationMenuList>
               <NavigationMenuItem>
                 <Link href="/projects" legacyBehavior passHref>
-                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                  <NavigationMenuLink className={navigationMenuTriggerStyle()} style={{ fontSize: '12px' }}>
                     Projects
                   </NavigationMenuLink>
                 </Link>
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <Link href="/blog" legacyBehavior passHref>
-                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                  <NavigationMenuLink className={navigationMenuTriggerStyle()} style={{ fontSize: '12px' }}>
                     Blog
                   </NavigationMenuLink>
                 </Link>
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <Link href="/photography" legacyBehavior passHref>
-                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                  <NavigationMenuLink className={navigationMenuTriggerStyle()} style={{ fontSize: '12px' }}>
                     Photography
                   </NavigationMenuLink>
                 </Link>
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <Link href="/about" legacyBehavior passHref>
-                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                  <NavigationMenuLink className={navigationMenuTriggerStyle()} style={{ fontSize: '12px' }}>
                     About
                   </NavigationMenuLink>
                 </Link>
@@ -198,7 +198,7 @@ function MobileNavLink({ href, pathname, children, onClick }: MobileNavLinkProps
       href={href}
       onClick={onClick}
       className={cn(
-        "group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-normal transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50",
+        "group inline-flex w-max items-center justify-center rounded-full bg-background px-4 py-1 text-sm font-normal transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50",
         pathname === href ? "bg-accent/50" : ""
       )}
     >
