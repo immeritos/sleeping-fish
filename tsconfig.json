@@ -25,5 +25,5 @@
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-  "exclude": ["node_modules", "portfolio-template", "tailwind-nextjs-starter-blog-main", "nextjs-blog"]
+  "exclude": ["node_modules", "portfolio-template", "tailwind-nextjs-starter-blog-main", "nextjs-blog", "web-test"]
 }

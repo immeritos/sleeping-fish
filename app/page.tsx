@@ -10,6 +10,11 @@ export default function Home() {
   const secondHeroRef = useRef<HTMLDivElement>(null);
   const [responsiveSizes, setResponsiveSizes] = useState({ large: 100, small: 70 });
   
+  // Shared proportional position (0-1 range for percentage)
+  const proportionalX = useMotionValue(0.5);
+  const proportionalY = useMotionValue(0.5);
+  const maskSize = useMotionValue(responsiveSizes.large);
+  
   // Calculate responsive sizes based on viewport
   useEffect(() => {
     const updateSizes = () => {
@@ -39,12 +44,8 @@ export default function Home() {
     window.addEventListener('resize', updateSizes);
     
     return () => window.removeEventListener('resize', updateSizes);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  
-  // Shared proportional position (0-1 range for percentage)
-  const proportionalX = useMotionValue(0.5);
-  const proportionalY = useMotionValue(0.5);
-  const maskSize = useMotionValue(responsiveSizes.large);
 
   // Shared springs
   const springProportionalX = useSpring(proportionalX, { stiffness: 150, damping: 25 });
