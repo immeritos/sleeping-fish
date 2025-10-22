@@ -139,12 +139,12 @@ export default function Home() {
                 style={{ backgroundColor: '#FEFCE9' }}
               >
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <p className="text-gray-800 leading-relaxed" style={{ fontSize: '11px' }}>
+                  <p className="text-gray-800 leading-relaxed" style={{ fontSize: '10px' }}>
                     welcome to my space ～
                   </p>
                 </div>
                 <div className="absolute inset-0 flex items-end justify-center pb-12">
-                  <p className="text-gray-800 leading-relaxed text-center max-w-xs" style={{ fontSize: '11px' }}>
+                  <p className="text-gray-800 leading-relaxed text-center max-w-xs" style={{ fontSize: '10px' }}>
                     This is where I put the things I&apos;m working on, the thoughts I&apos;m exploring, and the moments I would like to remember.
                   </p>
                 </div>
@@ -194,12 +194,12 @@ export default function Home() {
                 style={{ backgroundColor: '#FEFCE9' }}
               >
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <p className="text-gray-800 leading-relaxed" style={{ fontSize: '11px' }}>
+                  <p className="text-gray-800 leading-relaxed" style={{ fontSize: '10px' }}>
                     welcome to my space ～
                   </p>
                 </div>
                 <div className="absolute inset-0 flex items-end justify-center pb-12">
-                  <p className="text-gray-800 leading-relaxed text-center max-w-xs" style={{ fontSize: '11px' }}>
+                  <p className="text-gray-800 leading-relaxed text-center max-w-xs" style={{ fontSize: '10px' }}>
                     This is where I put the things I&apos;m working on, the thoughts I&apos;m exploring, and the moments I would like to remember.
                   </p>
                 </div>
