@@ -46,8 +46,8 @@ export default function About() {
           </div>
 
           {/* Bio text */}
-          <div className="prose dark:prose-invert max-w-none">
-            <p>
+          <div className="max-w-none">
+            <p className="text-sm leading-relaxed text-foreground">
               Daymoon comes from those rare moments when you see the moon shining in the daytime — simple, quiet, and a little magical. This is where I put the thoughts I&apos;m exploring, the things I&apos;m working on, and the moments I would like to remember. I hope that in sharing them, I can grow a little myself, and it may be helpful to others.
             </p>
           </div>

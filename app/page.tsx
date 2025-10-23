@@ -121,7 +121,7 @@ export default function Home() {
   return (
     <div>
       {/* Hero Section with Cursor Reveal - After Navigation */}
-      <section className="h-screen grid grid-cols-1 grid-rows-2 md:grid-cols-2 md:grid-rows-1">
+      <section className="h-screen grid grid-cols-1 grid-rows-2 md:grid-cols-2 md:grid-rows-1 p-2">
         {/* Left Side - Text base, Image reveal */}
         <div 
           ref={secondHeroRef}
@@ -136,16 +136,15 @@ export default function Home() {
           <CursorReveal
             primaryContent={
               <div 
-                className="w-full h-full relative p-12"
-                style={{ backgroundColor: '#FEFCE9' }}
+                className="w-full h-full relative p-12 bg-[#FEFCE9] dark:bg-[#1F2D5C]"
               >
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <p className="text-gray-800 leading-relaxed" style={{ fontSize: '10px' }}>
+                  <p className="text-gray-800 dark:text-gray-200 leading-relaxed" style={{ fontSize: '10px' }}>
                     welcome to my space ～
                   </p>
                 </div>
                 <div className="absolute inset-0 flex items-end justify-center pb-12">
-                  <p className="text-gray-800 leading-relaxed text-center max-w-xs" style={{ fontSize: '10px' }}>
+                  <p className="text-gray-800 dark:text-gray-200 leading-relaxed text-center max-w-xs" style={{ fontSize: '10px' }}>
                     This is where I put the things I&apos;m working on, the thoughts I&apos;m exploring, and the moments I would like to remember.
                   </p>
                 </div>
@@ -191,16 +190,15 @@ export default function Home() {
             }
             revealContent={
               <div 
-                className="w-full h-full relative p-12"
-                style={{ backgroundColor: '#FEFCE9' }}
+                className="w-full h-full relative p-12 bg-[#FEFCE9] dark:bg-[#1F2D5C]"
               >
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <p className="text-gray-800 leading-relaxed" style={{ fontSize: '10px' }}>
+                  <p className="text-gray-800 dark:text-gray-200 leading-relaxed" style={{ fontSize: '10px' }}>
                     welcome to my space ～
                   </p>
                 </div>
                 <div className="absolute inset-0 flex items-end justify-center pb-12">
-                  <p className="text-gray-800 leading-relaxed text-center max-w-xs" style={{ fontSize: '10px' }}>
+                  <p className="text-gray-800 dark:text-gray-200 leading-relaxed text-center max-w-xs" style={{ fontSize: '10px' }}>
                     This is where I put the things I&apos;m working on, the thoughts I&apos;m exploring, and the moments I would like to remember.
                   </p>
                 </div>
