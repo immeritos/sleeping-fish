@@ -121,7 +121,7 @@ export default function Home() {
   return (
     <div>
       {/* Hero Section with Cursor Reveal - After Navigation */}
-      <section className="h-screen grid grid-cols-1 grid-rows-2 md:grid-cols-2 md:grid-rows-1 p-2">
+      <section className="h-[calc(100vh-3.5rem)] mt-14 grid grid-cols-1 grid-rows-2 md:grid-cols-2 md:grid-rows-1 px-4 pb-4">
         {/* Left Side - Text base, Image reveal */}
         <div 
           ref={secondHeroRef}
