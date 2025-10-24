@@ -194,7 +194,7 @@ export default function Home() {
               >
                 <div className="absolute inset-0 flex items-center justify-center">
                   <p className="text-gray-800 dark:text-gray-200 leading-relaxed" style={{ fontSize: '10px' }}>
-                    welcome to my space ～
+                    welcome ~
                   </p>
                 </div>
                 <div className="absolute inset-0 flex items-end justify-center pb-12">

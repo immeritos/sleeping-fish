@@ -7,13 +7,13 @@ const siteMetadata = {
   language: 'en-us',
   theme: 'system', // system, dark or light
   siteUrl: 'https://daymoon.it.com',
-  siteRepo: 'https://github.com/yourusername/personal-website',
+  siteRepo: 'https://github.com/fanjingwenvi/personal-web',
   siteLogo: `${process.env.BASE_PATH || ''}/static/images/logo.png`,
   socialBanner: `${process.env.BASE_PATH || ''}/static/images/twitter-card.png`,
-  email: 'your-email@example.com',
-  github: 'https://github.com/yourusername',
+  email: 'fanjingwenvi@gmail.com',
+  github: 'https://github.com/fanjingwenvi',
   x: 'https://twitter.com/yourusername',
-  linkedin: 'https://www.linkedin.com/in/yourusername',
+  linkedin: 'https://www.linkedin.com/in/fanjingwenvi/',
   locale: 'en-US',
   // set to true if you want a navbar fixed to the top
   stickyNav: false,
