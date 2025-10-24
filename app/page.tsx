@@ -8,7 +8,7 @@ import Image from "next/image";
 export default function Home() {
   const firstHeroRef = useRef<HTMLDivElement>(null);
   const secondHeroRef = useRef<HTMLDivElement>(null);
-  const [responsiveSizes, setResponsiveSizes] = useState({ large: 100, small: 70 });
+  const [responsiveSizes, setResponsiveSizes] = useState({ large: 100, small: 80 });
   
   // Shared proportional position (0-1 range for percentage)
   const proportionalX = useMotionValue(0.5);
@@ -20,17 +20,17 @@ export default function Home() {
     const updateSizes = () => {
       const width = window.innerWidth;
       let largeMaskSize = 100;
-      let smallMaskSize = 70;
+      let smallMaskSize = 80;
       
       if (width < 640) {
-        largeMaskSize = Math.max(60, width * 0.12);
-        smallMaskSize = Math.max(40, width * 0.08);
+        largeMaskSize = 80;
+        smallMaskSize = 64;
       } else if (width < 1024) {
-        largeMaskSize = Math.max(80, width * 0.09);
-        smallMaskSize = Math.max(55, width * 0.06);
+        largeMaskSize = 90;
+        smallMaskSize = 72;
       } else {
-        largeMaskSize = Math.max(100, width * 0.08);
-        smallMaskSize = Math.max(70, width * 0.05);
+        largeMaskSize = 100;
+        smallMaskSize = 80;
       }
       
       setResponsiveSizes({ large: largeMaskSize, small: smallMaskSize });
@@ -119,9 +119,9 @@ export default function Home() {
   };
 
   return (
-    <div>
+    <div className="overflow-hidden">
       {/* Hero Section with Cursor Reveal - After Navigation */}
-      <section className="h-[calc(100vh-3.5rem)] mt-14 grid grid-cols-1 grid-rows-2 md:grid-cols-2 md:grid-rows-1 px-4 pb-4">
+      <section className="h-[calc(100vh-3.5rem)] h-[calc(100dvh-3.5rem)] mt-14 grid grid-cols-1 grid-rows-2 md:grid-cols-2 md:grid-rows-1 px-4 pb-4">
         {/* Left Side - Text base, Image reveal */}
         <div 
           ref={secondHeroRef}
@@ -140,7 +140,7 @@ export default function Home() {
               >
                 <div className="absolute inset-0 flex items-center justify-center">
                   <p className="text-gray-800 dark:text-gray-200 leading-relaxed" style={{ fontSize: '10px' }}>
-                    welcome to my space ～
+                    welcome ~
                   </p>
                 </div>
                 <div className="absolute inset-0 flex items-end justify-center pb-12">
