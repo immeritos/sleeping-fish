@@ -10,6 +10,7 @@ interface CursorRevealProps {
   sharedProportionalY?: MotionValue<number>;
   sharedMaskSize?: MotionValue<number>;
   fixedPosition?: boolean;
+  fixedCenter?: { x: number; y: number };
 }
 
 export default function CursorReveal({ 
@@ -18,7 +19,8 @@ export default function CursorReveal({
   sharedProportionalX,
   sharedProportionalY,
   sharedMaskSize,
-  fixedPosition = false
+  fixedPosition = false,
+  fixedCenter
 }: CursorRevealProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [rect, setRect] = useState<DOMRect | null>(null);
@@ -49,8 +51,8 @@ export default function CursorReveal({
     if (!rect || !sharedProportionalX || !sharedProportionalY || !sharedMaskSize) return;
 
     const updatePosition = () => {
-      const propX = fixedPosition ? 0.5 : sharedProportionalX.get();
-      const propY = fixedPosition ? 0.5 : sharedProportionalY.get();
+      const propX = fixedPosition ? (fixedCenter?.x ?? 0.5) : sharedProportionalX.get();
+      const propY = fixedPosition ? (fixedCenter?.y ?? 0.5) : sharedProportionalY.get();
       const size = sharedMaskSize.get();
       
       // Convert proportional position to local pixel position
