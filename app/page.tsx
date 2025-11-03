@@ -1,7 +1,7 @@
 "use client";
 
-import { MouseEvent, TouchEvent, useRef, useEffect, useState } from "react";
-import { useMotionValue, useSpring, animate } from "framer-motion";
+import { useRef, useEffect, useState } from "react";
+import { useMotionValue, useSpring } from "framer-motion";
 import CursorReveal from "@/components/cursor-reveal";
 import Image from "next/image";
 
@@ -10,7 +10,7 @@ export default function Home() {
   const secondHeroRef = useRef<HTMLDivElement>(null);
   const [responsiveSizes, setResponsiveSizes] = useState({ large: 100, small: 80 });
   
-  // Shared proportional position (0-1 range for percentage)
+  // Fixed position in the center
   const proportionalX = useMotionValue(0.5);
   const proportionalY = useMotionValue(0.5);
   const maskSize = useMotionValue(responsiveSizes.large);
@@ -23,21 +23,18 @@ export default function Home() {
       let smallMaskSize = 80;
       
       if (width < 640) {
-        largeMaskSize = 80;
-        smallMaskSize = 64;
+        largeMaskSize = 40; // Much smaller size for mobile
+        smallMaskSize = 32;
       } else if (width < 1024) {
-        largeMaskSize = 90;
-        smallMaskSize = 72;
+        largeMaskSize = 60; // Smaller size for tablets
+        smallMaskSize = 48;
       } else {
-        largeMaskSize = 100;
-        smallMaskSize = 80;
+        largeMaskSize = 80; // Smaller size for desktop
+        smallMaskSize = 64;
       }
       
       setResponsiveSizes({ large: largeMaskSize, small: smallMaskSize });
-      
-      if (maskSize.get() > 0) {
-        maskSize.set(largeMaskSize);
-      }
+      maskSize.set(largeMaskSize);
     };
     
     updateSizes();
@@ -52,72 +49,6 @@ export default function Home() {
   const springProportionalY = useSpring(proportionalY, { stiffness: 150, damping: 25 });
   const springSize = useSpring(maskSize, { stiffness: 150, damping: 25 });
 
-  // Animate cursor to center naturally on mount
-  useEffect(() => {
-    proportionalX.set(0.4);
-    proportionalY.set(0.4);
-    
-    const timer = setTimeout(() => {
-      animate(proportionalX, 0.5, {
-        duration: 1.5,
-        ease: [0.22, 0.61, 0.36, 1],
-      });
-      animate(proportionalY, 0.5, {
-        duration: 1.5,
-        ease: [0.22, 0.61, 0.36, 1],
-      });
-    }, 300);
-
-    return () => clearTimeout(timer);
-  }, [proportionalX, proportionalY]);
-
-  const handleMouseMove = (e: MouseEvent<HTMLDivElement>, ref: React.RefObject<HTMLDivElement>) => {
-    if (ref.current) {
-      const rect = ref.current.getBoundingClientRect();
-      const localX = e.clientX - rect.left;
-      const localY = e.clientY - rect.top;
-      
-      const propX = localX / rect.width;
-      const propY = localY / rect.height;
-      
-      proportionalX.set(propX);
-      proportionalY.set(propY);
-    }
-  };
-
-  const handleMouseEnter = () => {
-    maskSize.set(responsiveSizes.large);
-  };
-
-  const handleMouseLeave = () => {
-    maskSize.set(responsiveSizes.small);
-  };
-
-  // Touch event handlers for mobile support
-  const handleTouchStart = (e: TouchEvent<HTMLDivElement>, ref: React.RefObject<HTMLDivElement>) => {
-    maskSize.set(responsiveSizes.large);
-    handleTouchMove(e, ref);
-  };
-
-  const handleTouchMove = (e: TouchEvent<HTMLDivElement>, ref: React.RefObject<HTMLDivElement>) => {
-    if (e.touches.length > 0 && ref.current) {
-      const touch = e.touches[0];
-      const rect = ref.current.getBoundingClientRect();
-      const localX = touch.clientX - rect.left;
-      const localY = touch.clientY - rect.top;
-      
-      const propX = localX / rect.width;
-      const propY = localY / rect.height;
-      
-      proportionalX.set(propX);
-      proportionalY.set(propY);
-    }
-  };
-
-  const handleTouchEnd = () => {
-    maskSize.set(responsiveSizes.small);
-  };
-
   return (
     <div className="overflow-hidden">
       {/* Hero Section with Cursor Reveal - After Navigation */}
@@ -126,12 +57,6 @@ export default function Home() {
         <div 
           ref={secondHeroRef}
           className="w-full h-full"
-          onMouseMove={(e) => handleMouseMove(e, secondHeroRef)}
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
-          onTouchStart={(e) => handleTouchStart(e, secondHeroRef)}
-          onTouchMove={(e) => handleTouchMove(e, secondHeroRef)}
-          onTouchEnd={handleTouchEnd}
         >
           <CursorReveal
             primaryContent={
@@ -163,6 +88,7 @@ export default function Home() {
             sharedProportionalX={springProportionalX}
             sharedProportionalY={springProportionalY}
             sharedMaskSize={springSize}
+            fixedPosition={true}
           />
         </div>
 
@@ -170,12 +96,6 @@ export default function Home() {
         <div 
           ref={firstHeroRef} 
           className="w-full h-full"
-          onMouseMove={(e) => handleMouseMove(e, firstHeroRef)}
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
-          onTouchStart={(e) => handleTouchStart(e, firstHeroRef)}
-          onTouchMove={(e) => handleTouchMove(e, firstHeroRef)}
-          onTouchEnd={handleTouchEnd}
         >
           <CursorReveal
             primaryContent={
@@ -207,9 +127,10 @@ export default function Home() {
             sharedProportionalX={springProportionalX}
             sharedProportionalY={springProportionalY}
             sharedMaskSize={springSize}
+            fixedPosition={true}
           />
         </div>
       </section>
     </div>
-  )
+  );
 }
