@@ -75,7 +75,7 @@ export default function CursorReveal({
       unsubscribeY();
       unsubscribeSize();
     };
-  }, [rect, sharedProportionalX, sharedProportionalY, sharedMaskSize, clipPath, fixedPosition]);
+  }, [rect, sharedProportionalX, sharedProportionalY, sharedMaskSize, clipPath, fixedPosition, fixedCenter?.x, fixedCenter?.y]);
 
   return (
     <div
