@@ -4,6 +4,7 @@ import './globals.css'
 import { Navigation } from '@/components/navigation'
 import { ThemeProvider } from '@/components/theme-provider'
 import siteMetadata from '@/data/siteMetadata'
+import CursorOverlay from '@/components/cursor-overlay'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -34,6 +35,7 @@ export default function RootLayout({
           <main className="min-h-screen">
             {children}
           </main>
+          <CursorOverlay />
         </ThemeProvider>
       </body>
     </html>
