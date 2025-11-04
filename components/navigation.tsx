@@ -51,7 +51,7 @@ export function Navigation() {
               {/* Moon */}
               <circle cx="45" cy="18" r="4" fill="currentColor"/>
             </svg>
-            <div className="font-normal flex flex-col leading-tight text-center" style={{ fontSize: '10px' }}>
+            <div className="font-normal flex flex-col leading-tight text-center text-xs">
               <span>Day</span>
               <span>Moon</span>
             </div>
@@ -78,7 +78,7 @@ export function Navigation() {
               {/* Moon */}
               <circle cx="45" cy="18" r="4" fill="currentColor"/>
             </svg>
-            <div className="font-normal flex flex-col leading-tight text-center" style={{ fontSize: '10px' }}>
+            <div className="font-normal flex flex-col leading-tight text-center text-xs">
               <span>Day</span>
               <span>Moon</span>
             </div>
@@ -91,7 +91,7 @@ export function Navigation() {
             <NavigationMenuList>
               <NavigationMenuItem>
                 <Link href="/projects" legacyBehavior passHref>
-                  <NavigationMenuLink className={navigationMenuTriggerStyle()} style={{ fontSize: '12px' }}>
+                  <NavigationMenuLink className={navigationMenuTriggerStyle() + " text-sm"}>
                     Projects
                   </NavigationMenuLink>
                 </Link>

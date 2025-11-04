@@ -22,7 +22,7 @@
 }
 
 .code-line {
-  @apply -mx-4 block border-l-4 border-transparent pr-4 pl-4;
+  @apply block border-l-4 border-transparent px-4 mx-0;
 }
 
 .code-line.inserted {
@@ -34,7 +34,7 @@
 }
 
 .highlight-line {
-  @apply border-blue-500 -mx-4 border-l-4 bg-gray-700/50;
+  @apply border-blue-500 border-l-4;
 }
 
 .line-number::before {
@@ -50,61 +50,142 @@
  * Ported by Sara vieria [@SaraVieira]
  * Added by Souvik Mandal [@SimpleIndian]
  */
+/* Material Light/Dark token palette via CSS variables */
+:root {
+  --code-bg: #FAFAFA;
+  --code-text: #263238;
+  --code-comment: #90A4AE;
+  --code-punctuation: #37474F;
+  --code-tag: #E53935;
+  --code-operator: #00BCD4;
+  --code-keyword: #7C4DFF;
+  --code-boolean: #E53935;
+  --code-number: #F4511E;
+  --code-function: #448AFF;
+  --code-constant: #448AFF;
+  --code-builtin: #448AFF;
+  --code-char: #448AFF;
+  --code-selector: #7C4DFF;
+  --code-doctype: #7C4DFF;
+  --code-attr-name: #00897B;
+  --code-inserted: #43A047;
+  --code-string: #43A047;
+  --code-url: #43A047;
+  --code-entity: #43A047;
+  --code-class-name: #FFB300;
+  --code-atrule: #FFB300;
+  --code-attr-value: #43A047;
+  --code-variable: #E91E63;
+  --code-important: #E91E63;
+}
+
+.dark {
+  --code-bg: #1E1E1E;
+  --code-text: #ECEFF1;
+  --code-comment: #546E7A;
+  --code-punctuation: #89DDFF;
+  --code-tag: #FF5370;
+  --code-operator: #89DDFF;
+  --code-keyword: #C792EA;
+  --code-boolean: #FF5370;
+  --code-number: #F78C6C;
+  --code-function: #82AAFF;
+  --code-constant: #82AAFF;
+  --code-builtin: #82AAFF;
+  --code-char: #82AAFF;
+  --code-selector: #C792EA;
+  --code-doctype: #C792EA;
+  --code-attr-name: #C792EA;
+  --code-inserted: #C3E88D;
+  --code-string: #C3E88D;
+  --code-url: #C3E88D;
+  --code-entity: #C3E88D;
+  --code-class-name: #FFCB6B;
+  --code-atrule: #FFCB6B;
+  --code-attr-value: #C3E88D;
+  --code-variable: #F07178;
+  --code-important: #F07178;
+}
+
+/* Base code block surfaces (light/dark) */
+pre[class*="language-"],
+code[class*="language-"] {
+  background-color: var(--code-bg) !important;
+  color: var(--code-text);
+}
+
+pre[class*="language-"] {
+  border-radius: 0.25rem;
+  overflow: auto;
+  border: none;
+}
+
+/* Token styles (mapped to variables above) */
 .token.comment,
 .token.prolog,
 .token.cdata {
-  color: rgb(99, 119, 119);
+  color: var(--code-comment) !important;
   font-style: italic;
 }
 
 .token.punctuation {
-  color: rgb(199, 146, 234);
+  color: var(--code-punctuation) !important;
 }
 
 .namespace {
-  color: rgb(178, 204, 214);
+  color: var(--code-punctuation) !important;
 }
 
 .token.deleted {
-  color: rgba(239, 83, 80, 0.56);
+  color: var(--code-tag) !important;
   font-style: italic;
 }
 
 .token.symbol,
 .token.property {
-  color: rgb(128, 203, 196);
+  color: var(--code-class-name) !important;
 }
 
-.token.tag,
-.token.operator,
+.token.tag {
+  color: var(--code-tag) !important;
+}
+
+.token.operator {
+  color: var(--code-operator) !important;
+}
+
 .token.keyword {
-  color: rgb(127, 219, 202);
+  color: var(--code-keyword) !important;
 }
 
 .token.boolean {
-  color: rgb(255, 88, 116);
+  color: var(--code-boolean) !important;
 }
 
 .token.number {
-  color: rgb(247, 140, 108);
+  color: var(--code-number) !important;
 }
 
 .token.constant,
 .token.function,
 .token.builtin,
 .token.char {
-  color: rgb(130, 170, 255);
+  color: var(--code-function) !important;
 }
 
 .token.selector,
 .token.doctype {
-  color: rgb(199, 146, 234);
+  color: var(--code-selector) !important;
   font-style: italic;
 }
 
-.token.attr-name,
+.token.attr-name {
+  color: var(--code-attr-name) !important;
+  font-style: italic;
+}
+
 .token.inserted {
-  color: rgb(173, 219, 103);
+  color: var(--code-inserted) !important;
   font-style: italic;
 }
 
@@ -113,19 +194,18 @@
 .token.entity,
 .language-css .token.string,
 .style .token.string {
-  color: rgb(173, 219, 103);
+  color: var(--code-string) !important;
 }
 
 .token.class-name,
 .token.atrule,
 .token.attr-value {
-  color: rgb(255, 203, 139);
+  color: var(--code-class-name) !important;
 }
 
 .token.regex,
-.token.important,
 .token.variable {
-  color: rgb(214, 222, 235);
+  color: var(--code-variable) !important;
 }
 
 .token.important,
@@ -139,4 +219,10 @@
 
 .token.table {
   display: inline;
+}
+
+/* Remove default prose pre padding */
+.prose pre,
+.prose pre[class*="language-"] {
+  padding: 0 !important;
 }

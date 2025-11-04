@@ -28,13 +28,13 @@ export default function ProjectCard({ slug, title, description, coverImage, tags
         <h2 className="text-lg font-medium text-foreground group-hover:text-muted-foreground transition-colors">
           {title}
         </h2>
-        <p className="text-sm text-muted-foreground leading-relaxed line-clamp-2">
+        <p className="text-base text-muted-foreground leading-relaxed line-clamp-2">
           {description}
         </p>
         {tags && tags.length > 0 && (
           <div className="flex flex-wrap gap-2 pt-1">
             {tags.map((tag) => (
-              <span key={tag} className="text-xs text-muted-foreground/60">
+              <span key={tag} className="text-sm text-muted-foreground/60">
                 {tag}
               </span>
             ))}

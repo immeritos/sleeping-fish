@@ -78,7 +78,10 @@ export default function ListLayout({
       <div>
         {title && (
           <div className="space-y-2 pb-8 md:space-y-5 border-b border-gray-200 dark:border-gray-700">
-            <h1 className="text-3xl leading-9 font-normal tracking-tight text-gray-900 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14 dark:text-gray-100" style={{ fontFamily: "'Times New Roman', serif" }}>
+            <h1
+              className="text-3xl leading-9 font-normal tracking-tight text-gray-900 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14 dark:text-gray-100"
+              style={{ fontFamily: "'Times New Roman', serif" }}
+            >
               {title}
             </h1>
           </div>
@@ -98,7 +101,7 @@ export default function ListLayout({
                   </dl>
                   <div className="space-y-3 xl:col-span-3">
                     <div>
-                      <h3 className="text-2xl leading-8 font-normal tracking-tight" style={{ fontFamily: "'Times New Roman', serif" }}>
+                      <h3 className="text-2xl leading-8 font-normal tracking-tight font-serif">
                         <Link href={`/${path}`} className="text-gray-900 dark:text-gray-100">
                           {title}
                         </Link>

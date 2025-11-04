@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  /* Provide utility classes for tokens */
+  .bg-background { background-color: hsl(var(--background)); }
+  .text-foreground { color: hsl(var(--foreground)); }
+  .border-border { border-color: hsl(var(--border)); }
+  .text-muted-foreground { color: hsl(var(--muted-foreground)); }
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -49,9 +57,10 @@
   }
 
   * {
-    @apply border-border;
+    /* Fix invalid @apply: use CSS var for border color */
+    border-color: hsl(var(--border));
   }
-  
+
   body {
     @apply bg-background text-foreground;
     overflow-x: hidden;
