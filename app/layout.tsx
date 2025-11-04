@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 import { Navigation } from '@/components/navigation'
@@ -15,6 +15,13 @@ export const metadata: Metadata = {
   icons: {
     icon: '/logo.svg',
   },
+}
+
+// Add iOS safe-area support
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  viewportFit: 'cover',
 }
 
 export default function RootLayout({
