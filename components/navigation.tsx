@@ -28,8 +28,17 @@ export function Navigation() {
     setIsMobileMenuOpen(false)
   }
 
+  // Show thin line on desktop when scrolled
+  const [isScrolled, setIsScrolled] = React.useState(false)
+  React.useEffect(() => {
+    const onScroll = () => setIsScrolled(window.scrollY > 0)
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
   return (
-    <header className="fixed top-0 z-50 w-full bg-background">
+    <header className={`fixed top-0 z-50 w-full bg-background ${isScrolled ? 'md:border-b md:border-border' : ''}`}>
       <div className="container flex h-14 items-center">
         {/* Logo/Brand - Desktop */}
         <div className="hidden md:flex">
