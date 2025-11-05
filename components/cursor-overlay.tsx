@@ -8,16 +8,46 @@ export default function CursorOverlay() {
   const [overClickable, setOverClickable] = useState(false);
   const [isMouseDown, setIsMouseDown] = useState(false);
 
-  // Enable only on desktops: fine pointer + hover, and no touch
+  // Baseline: enable when ANY fine pointer or hover exists (supports hybrids)
   useEffect(() => {
     if (typeof window === "undefined") return;
 
-    const canHover = window.matchMedia("(hover: hover)").matches;
-    const hasFinePointer = window.matchMedia("(pointer: fine)").matches;
-    const isTouchDevice = navigator.maxTouchPoints > 0;
-    const hasCoarsePointer = window.matchMedia("(pointer: coarse)").matches;
+    const anyHover = window.matchMedia("(any-hover: hover)").matches;
+    const anyFine = window.matchMedia("(any-pointer: fine)").matches;
+    setEnabled(anyHover || anyFine);
+  }, []);
 
-    setEnabled(canHover && hasFinePointer && !isTouchDevice && !hasCoarsePointer);
+  // Dynamic toggle: enable on mouse input, disable on touch input
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+
+    const onPointerMove = (e: PointerEvent) => {
+      if (e.pointerType === "mouse") {
+        setEnabled(true);
+      }
+    };
+    const onPointerDown = (e: PointerEvent) => {
+      if (e.pointerType === "touch") {
+        setEnabled(false);
+      } else if (e.pointerType === "mouse") {
+        setIsMouseDown(true);
+      }
+    };
+    const onPointerUp = (e: PointerEvent) => {
+      if (e.pointerType === "mouse") {
+        setIsMouseDown(false);
+      }
+    };
+
+    window.addEventListener("pointermove", onPointerMove, { passive: true });
+    window.addEventListener("pointerdown", onPointerDown, { passive: true });
+    window.addEventListener("pointerup", onPointerUp, { passive: true });
+
+    return () => {
+      window.removeEventListener("pointermove", onPointerMove);
+      window.removeEventListener("pointerdown", onPointerDown);
+      window.removeEventListener("pointerup", onPointerUp);
+    };
   }, []);
 
   // Attach mouse listeners only when enabled
@@ -50,7 +80,7 @@ export default function CursorOverlay() {
     };
   }, [enabled]);
 
-  // If not enabled (mobile/tablet), render nothing
+  // If not enabled (touch-only), render nothing
   if (!enabled) return null;
 
   // Effect should happen when over a clickable regardless of hover or click
