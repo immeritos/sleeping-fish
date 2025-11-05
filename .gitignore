@@ -7,6 +7,9 @@ nextjs-blog/
 tailwind-nextjs-starter-blog-main/
 web-test/
 
+# Contentlayer
+.contentlayer/
+
 # Dependencies
 node_modules/
 npm-debug.log*
@@ -128,3 +131,5 @@ Thumbs.db
 /playwright-report/
 /blob-report/
 /playwright/.cache/
+
+
