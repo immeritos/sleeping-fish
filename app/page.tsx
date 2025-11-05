@@ -8,6 +8,8 @@ import Image from "next/image";
 export default function Home() {
   const leftRef = useRef<HTMLDivElement>(null);
   const rightRef = useRef<HTMLDivElement>(null);
+  const leftBottomTextRef = useRef<HTMLDivElement>(null);
+  const rightBottomTextRef = useRef<HTMLDivElement>(null);
 
   // Fixed centered position (0.5, 0.5) - circle stays in center
   const proportionalX = useMotionValue(0.5);
@@ -15,32 +17,78 @@ export default function Home() {
 
   // Responsive mask sizes (large when interacting, small when idle)
   const [sizes, setSizes] = useState({ large: 100, small: 80 });
-  const maskSize = useMotionValue(sizes.small);
+  const maskSizeLeft = useMotionValue(sizes.small);
+  const maskSizeRight = useMotionValue(sizes.small);
+  const [showTextLeft, setShowTextLeft] = useState(true);
+  const [showTextRight, setShowTextRight] = useState(true);
 
-  // Responsive sizing by viewport width
+  // Responsive sizing by viewport width (mobile smaller, not hidden)
   useEffect(() => {
-    const update = () => {
+    const updateSizes = () => {
       const w = window.innerWidth;
       let newSizes = { large: 100, small: 80 };
       if (w < 640) {
-        // On small screens, hide the circle to avoid overlap/dizziness
-        newSizes = { large: 0, small: 0 };
+        // Mobile: slightly smaller radius to allow showing on shorter screens
+        newSizes = { large: 72, small: 52 };
       } else if (w < 1024) {
         newSizes = { large: 90, small: 72 };
       }
       setSizes(newSizes);
-      maskSize.set(newSizes.small);
     };
-    update();
-    window.addEventListener("resize", update);
-    return () => window.removeEventListener("resize", update);
-  }, [maskSize]);
+    updateSizes();
+    window.addEventListener("resize", updateSizes);
+    return () => window.removeEventListener("resize", updateSizes);
+  }, []);
+
+  // Set mask size and text visibility per section.
+  // Only use section height vs 3× diameter; no overlap checks.
+  useEffect(() => {
+    const computeMasks = () => {
+      // sizes.small is the base circle RADIUS used by clip-path.
+      // Dynamic sizing: smoothly scale the circle with left section height.
+      const baseRadius = sizes.small;
+      const minRadius = 52; // smallest allowed circle radius; below this, disappear
+      const leftHeight = leftRef.current?.clientHeight ?? 0;
+      const rightHeight = rightRef.current?.clientHeight ?? 0;
+      const leftWidth = leftRef.current?.clientWidth ?? 0;
+      const rightWidth = rightRef.current?.clientWidth ?? 0;
+
+      // Compute target radius based on leftHeight. Clamp to [0, baseRadius].
+      const targetRadiusRaw = leftHeight > 0
+        ? Math.min(baseRadius, Math.max(0, leftHeight / 5))
+        : baseRadius;
+      const circleVisible = targetRadiusRaw >= minRadius;
+      const targetRadius = circleVisible ? targetRadiusRaw : 0;
+
+      // Apply target radius to both sides (clip-path expects radius)
+      maskSizeLeft.set(targetRadius);
+      maskSizeRight.set(targetRadius);
+
+      // Link text visibility to circle presence (no smaller-than-52 circle)
+      setShowTextLeft(circleVisible);
+      setShowTextRight(circleVisible);
+    };
+    computeMasks();
+
+    const roLeft = leftRef.current ? new ResizeObserver(computeMasks) : null;
+    const roRight = rightRef.current ? new ResizeObserver(computeMasks) : null;
+    if (roLeft && leftRef.current) roLeft.observe(leftRef.current);
+    if (roRight && rightRef.current) roRight.observe(rightRef.current);
+
+    window.addEventListener("resize", computeMasks);
+    return () => {
+      window.removeEventListener("resize", computeMasks);
+      roLeft?.disconnect();
+      roRight?.disconnect();
+    };
+  }, [sizes.small, leftRef, rightRef, maskSizeLeft, maskSizeRight]);
 
   // Fixed center position (no movement)
   const springX = useMotionValue(0.5);
   const springY = useMotionValue(0.5);
   // Smooth size changes on hover
-  const springSize = useSpring(maskSize, { stiffness: 150, damping: 25 });
+  const springSizeLeft = useSpring(maskSizeLeft, { stiffness: 150, damping: 25 });
+  const springSizeRight = useSpring(maskSizeRight, { stiffness: 150, damping: 25 });
 
   // Lock size; no hover/touch growth to avoid motion
   const handleEnter = () => {};
@@ -59,15 +107,19 @@ export default function Home() {
             primaryContent={
               <div className="w-full h-full relative bg-[#FEFCE9] dark:bg-[#1F2D5C] px-6 md:px-12">
                 {/* Welcome text at circle center (hidden on small screens) */}
-                <div className="hidden sm:block absolute left-1/2 top-[38%] -translate-x-1/2 -translate-y-1/2 z-20">
-                  <p className="text-gray-800 dark:text-gray-200 text-center leading-relaxed" style={{ fontSize: '10px' }}>welcome ~</p>
-                </div>
+                {showTextLeft && (
+                  <div className="block absolute left-1/2 top-[38%] -translate-x-1/2 -translate-y-1/2 z-20">
+                    <p className="text-gray-800 dark:text-gray-200 text-center leading-relaxed" style={{ fontSize: '10px' }}>welcome ~</p>
+                  </div>
+                )}
                 {/* Bottom text outside circle (hidden on small screens) */}
-                <div className="hidden sm:block absolute left-1/2 bottom-12 md:bottom-16 -translate-x-1/2 z-10">
-                  <p className="text-gray-800 dark:text-gray-200 text-center leading-relaxed max-w-xs" style={{ fontSize: '10px' }}>
-                    This is where I put the things I&apos;m working on, the thoughts I&apos;m exploring, and the moments I would like to remember.
-                  </p>
-                </div>
+                {showTextLeft && (
+                  <div ref={leftBottomTextRef} className="block absolute left-1/2 bottom-12 md:bottom-16 -translate-x-1/2 z-10">
+                    <p className="text-gray-800 dark:text-gray-200 text-center leading-relaxed max-w-xs" style={{ fontSize: '10px' }}>
+                      This is where I put the things I&apos;m working on, the thoughts I&apos;m exploring, and the moments I would like to remember.
+                    </p>
+                  </div>
+                )}
               </div>
             }
             revealContent={
@@ -82,7 +134,7 @@ export default function Home() {
             }
             sharedProportionalX={springX}
             sharedProportionalY={springY}
-            sharedMaskSize={springSize}
+            sharedMaskSize={springSizeLeft}
             fixedPosition={true}
             fixedCenter={{ x: 0.5, y: 0.38 }}
           />
@@ -107,20 +159,24 @@ export default function Home() {
             revealContent={
               <div className="w-full h-full relative bg-[#FEFCE9] dark:bg-[#1F2D5C] px-6 md:px-12">
                 {/* Welcome text at circle center (hidden on small screens) */}
-                <div className="hidden sm:block absolute left-1/2 top-[38%] -translate-x-1/2 -translate-y-1/2 z-20">
-                  <p className="text-gray-800 dark:text-gray-200 text-center leading-relaxed" style={{ fontSize: '10px' }}>welcome ~</p>
-                </div>
+                {showTextRight && (
+                  <div className="block absolute left-1/2 top-[38%] -translate-x-1/2 -translate-y-1/2 z-20">
+                    <p className="text-gray-800 dark:text-gray-200 text-center leading-relaxed" style={{ fontSize: '10px' }}>welcome ~</p>
+                  </div>
+                )}
                 {/* Bottom text outside circle (hidden on small screens) */}
-                <div className="hidden sm:block absolute left-1/2 bottom-12 md:bottom-16 -translate-x-1/2 z-10">
-                  <p className="text-gray-800 dark:text-gray-200 text-center leading-relaxed max-w-xs" style={{ fontSize: '10px' }}>
-                    This is where I put the things I&apos;m working on, the thoughts I&apos;m exploring, and the moments I would like to remember.
-                  </p>
-                </div>
+                {showTextRight && (
+                  <div ref={rightBottomTextRef} className="block absolute left-1/2 bottom-12 md:bottom-16 -translate-x-1/2 z-10">
+                    <p className="text-gray-800 dark:text-gray-200 text-center leading-relaxed max-w-xs" style={{ fontSize: '10px' }}>
+                      This is where I put the things I&apos;m working on, the thoughts I&apos;m exploring, and the moments I would like to remember.
+                    </p>
+                  </div>
+                )}
               </div>
             }
             sharedProportionalX={springX}
             sharedProportionalY={springY}
-            sharedMaskSize={springSize}
+            sharedMaskSize={springSizeRight}
             fixedPosition={true}
             fixedCenter={{ x: 0.5, y: 0.38 }}
           />
