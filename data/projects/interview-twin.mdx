@@ -1,31 +1,44 @@
 ---
-title: 'Interview Twin'
-description: 'Another example project showcasing different technologies and approaches.'
+title: 'Interview Twin: Building a Production-Ready LLM Application'
+description: 'Interview Twin is an ongoing project aimed at creating a production-ready LLM-powered interview preparation assistant. It serves both as a personal tool and a practical case study for building end-to-end AI applications using modern web and cloud technologies.'
 date: '2025-11-30'
 coverImage: '/projects/interview_twin_cover.jpg'
-href: 'https://github.com/yourusername/another-project'
-tags: ['React', 'Node.js', 'MongoDB']
+href: 'https://github.com/fanjingwenvi/interview-twin'
+tags: ['LLM', 'RAG', 'Next.js', 'FastAPI','PostgreSQL', 'Qdrant', 'Docker', 'AWS']
 ---
 
-# Interview Twin
+# Interview Twin: Building a Production-Ready LLM Application
 
-This is a second example project to demonstrate the projects grid layout.
+## Architecture Diagram
 
-## Overview
+*(to be added as the project evolves)*
 
-A full-stack application built with modern web technologies.
+## Why
 
-## Key Features
+1. Personal helper for interview preparation  
+2. To demonstrate the process of developing a full end-to-end product
+3. Networking, self-advertising, and learning in public
 
-- Real-time data synchronization
-- User authentication and authorization
-- Responsive design across all devices
-- RESTful API integration
+## What
+System scope:
+The goal is to Production-ready and deployable on the cloud  — not just a demo.
 
-## Technical Stack
+Reference：
+LLM Engineer’s Handbook
+https://github.com/DataTalksClub/llm-zoomcamp 
+https://github.com/benitomartin/substack-newsletters-search-course/tree/main
 
-- **Frontend:** React with hooks
-- **Backend:** Node.js and Express
-- **Database:** MongoDB
-- **Deployment:** Vercel and MongoDB Atlas
+## How
+
+### Tech Stack
+- **Frontend:** Next.js.
+- **Backend:**  A REST API backend containerized with Docker.  
+- **Database:** PostgreSQL for structured data and Qdrant (or pgvector) for vector embeddings, supporting semantic search and retrieval.
+- **Cloud Infrastructure:** Deployed on AWS using ECS Fargate, with potential usage of Lambda Docker or App Runner.  
+
+### Dataset
+The system integrates personal notes, interview reflections, and structured knowledge as a private dataset.
+
+### Pipelines
+
 
