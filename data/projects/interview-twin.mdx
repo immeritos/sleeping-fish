@@ -30,17 +30,17 @@ References
 
 ### Tech Stack
 - **Frontend:** Next.js.
-- **Backend:**  A REST API backend containerized with Docker.  
-- **Database:** PostgreSQL for structured data and Qdrant (or pgvector) for vector embeddings, supporting semantic search and retrieval.
+- **Backend:** REST API backend containerized with Docker.  
+- **Database:** PostgreSQL for structured data and Qdrant (or pgvector) for vector embeddings
 - **Cloud Infrastructure:** Deployed on AWS using ECS Fargate, with potential usage of Lambda Docker or App Runner.  
 
 ### Dataset
-The system integrates personal notes, interview reflections, and structured knowledge as a private dataset.
+The system integrates personal notes, interview reflections, and structured knowledge 
 
 ### Pipelines
 1. **Feature Pipeline** – collect and structure data  
 2. **Training Pipeline** – fine-tune and build embeddings  
 3. **Inference Pipeline** – serve and query the model  
-+ **LLM Ops** for monitoring and iteration.
+4. **LLM Ops** for monitoring and iteration.
 
 

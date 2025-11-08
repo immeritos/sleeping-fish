@@ -23,18 +23,16 @@ export default function PostSimple({ content, next, prev, children }: LayoutProp
           <header className="mb-8">
             <div className="text-center">
               <h1 className="text-2xl font-serif font-medium text-foreground mb-2">{title}</h1>
-              <time
-                dateTime={date}
-                className="text-lg font-light text-[hsl(var(--foreground)/0.85)]"
-              >
+              <time dateTime={date} className="text-lg font-light text-[hsl(var(--foreground)/0.85)]">
                 {formatDate(date, siteMetadata.locale)}
               </time>
             </div>
           </header>
-          {/* Match project detail MDX typography */}
+          {/* MDX Typography */}
           <div
             className="prose max-w-none text-lg font-light dark:prose-invert
-                       prose-headings:font-medium prose-h1:text-xl prose-h2:text-xl prose-h3:text-[18px]
+                       prose-headings:font-medium prose-h1:text-xl prose-h2:text-xl prose-h3:text-xl
+                       prose-h2:font-medium prose-h3:font-medium
                        prose-a:underline prose-a:decoration-1 prose-a:text-inherit prose-a:font-light
                        prose-strong:font-medium
                        prose-li:font-light prose-li:marker:text-[hsl(var(--foreground)/0.85)] prose-li:marker:font-light
