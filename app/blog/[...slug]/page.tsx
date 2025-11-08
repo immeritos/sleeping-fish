@@ -18,10 +18,7 @@ const layouts = {
   PostSimple,
 } as Record<string, React.ComponentType<any>>
 
-export async function generateMetadata(props: {
-  params: Promise<{ slug: string[] }>
-}): Promise<Metadata | undefined> {
-  const params = await props.params
+export async function generateMetadata({ params }: { params: { slug: string[] } }): Promise<Metadata | undefined> {
   const slug = decodeURI(params.slug.join('/'))
   const post = allBlogs.find((p) => p.slug === slug)
   if (!post) {
@@ -68,8 +65,7 @@ export const generateStaticParams = async () => {
   return allBlogs.map((p) => ({ slug: p.slug.split('/').map((name) => decodeURI(name)) }))
 }
 
-export default async function Page(props: { params: Promise<{ slug: string[] }> }) {
-  const params = await props.params
+export default async function Page({ params }: { params: { slug: string[] } }) {
   const slug = decodeURI(params.slug.join('/'))
   // Filter out drafts in production
   const sortedCoreContents = allCoreContent(sortPosts(allBlogs))
@@ -84,7 +80,8 @@ export default async function Page(props: { params: Promise<{ slug: string[] }> 
   const mainContent = coreContent(post)
   const jsonLd = post.structuredData
 
-  const Layout = layouts[post.layout || defaultLayout]
+  const layoutKey = post.layout || defaultLayout
+  const Layout = layouts[layoutKey] || PostSimple
 
   return (
     <>
@@ -92,9 +89,11 @@ export default async function Page(props: { params: Promise<{ slug: string[] }> 
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <Layout content={mainContent} next={next} prev={prev}>
-        <MDXLayoutRenderer code={post.body.code} components={components} toc={post.toc} />
-      </Layout>
+      <div className="font-light">
+        <Layout content={mainContent} next={next} prev={prev}>
+          <MDXLayoutRenderer code={post.body.code} components={components} toc={post.toc} />
+        </Layout>
+      </div>
     </>
   )
 }

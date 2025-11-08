@@ -83,3 +83,13 @@
     cursor: none !important;
   }
 }
+
+.prose ul > li::marker,
+.prose ol > li::marker {
+  color: hsl(var(--foreground) / 0.85);
+  font-weight: 300;
+}
+.dark .prose ul > li::marker,
+.dark .prose ol > li::marker {
+  color: hsl(var(--foreground) / 0.85);
+}
