@@ -86,9 +86,9 @@ export default function CursorOverlay() {
   // Effect should happen when over a clickable regardless of hover or click
   const shouldEmphasize = overClickable || isMouseDown;
 
-  const baseSize = 12; // px
-  const scale = shouldEmphasize ? 2 : 1; // 2x when over clickables or clicking
-  const opacity = shouldEmphasize ? 0.4 : 0.9; // 40% when emphasized
+  const baseSize = 14; // px
+  const scale = shouldEmphasize ? 2 : 1
+  const opacity = shouldEmphasize ? 0.3 : 0.9
 
   // Light/Dark colors that remain visible without blending
   const isDark =
@@ -106,9 +106,8 @@ export default function CursorOverlay() {
     borderRadius: "50%",
     backgroundColor: dotColor,
     boxShadow: shouldEmphasize
-      ? `0 0 ${baseSize * 2}px ${
-          isDark ? "rgba(51, 88, 212, 0.15)" : "rgba(255, 243, 148, 0.25)"
-        }`
+      ? `0 0 ${baseSize * 3}px ${isDark ? "rgba(51, 88, 212, 0.35)" : "rgba(255, 243, 148, 0.45)"},
+         0 0 ${baseSize * 1.5}px ${isDark ? "rgba(51, 88, 212, 0.25)" : "rgba(255, 243, 148, 0.25)"}`
       : `0 0 ${baseSize}px ${
           isDark ? "rgba(51, 88, 212, 0.15)" : "rgba(255, 243, 148, 0.25)"
         }`,

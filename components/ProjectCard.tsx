@@ -25,7 +25,7 @@ export default function ProjectCard({ slug, title, description, coverImage, tags
 
       {/* Content */}
       <div className="space-y-2">
-        <h2 className="text-lg font-medium text-foreground group-hover:text-muted-foreground transition-colors">
+        <h2 className="text-xl font-serif font-medium text-foreground group-hover:text-muted-foreground transition-colors">
           {title}
         </h2>
         <p className="text-base text-muted-foreground leading-relaxed line-clamp-2">
