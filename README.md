@@ -3,6 +3,10 @@
 A modern personal website 
 https://daymoon.it.com/
 
+## Project Timeline
+
+![Personal Website Timeline](./public/projects/personl_website_timeline.png)
+
 ## Features
 - **Minimal Design** - Clean, focused user experience
 - **Responsive Layout** - Optimized for all screen sizes
