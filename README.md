@@ -5,7 +5,7 @@ https://daymoon.it.com/
 
 ## Project Timeline
 
-![Personal Website Timeline](./public/projects/personl_website_timeline.png)
+![Personal Website Timeline](./public/projects/personl_website_timeline.svg)
 
 ## Features
 - **Minimal Design** - Clean, focused user experience
