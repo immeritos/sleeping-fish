@@ -10,7 +10,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteMetadata.siteUrl),
-  title: 'Daymoon',
+  title: 'Sleeping Fish',
   description: 'A personal website with blog and photography',
   icons: {
     icon: '/logo.svg',

@@ -19,14 +19,14 @@ export default function About() {
           {/* Social Icons */}
           <div className="flex space-x-3">
             <a
-              href="mailto:fanjingwenvi@gmail.com"
+              href="mailto:immeritos@gmail.com"
               className="text-foreground hover:text-foreground/80 transition-colors"
               aria-label="Email"
             >
               <EnvelopeClosedIcon className="h-5 w-5" />
             </a>
             <a
-              href="https://github.com/fanjingwenvi"
+              href="https://github.com/immeritos"
               target="_blank"
               rel="noopener noreferrer"
               className="text-foreground hover:text-foreground/80 transition-colors"
@@ -35,7 +35,7 @@ export default function About() {
               <GitHubLogoIcon className="h-5 w-5" />
             </a>
             <a
-              href="https://www.linkedin.com/in/fanjingwenvi/"
+              href="https://www.linkedin.com/in/ye-dai-113a98232/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-foreground hover:text-foreground/80 transition-colors"

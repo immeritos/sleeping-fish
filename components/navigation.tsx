@@ -42,86 +42,46 @@ export function Navigation() {
       <div className="container flex h-14 items-center">
         {/* Logo/Brand - Desktop */}
         <div className="hidden md:flex">
-          <Link href="/" className="flex items-center space-x-2">
-            <svg 
-              width="24" 
-              height="24" 
-              viewBox="0 0 64 64" 
-              fill="none" 
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6 text-foreground"
-            >
-              {/* Thin Outer Circle */}
-              <circle cx="32" cy="32" r="30" stroke="currentColor" strokeWidth="1" fill="none"/>
-              
-              {/* Mountain */}
-              <polygon points="12,44 32,18 52,44" fill="currentColor"/>
-              
-              {/* Moon */}
-              <circle cx="45" cy="18" r="4" fill="currentColor"/>
-            </svg>
-            <div className="font-normal flex flex-col leading-tight text-center text-xs">
-              <span>Day</span>
-              <span>Moon</span>
-            </div>
+          <Link href="/" className="flex items-center">
+            <span className="font-semibold text-base">Sleeping Fish</span>
           </Link>
         </div>
 
         {/* Logo/Brand - Mobile */}
         <div className="flex md:hidden">
-          <Link href="/" className="flex items-center space-x-2">
-            <svg 
-              width="24" 
-              height="24" 
-              viewBox="0 0 64 64" 
-              fill="none" 
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6 text-foreground"
-            >
-              {/* Thin Outer Circle */}
-              <circle cx="32" cy="32" r="30" stroke="currentColor" strokeWidth="1" fill="none"/>
-              
-              {/* Mountain */}
-              <polygon points="12,44 32,18 52,44" fill="currentColor"/>
-              
-              {/* Moon */}
-              <circle cx="45" cy="18" r="4" fill="currentColor"/>
-            </svg>
-            <div className="font-normal flex flex-col leading-tight text-center text-xs">
-              <span>Day</span>
-              <span>Moon</span>
-            </div>
+          <Link href="/" className="flex items-center">
+            <span className="font-semibold text-base">Sleeping Fish</span>
           </Link>
         </div>
 
         {/* Desktop Navigation - Centered */}
         <div className="hidden md:flex flex-1 justify-center">
           <NavigationMenu>
-            <NavigationMenuList>
+            <NavigationMenuList className="space-x-2">
               <NavigationMenuItem>
                 <Link href="/projects" legacyBehavior passHref>
-                  <NavigationMenuLink className={navigationMenuTriggerStyle() + " text-sm"}>
+                  <NavigationMenuLink className={navigationMenuTriggerStyle() + " uppercase tracking-wider text-xs font-medium"}>
                     Projects
                   </NavigationMenuLink>
                 </Link>
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <Link href="/blog" legacyBehavior passHref>
-                  <NavigationMenuLink className={navigationMenuTriggerStyle()} style={{ fontSize: '12px' }}>
+                  <NavigationMenuLink className={navigationMenuTriggerStyle() + " uppercase tracking-wider text-xs font-medium"}>
                     Blog
                   </NavigationMenuLink>
                 </Link>
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <Link href="/photography" legacyBehavior passHref>
-                  <NavigationMenuLink className={navigationMenuTriggerStyle()} style={{ fontSize: '12px' }}>
+                  <NavigationMenuLink className={navigationMenuTriggerStyle() + " uppercase tracking-wider text-xs font-medium"}>
                     Photography
                   </NavigationMenuLink>
                 </Link>
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <Link href="/about" legacyBehavior passHref>
-                  <NavigationMenuLink className={navigationMenuTriggerStyle()} style={{ fontSize: '12px' }}>
+                  <NavigationMenuLink className={navigationMenuTriggerStyle() + " uppercase tracking-wider text-xs font-medium"}>
                     About
                   </NavigationMenuLink>
                 </Link>

@@ -1,60 +1,54 @@
 ---
-title: 'Building a Modern Personal Website: From Concept to Deployment'
-description: 'Building a personal website is both a creative and technical journey. It allows self-expression while learning how modern web development works. This project documents the process from basic web development to mastering contemporary tools and workflows.'
-date: '2025-11-07'
-coverImage: '/projects/personal_web_cover.jpg'
-href: 'https://github.com/fanjingwenvi/personal-website'
-tags: ['Radix', 'Shadcn', 'Tailwind CSS', 'Next.js', 'TypeScript', 'Vercel']
+title: "Personal Website"
+description: "A modern personal website built with Next.js 14, featuring blog, projects, and photography sections with dark mode support."
+date: "2025-12-28"
+coverImage: "/projects/personal-website.png"
+tags: ["Next.js", "TypeScript", "Tailwind CSS", "React"]
+draft: false
 ---
 
-![Personal Website Timeline](/projects/personl_website_timeline.svg)
+# Personal Website
 
-## Why a Personal Website in the Modern Era
+A modern, responsive personal website showcasing my work, thoughts, and creative projects. Built with the latest web technologies to provide a fast and engaging user experience.
 
-A personal website serves multiple purposes in today's digital landscape. It’s a space for authentic self-expression beyond social media templates, a professional platform to showcase work and connect with others, and, most importantly, it’s simply great fun to build and customize.
+## Features
 
-## Starting Point: The Basic Approach
+- 📝 **Blog System** - Write and share articles with MDX support
+- 📸 **Photography Gallery** - Showcase visual work organized by series
+- 💼 **Project Portfolio** - Display creative and technical projects
+- 🌓 **Dark Mode** - Seamless theme switching with system preference detection
+- ⚡ **Performance Optimized** - Static generation for lightning-fast page loads
+- 📱 **Fully Responsive** - Beautiful on all devices and screen sizes
 
-I started with basic web development knowledge but no professional experience. My initial tech stack consisted of static HTML, CSS, and JavaScript, deployed via GitHub Pages and Spaceship, with Google Analytics for tracking.
+## Tech Stack
 
-Challenges appeared quickly. UI and UX adjustments across different devices and browsers required extensive manual testing. Communicating design ideas with AI assistants was inefficient without proper technical vocabulary, making iteration slow and sometimes frustrating.
+### Frontend
+- **Next.js 14** with App Router for modern React architecture
+- **TypeScript** for type-safe development
+- **Tailwind CSS** for utility-first styling
+- **Framer Motion** for smooth animations
 
-For example, building a responsive navigation menu required writing multiple media queries and testing across browsers. A simple layout change could easily break the mobile view, leading to hours of debugging.
+### Content Management
+- **Contentlayer2** for type-safe MDX content processing
+- **MDX** for rich, component-based content
+- **Gray Matter** for frontmatter parsing
 
-## Learning Modern Web Development with AI 
+### UI Components
+- **Radix UI** for accessible, unstyled components
+- **Lucide React** for beautiful icons
+- **next-themes** for theme management
 
-Researching current technologies took time but proved invaluable. I explored various design and development tools to find the right fit:
+## Design Philosophy
 
-- Lovable: Great for quick prototypes but limited in customization
-- Framer: Excellent for design inspiration with rich component libraries
-- Figma AI: Helpful for design assistance, though it required some learning investment
+The design follows a clean, magazine-style layout that puts content first. The interface adapts to user preferences with automatic dark mode detection while maintaining readability and visual hierarchy.
 
-I also evaluated different AI coding assistants:
-- Cursor: Feature-rich but a bit expensive for regular use
-- GitHub Copilot: Good for code suggestions but limited in project context
-- Trae: Offered the best balance between features and affordability but recently banned for Claude Code model
+## Development Experience
 
-To understand modern frameworks and workflows, I followed the [Next.js official tutorial](https://nextjs.org/learn) and studied reusable components and examples on GitHub.
+- Hot reload development server
+- TypeScript for enhanced IDE support
+- ESLint and Prettier for code quality
+- Modular component architecture
 
-## Modern Approach with Handy Tools
+## Deployment
 
-After thorough research, I rebuilt the website using a modern stack:
-
-- Framework: Next.js 14 with TypeScript
-- Styling: Tailwind CSS
-- UI Components: shadcn/ui + Radix UI
-- Animation: Framer Motion
-- Deployment: Vercel
-
-This approach greatly improved scalability, maintainability, and performance. My better understanding of web concepts also made communication with AI assistants more effective.
-
-When designing a dynamic landing page layout, using CSS Grid with Tailwind, I created a responsive system that adapts to different screen sizes while maintaining visual hierarchy. The component-based architecture made it easy to reuse layout patterns across the site.
-
-## What I Have Learned
-
-This journey taught me lessons that go beyond technical skills: 
-- **Learn by doing.** Rapid iteration with quick feedback makes development more engaging. Using platforms that support continuous deployment keeps motivation high and progress visible.
-- **Collaboration matters.** Discussing ideas with others leads to better solutions. Teaching concepts and learning from peers deepen understanding. (Thanks to my friend Xiaoye for the great discussions.)  
-- **Research pays off.** Investing time to understand the landscape before starting saves effort later.  
-- **Master the fundamentals.** Solid foundational knowledge changes how you approach problems, choose tools, and communicate with AI.  
-- **Leverage existing tools.** Starting with established design systems and component libraries saves countless hours. They handle complex styling and accessibility, letting you focus on what makes your project unique — no need to reinvent the wheel.
+Optimized for deployment on modern platforms like Vercel and Cloudflare Pages, with automatic builds and preview deployments.
