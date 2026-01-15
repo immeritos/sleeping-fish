@@ -12,15 +12,15 @@ const CustomHeading = ({ level, children, ...props }: any) => {
   const getClassName = (level: number) => {
     switch (level) {
       case 1:
-        return "font-medium font-serif text-2xl mt-12 mb-6"
+        return "font-serif font-bold text-3xl mt-12 mb-6"
       case 2:
-        return "font-medium font-sans text-xl mt-10 mb-4"
+        return "font-serif font-semibold text-xl mt-10 mb-4"
       case 3:
-        return "font-medium font-sans text-lg mt-8 mb-3"
+        return "font-serif font-semibold text-lg mt-8 mb-3"
       case 4:
-        return "font-medium font-sans text-base mt-6 mb-2"
+        return "font-sans font-medium text-base mt-6 mb-2"
       default:
-        return "font-medium font-sans text-sm mt-4 mb-2"
+        return "font-sans font-medium text-sm mt-4 mb-2"
     }
   }
 

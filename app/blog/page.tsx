@@ -4,6 +4,11 @@ import ListLayout from '@/components/layouts/ListLayout'
 
 const POSTS_PER_PAGE = 5
 
+export const metadata = {
+  title: 'Blog Archives - Sleeping Fish',
+  description: 'Thoughts, ideas, and writings',
+}
+
 export default async function BlogPage() {
   const posts = allCoreContent(sortPosts(allBlogs))
   const pageNumber = 1

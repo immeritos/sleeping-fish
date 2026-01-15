@@ -2,11 +2,16 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { getAllPhotoSeries } from '@/lib/photography'
 
+export const metadata = {
+  title: 'Photography Archives - Sleeping Fish',
+  description: 'Photo series and collections',
+}
+
 export default async function PhotographyPage() {
   const photoSeries = await getAllPhotoSeries()
 
   return (
-    <div className="mx-auto px-4 pt-20 pb-16">
+    <div className="mx-auto px-4 pt-24 md:pt-32 pb-16">
       {/* Main Gallery Grid - 2 photos per row on mobile, 3 on larger screens */}
       <div className="grid grid-cols-2 sm:grid-cols-3 gap-1.5 max-w-4xl mx-auto">
         {photoSeries.map((series) => (

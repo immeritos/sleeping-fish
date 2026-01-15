@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: { params: { slug: string[] } 
   const publishedAt = new Date(project.date).toISOString()
 
   return {
-    title: project.title,
+    title: `${project.title} | Sleeping Fish`,
     description: project.description,
     openGraph: {
       title: project.title,
@@ -61,7 +61,7 @@ export default async function Page({ params }: { params: { slug: string[] } }) {
   }
 
   return (
-    <div className="mx-auto px-4 pt-20 pb-16">
+    <div className="mx-auto px-4 pt-24 md:pt-32 pb-16">
       <div className="max-w-3xl mx-auto">
         {/* Project Header */}
         <div className="mb-8">
@@ -103,24 +103,22 @@ export default async function Page({ params }: { params: { slug: string[] } }) {
                      prose-h2:font-medium prose-h3:font-medium
                      prose-a:underline prose-a:decoration-1 prose-a:text-inherit prose-a:font-light
                      prose-strong:font-medium
-                     prose-li:font-light prose-li:marker:text-[hsl(var(--foreground)/0.85)] prose-li:marker:font-light
-                     prose-ol:marker:text-[hsl(var(--foreground)/0.85)] prose-ol:marker:font-light
-                     prose-li:my-1 prose-li:leading-snug
+                     prose-li:font-light prose-li:my-1 prose-li:leading-snug
                      prose-ul:font-light prose-ul:mt-2 prose-ul:mb-2
                      prose-ol:font-light prose-ol:mt-2 prose-ol:mb-2"
           style={{
-            '--tw-prose-body': 'hsl(var(--foreground) / 0.85)',
-            '--tw-prose-headings': 'hsl(var(--foreground))',
-            '--tw-prose-links': 'hsl(var(--foreground) / 0.85)',
-            '--tw-prose-bullets': 'hsl(var(--foreground) / 0.85)',
-            '--tw-prose-counters': 'hsl(var(--foreground) / 0.85)',
-            '--tw-prose-bold': 'hsl(var(--foreground) / 0.85)',
-            '--tw-prose-invert-body': 'hsl(var(--foreground) / 0.85)',
-            '--tw-prose-invert-headings': 'hsl(var(--foreground))',
-            '--tw-prose-invert-links': 'hsl(var(--foreground) / 0.85)',
-            '--tw-prose-invert-bullets': 'hsl(var(--foreground) / 0.85)',
-            '--tw-prose-invert-counters': 'hsl(var(--foreground) / 0.85)',
-            '--tw-prose-invert-bold': 'hsl(var(--foreground) / 0.85)',
+            '--tw-prose-body': 'var(--slate-11)',
+            '--tw-prose-headings': 'var(--slate-12)',
+            '--tw-prose-links': 'var(--slate-11)',
+            '--tw-prose-bullets': 'var(--slate-11)',
+            '--tw-prose-counters': 'var(--slate-11)',
+            '--tw-prose-bold': 'var(--slate-12)',
+            '--tw-prose-invert-body': 'var(--slate-11)',
+            '--tw-prose-invert-headings': 'var(--slate-12)',
+            '--tw-prose-invert-links': 'var(--slate-11)',
+            '--tw-prose-invert-bullets': 'var(--slate-11)',
+            '--tw-prose-invert-counters': 'var(--slate-11)',
+            '--tw-prose-invert-bold': 'var(--slate-12)',
           } as React.CSSProperties}
         >
           <MDXLayoutRenderer code={project.body.code} components={components} />

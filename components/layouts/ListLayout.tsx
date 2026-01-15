@@ -77,10 +77,9 @@ export default function ListLayout({
     <SectionContainer>
       <div>
         {title && (
-          <div className="space-y-2 pb-8 md:space-y-5 border-b border-gray-200 dark:border-gray-700">
+          <div className="space-y-2 pb-8 md:space-y-5 border-b border-border">
             <h1
-              className="text-3xl leading-9 font-normal tracking-tight text-gray-900 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14 dark:text-gray-100"
-              style={{ fontFamily: "'Times New Roman', serif" }}
+              className="text-5xl leading-tight font-medium tracking-tight text-foreground font-serif"
             >
               {title}
             </h1>
@@ -91,23 +90,23 @@ export default function ListLayout({
           {displayPosts.map((post) => {
             const { path, date, title, summary } = post
             return (
-              <li key={path} className="py-4">
-                <article className="space-y-2 xl:grid xl:grid-cols-4 xl:items-baseline xl:space-y-0">
+              <li key={path} className="py-6">
+                <article className="space-y-3 xl:grid xl:grid-cols-4 xl:items-baseline xl:space-y-0 xl:gap-4">
                   <dl>
                     <dt className="sr-only">Published on</dt>
-                    <dd className="text-sm text-muted-foreground/60">
+                    <dd className="text-xs font-medium uppercase tracking-extra-wide text-muted-foreground/60">
                       <time dateTime={date}>{formatDate(date, siteMetadata.locale)}</time>
                     </dd>
                   </dl>
                   <div className="space-y-3 xl:col-span-3">
                     <div>
-                      <h3 className="text-xl font-serif font-normal tracking-tight">
-                        <Link href={`/${path}`} className="text-gray-900 dark:text-gray-100">
+                      <h3 className="text-2xl font-serif font-medium tracking-tight">
+                        <Link href={`/${path}`} className="text-foreground hover:opacity-60 transition-opacity">
                           {title}
                         </Link>
                       </h3>
                     </div>
-                    <p className="text-base text-muted-foreground leading-relaxed line-clamp-2">
+                    <p className="text-base font-inter text-muted-foreground leading-loose line-clamp-2">
                       {summary}
                     </p>
                   </div>

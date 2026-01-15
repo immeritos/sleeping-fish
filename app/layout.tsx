@@ -1,19 +1,33 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Inter, Outfit, Fraunces } from 'next/font/google'
 import './globals.css'
 import { Navigation } from '@/components/navigation'
-import { ThemeProvider } from '@/components/theme-provider'
 import siteMetadata from '@/data/siteMetadata'
-import CursorOverlay from '@/components/cursor-overlay'
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ 
+  subsets: ['latin'],
+  variable: '--font-inter',
+  display: 'swap',
+})
+const outfit = Outfit({ 
+  subsets: ['latin'], 
+  variable: '--font-outfit',
+  display: 'swap'
+})
+const fraunces = Fraunces({ 
+  subsets: ['latin'], 
+  variable: '--font-fraunces',
+  display: 'swap',
+  axes: ['SOFT', 'WONK']  // 启用柔和度轴和倾斜轴
+})
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteMetadata.siteUrl),
-  title: 'Sleeping Fish',
+  title: 'Sleeping Fish | HOME',
   description: 'A personal website with blog and photography',
   icons: {
-    icon: '/logo.svg',
+    icon: '/logo.png',
+    apple: '/logo.png',
   },
 }
 
@@ -24,19 +38,27 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.className} font-sans`}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <Navigation />
-          <main className="min-h-screen">
-            {children}
-          </main>
-          <CursorOverlay />
-        </ThemeProvider>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                const theme = localStorage.getItem('theme');
+                if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                  document.documentElement.classList.add('dark');
+                } else if (theme === 'light') {
+                  document.documentElement.classList.add('light');
+                }
+              })();
+            `,
+          }}
+        />
+      </head>
+      <body className={`${outfit.variable} ${fraunces.variable} font-sans`}>
+        <Navigation />
+        <main className="min-h-screen">
+          {children}
+        </main>
       </body>
     </html>
   )

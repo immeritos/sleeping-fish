@@ -2,58 +2,225 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Import Radix Colors - Light mode only */
+@import "@radix-ui/colors/sky.css";
+@import "@radix-ui/colors/slate.css";
+@import "@radix-ui/colors/amber.css";
+@import "@radix-ui/colors/red.css";
+
 @layer utilities {
   /* Provide utility classes for tokens */
-  .bg-background { background-color: hsl(var(--background)); }
-  .text-foreground { color: hsl(var(--foreground)); }
-  .border-border { border-color: hsl(var(--border)); }
-  .text-muted-foreground { color: hsl(var(--muted-foreground)); }
+  .bg-background { background-color: var(--background); }
+  .text-foreground { color: var(--foreground); }
+  .border-border { border-color: var(--border); }
+  .text-muted-foreground { color: var(--muted-foreground); }
+  
+  /* Hero container background */
+  .bg-hero-container { background-color: var(--hero-container-bg); }
+  
+  /* Mobile navigation background */
+  .bg-nav-mobile { background-color: var(--nav-mobile-bg); }
+  
+  /* Rich gray text utilities - Slate series */
+  .text-gray-12 { color: var(--slate-12); }
+  .text-gray-11 { color: var(--slate-11); }
+  .text-gray-10 { color: var(--slate-10); }
+  .text-gray-9 { color: var(--slate-9); }
+  .text-gray-8 { color: var(--slate-8); }
 }
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-    --secondary: 210 40% 96%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-    --muted: 210 40% 96%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 210 40% 96%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Sky series for backgrounds and cards */
+    --background: var(--sky-1);
+    --foreground: var(--slate-12);
+    --card: var(--sky-3);
+    --card-foreground: var(--slate-12);
+    --popover: var(--sky-2);
+    --popover-foreground: var(--slate-12);
+    --primary: var(--slate-12);
+    --primary-foreground: var(--sky-1);
+    --secondary: var(--sky-3);
+    --secondary-foreground: var(--slate-12);
+    --muted: var(--sky-3);
+    --muted-foreground: var(--slate-11);
+    --accent: var(--sky-4);
+    --accent-foreground: var(--slate-12);
+    --destructive: var(--red-9);
+    --destructive-foreground: var(--sky-1);
+    --border: var(--sky-6);
+    --input: var(--sky-7);
+    --ring: var(--sky-8);
     --radius: 0.5rem;
+    
+    /* Custom variables */
+    --hero-container-bg: var(--sky-1);
+    --nav-mobile-bg: var(--amber-2);
   }
 
+  /* System dark mode preference - for users who don't manually toggle */
+  @media (prefers-color-scheme: dark) {
+    :root:not(.light) {
+      /* Override Radix variables with dark palette */
+      --sky-1: hsl(205 45% 8.8%);
+      --sky-2: hsl(205 47% 11%);
+      --sky-3: hsl(205 48% 14.3%);
+      --sky-4: hsl(205 49% 16.5%);
+      --sky-5: hsl(205 49% 18.8%);
+      --sky-6: hsl(205 50% 22%);
+      --sky-7: hsl(205 52% 27.5%);
+      --sky-8: hsl(205 56% 37.4%);
+      --sky-9: hsl(206 100% 50%);
+      --sky-10: hsl(209 100% 60.6%);
+      --sky-11: hsl(210 100% 66.1%);
+      --sky-12: hsl(206 98% 95.8%);
+      
+      --slate-1: hsl(200 7% 8.8%);
+      --slate-2: hsl(195 7.1% 11%);
+      --slate-3: hsl(197 6.8% 13.6%);
+      --slate-4: hsl(198 6.6% 15.8%);
+      --slate-5: hsl(199 6.4% 17.9%);
+      --slate-6: hsl(201 6.2% 20.5%);
+      --slate-7: hsl(203 6% 24.3%);
+      --slate-8: hsl(207 5.6% 31.6%);
+      --slate-9: hsl(206 6% 43.9%);
+      --slate-10: hsl(206 5.2% 49.5%);
+      --slate-11: hsl(206 6% 63%);
+      --slate-12: hsl(210 6% 93%);
+      
+      --amber-1: hsl(36 100% 6.1%);
+      --amber-2: hsl(35 100% 7.6%);
+      --amber-3: hsl(32 100% 10.2%);
+      --amber-4: hsl(32 100% 12.4%);
+      --amber-5: hsl(33 100% 14.6%);
+      --amber-6: hsl(35 100% 17.1%);
+      --amber-7: hsl(35 91% 21.6%);
+      --amber-8: hsl(36 100% 25.5%);
+      --amber-9: hsl(39 100% 57%);
+      --amber-10: hsl(43 100% 64%);
+      --amber-11: hsl(39 90% 49.8%);
+      --amber-12: hsl(39 97% 93.2%);
+      
+      --red-1: hsl(353 23% 9.8%);
+      --red-2: hsl(357 34% 12%);
+      --red-3: hsl(356 43% 16.4%);
+      --red-4: hsl(356 47% 19.2%);
+      --red-5: hsl(356 48% 22.3%);
+      --red-6: hsl(355 50% 26.1%);
+      --red-7: hsl(354 54% 31.7%);
+      --red-8: hsl(353 61% 41.6%);
+      --red-9: hsl(358 75% 59%);
+      --red-10: hsl(358 85% 66%);
+      --red-11: hsl(358 100% 69%);
+      --red-12: hsl(351 89% 96%);
+      
+      /* Theme variables using Radix scale */
+      --background: var(--sky-2);
+      --foreground: var(--slate-12);
+      --card: var(--sky-4);
+      --card-foreground: var(--slate-12);
+      --popover: var(--sky-3);
+      --popover-foreground: var(--slate-12);
+      --primary: var(--slate-12);
+      --primary-foreground: var(--sky-2);
+      --secondary: var(--sky-5);
+      --secondary-foreground: var(--slate-12);
+      --muted: var(--sky-5);
+      --muted-foreground: var(--slate-11);
+      --accent: var(--sky-6);
+      --accent-foreground: var(--slate-12);
+      --destructive: var(--red-9);
+      --destructive-foreground: var(--sky-2);
+      --border: var(--sky-7);
+      --input: var(--sky-8);
+      --ring: var(--sky-9);
+      
+      --hero-container-bg: var(--sky-2);
+      --nav-mobile-bg: var(--amber-2);
+    }
+  }
+
+  /* Manual dark mode override via .dark class */
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    /* Sky dark palette - specific color values */
+    --sky-1: hsl(205 45% 8.8%);
+    --sky-2: hsl(205 47% 11%);
+    --sky-3: hsl(205 48% 14.3%);
+    --sky-4: hsl(205 49% 16.5%);
+    --sky-5: hsl(205 49% 18.8%);
+    --sky-6: hsl(205 50% 22%);
+    --sky-7: hsl(205 52% 27.5%);
+    --sky-8: hsl(205 56% 37.4%);
+    --sky-9: hsl(206 100% 50%);
+    --sky-10: hsl(209 100% 60.6%);
+    --sky-11: hsl(210 100% 66.1%);
+    --sky-12: hsl(206 98% 95.8%);
+    
+    /* Slate dark palette */
+    --slate-1: hsl(200 7% 8.8%);
+    --slate-2: hsl(195 7.1% 11%);
+    --slate-3: hsl(197 6.8% 13.6%);
+    --slate-4: hsl(198 6.6% 15.8%);
+    --slate-5: hsl(199 6.4% 17.9%);
+    --slate-6: hsl(201 6.2% 20.5%);
+    --slate-7: hsl(203 6% 24.3%);
+    --slate-8: hsl(207 5.6% 31.6%);
+    --slate-9: hsl(206 6% 43.9%);
+    --slate-10: hsl(206 5.2% 49.5%);
+    --slate-11: hsl(206 6% 63%);
+    --slate-12: hsl(210 6% 93%);
+    
+    /* Amber dark palette */
+    --amber-1: hsl(36 100% 6.1%);
+    --amber-2: hsl(35 100% 7.6%);
+    --amber-3: hsl(32 100% 10.2%);
+    --amber-4: hsl(32 100% 12.4%);
+    --amber-5: hsl(33 100% 14.6%);
+    --amber-6: hsl(35 100% 17.1%);
+    --amber-7: hsl(35 91% 21.6%);
+    --amber-8: hsl(36 100% 25.5%);
+    --amber-9: hsl(39 100% 57%);
+    --amber-10: hsl(43 100% 64%);
+    --amber-11: hsl(39 90% 49.8%);
+    --amber-12: hsl(39 97% 93.2%);
+    
+    /* Red dark palette */
+    --red-1: hsl(353 23% 9.8%);
+    --red-2: hsl(357 34% 12%);
+    --red-3: hsl(356 43% 16.4%);
+    --red-4: hsl(356 47% 19.2%);
+    --red-5: hsl(356 48% 22.3%);
+    --red-6: hsl(355 50% 26.1%);
+    --red-7: hsl(354 54% 31.7%);
+    --red-8: hsl(353 61% 41.6%);
+    --red-9: hsl(358 75% 59%);
+    --red-10: hsl(358 85% 66%);
+    --red-11: hsl(358 100% 69%);
+    --red-12: hsl(351 89% 96%);
+    
+    /* Theme variables - these will now use the remapped Radix variables */
+    --background: var(--sky-2);
+    --foreground: var(--slate-12);
+    --card: var(--sky-4);
+    --card-foreground: var(--slate-12);
+    --popover: var(--sky-3);
+    --popover-foreground: var(--slate-12);
+    --primary: var(--slate-12);
+    --primary-foreground: var(--sky-2);
+    --secondary: var(--sky-5);
+    --secondary-foreground: var(--slate-12);
+    --muted: var(--sky-5);
+    --muted-foreground: var(--slate-11);
+    --accent: var(--sky-6);
+    --accent-foreground: var(--slate-12);
+    --destructive: var(--red-9);
+    --destructive-foreground: var(--sky-2);
+    --border: var(--sky-7);
+    --input: var(--sky-8);
+    --ring: var(--sky-9);
+    
+    --hero-container-bg: var(--sky-2);
+    --nav-mobile-bg: var(--amber-2);
   }
 
   * {
@@ -84,7 +251,67 @@
   color: hsl(var(--foreground) / 0.85);
   font-weight: 300;
 }
-.dark .prose ul > li::marker,
-.dark .prose ol > li::marker {
-  color: hsl(var(--foreground) / 0.85);
+
+@media (prefers-color-scheme: dark) {
+  .prose ul > li::marker,
+  .prose ol > li::marker {
+    color: hsl(var(--foreground) / 0.85);
+  }
+}
+
+/* Navigation link hover underline effect */
+.nav-link-with-underline {
+  position: relative;
+  display: inline-block;
+  isolation: isolate;
+}
+
+.nav-link-with-underline::after {
+  content: '';
+  position: absolute;
+  left: -0.5em;
+  bottom: 0.15em;
+  width: 0;
+  height: 6px;
+  background-color: var(--amber-9);
+  opacity: 0.5;
+  transition: all 0.3s ease-out;
+  z-index: -1;
+}
+
+.nav-link-with-underline:hover::after {
+  width: calc(100% - 0.3em);
+}
+
+/* Hero title hover underline effect - more flexible for longer text */
+.hero-title-with-underline {
+  position: relative;
+  display: inline-block;
+  isolation: isolate;
+}
+
+.hero-title-with-underline::after {
+  content: '';
+  position: absolute;
+  left: 0.15em;
+  bottom: 0.25em;
+  width: 0;
+  height: 10px;
+  background-color: var(--amber-9);
+  opacity: 0.5;
+  transition: all 0.4s ease-out;
+  z-index: -1;
+}
+
+/* Desktop styles for hero title underline */
+@media (min-width: 1024px) {
+  .hero-title-with-underline::after {
+    left: 0.8em;
+    bottom: 0.4em;
+    height: 16px;
+  }
+}
+
+.hero-title-with-underline:hover::after {
+  width: 61.8%;
 }

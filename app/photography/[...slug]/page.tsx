@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation'
 import { PhotoSeriesClient } from './photo-series-client'
 import { getAllPhotoSeriesIds, getPhotoSeriesById } from '@/lib/photography'
+import { Metadata } from 'next'
 
 // Generate static params for all photo series
 export async function generateStaticParams() {
@@ -8,6 +9,28 @@ export async function generateStaticParams() {
   return seriesIds.map((seriesId) => ({
     slug: [seriesId],
   }))
+}
+
+// Generate metadata for photo series
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string[] }>
+}): Promise<Metadata> {
+  const { slug } = await params
+  const seriesId = slug[0]
+  const series = await getPhotoSeriesById(seriesId)
+
+  if (!series) {
+    return {
+      title: 'Photography | Sleeping Fish',
+    }
+  }
+
+  return {
+    title: `${series.title} | Sleeping Fish`,
+    description: `Photo series: ${series.title}`,
+  }
 }
 
 // Main page component (server component)

@@ -24,7 +24,7 @@ export function PhotoSeriesClient({ series }: PhotoSeriesClientProps) {
   }
 
   return (
-    <div className="h-screen flex flex-col pt-20 overflow-hidden">
+    <div className="h-screen flex flex-col pt-24 md:pt-32 overflow-hidden">
       {/* Main Photo Display - Centered between navigation and thumbnails */}
       <div className="flex-1 flex items-center justify-center px-4 min-h-0">
         <div className="flex items-center justify-center gap-1 md:gap-8 w-full h-full">
