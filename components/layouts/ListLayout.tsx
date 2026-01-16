@@ -7,11 +7,8 @@ import type { Blog } from 'contentlayer/generated'
 import Link from '@/components/blog/Link'
 import SectionContainer from '@/components/blog/SectionContainer'
 import siteMetadata from '@/data/siteMetadata'
+import { PaginationProps } from '@/types'
 
-interface PaginationProps {
-  totalPages: number
-  currentPage: number
-}
 interface ListLayoutProps {
   posts: CoreContent<Blog>[]
   title: string

@@ -3,11 +3,7 @@
 import { useState } from 'react'
 import Image from 'next/image'
 import { ChevronLeftIcon, ChevronRightIcon } from '@radix-ui/react-icons'
-import { PhotoSeries } from '@/lib/photography'
-
-interface PhotoSeriesClientProps {
-  series: PhotoSeries
-}
+import { PhotoSeries, PhotoSeriesClientProps } from '@/types'
 
 export function PhotoSeriesClient({ series }: PhotoSeriesClientProps) {
   const [currentPhotoIndex, setCurrentPhotoIndex] = useState(0)
