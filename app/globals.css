@@ -10,7 +10,6 @@
 
 /* Import modular CSS */
 @import "../css/navigation.css";
-@import "../css/animations.css";
 @import "../css/prose.css";
 
 @layer utilities {

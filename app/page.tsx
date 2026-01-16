@@ -1,28 +1,14 @@
-"use client";
-
 import { allCoreContent, sortPosts } from 'pliny/utils/contentlayer';
 import { allBlogs } from 'contentlayer/generated';
-import { useEffect, useState } from "react";
 import { HeroContent } from "@/components/home/home-hero";
-import { HeroSkeleton } from "@/components/skeleton/HeroSkeleton";
 
 export default function Home() {
-  const [latestPost, setLatestPost] = useState<any>(null);
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    const posts = allCoreContent(sortPosts(allBlogs));
-    if (posts.length > 0) {
-      setLatestPost(posts[0]);
-    }
-    setIsLoading(false);
-  }, []);
+  const posts = allCoreContent(sortPosts(allBlogs));
+  const latestPost = posts.length > 0 ? posts[0] : null;
 
   return (
     <section className="container mx-auto px-4 min-h-[calc(100vh-3.5rem)] mt-16 pt-4 md:pt-8 pb-20">
-      {isLoading ? (
-        <HeroSkeleton />
-      ) : latestPost ? (
+      {latestPost ? (
         <HeroContent
           category="Latest Post"
           title={latestPost.title}
