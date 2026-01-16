@@ -1,0 +1,63 @@
+/* Content Enhancement Styles */
+/* For blog posts and projects with math formulas, citations, and anchor links */
+
+/* KaTeX Math Styling */
+.katex-display {
+  margin: 1.5em 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.katex {
+  font-size: 1.1em;
+}
+
+/* Heading Anchor Links */
+.anchor {
+  text-decoration: none;
+  position: relative;
+}
+
+.anchor::before {
+  content: '#';
+  position: absolute;
+  left: -1.2em;
+  color: var(--slate-9);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  font-weight: 400;
+}
+
+.anchor:hover::before {
+  opacity: 1;
+}
+
+/* Hide anchor links on mobile */
+@media (max-width: 768px) {
+  .anchor::before {
+    display: none;
+  }
+}
+
+/* Citation Styling (future use) */
+.citation {
+  color: var(--slate-11);
+  font-size: 0.9em;
+}
+
+.bibliography {
+  margin-top: 3em;
+  padding-top: 2em;
+  border-top: 1px solid var(--border);
+}
+
+.bibliography h2 {
+  font-size: 1.25em;
+  margin-bottom: 1em;
+  color: var(--foreground);
+}
+
+.bibliography ol {
+  padding-left: 1.5em;
+  line-height: 1.8;
+}

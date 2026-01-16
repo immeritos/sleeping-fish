@@ -8,6 +8,11 @@
 @import "@radix-ui/colors/amber.css";
 @import "@radix-ui/colors/red.css";
 
+/* Import modular CSS */
+@import "../css/navigation.css";
+@import "../css/animations.css";
+@import "../css/prose.css";
+
 @layer utilities {
   /* Provide utility classes for tokens */
   .bg-background { background-color: var(--background); }
@@ -246,72 +251,3 @@
   }
 }
 
-.prose ul > li::marker,
-.prose ol > li::marker {
-  color: hsl(var(--foreground) / 0.85);
-  font-weight: 300;
-}
-
-@media (prefers-color-scheme: dark) {
-  .prose ul > li::marker,
-  .prose ol > li::marker {
-    color: hsl(var(--foreground) / 0.85);
-  }
-}
-
-/* Navigation link hover underline effect */
-.nav-link-with-underline {
-  position: relative;
-  display: inline-block;
-  isolation: isolate;
-}
-
-.nav-link-with-underline::after {
-  content: '';
-  position: absolute;
-  left: -0.5em;
-  bottom: 0.15em;
-  width: 0;
-  height: 6px;
-  background-color: var(--amber-9);
-  opacity: 0.5;
-  transition: all 0.3s ease-out;
-  z-index: -1;
-}
-
-.nav-link-with-underline:hover::after {
-  width: calc(100% - 0.3em);
-}
-
-/* Hero title hover underline effect - more flexible for longer text */
-.hero-title-with-underline {
-  position: relative;
-  display: inline-block;
-  isolation: isolate;
-}
-
-.hero-title-with-underline::after {
-  content: '';
-  position: absolute;
-  left: 0.15em;
-  bottom: 0.25em;
-  width: 0;
-  height: 10px;
-  background-color: var(--amber-9);
-  opacity: 0.5;
-  transition: all 0.4s ease-out;
-  z-index: -1;
-}
-
-/* Desktop styles for hero title underline */
-@media (min-width: 1024px) {
-  .hero-title-with-underline::after {
-    left: 0.8em;
-    bottom: 0.4em;
-    height: 16px;
-  }
-}
-
-.hero-title-with-underline:hover::after {
-  width: 61.8%;
-}

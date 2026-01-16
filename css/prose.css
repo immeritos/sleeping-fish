@@ -1,0 +1,16 @@
+/* Prose Styles */
+/* Typography enhancements for MDX content */
+
+/* List marker styling */
+.prose ul > li::marker,
+.prose ol > li::marker {
+  color: hsl(var(--foreground) / 0.85);
+  font-weight: 300;
+}
+
+@media (prefers-color-scheme: dark) {
+  .prose ul > li::marker,
+  .prose ol > li::marker {
+    color: hsl(var(--foreground) / 0.85);
+  }
+}

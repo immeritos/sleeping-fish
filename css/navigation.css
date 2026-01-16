@@ -1,0 +1,59 @@
+/* Navigation Styles */
+/* Hover underline effects for navigation and hero elements */
+
+/* Navigation link hover underline effect */
+.nav-link-with-underline {
+  position: relative;
+  display: inline-block;
+  isolation: isolate;
+}
+
+.nav-link-with-underline::after {
+  content: '';
+  position: absolute;
+  left: -0.5em;
+  bottom: 0.15em;
+  width: 0;
+  height: 6px;
+  background-color: var(--amber-9);
+  opacity: 0.5;
+  transition: all 0.3s ease-out;
+  z-index: -1;
+}
+
+.nav-link-with-underline:hover::after {
+  width: calc(100% - 0.3em);
+}
+
+/* Hero title hover underline effect - more flexible for longer text */
+.hero-title-with-underline {
+  position: relative;
+  display: inline-block;
+  isolation: isolate;
+}
+
+.hero-title-with-underline::after {
+  content: '';
+  position: absolute;
+  left: 0.15em;
+  bottom: 0.25em;
+  width: 0;
+  height: 10px;
+  background-color: var(--amber-9);
+  opacity: 0.5;
+  transition: all 0.4s ease-out;
+  z-index: -1;
+}
+
+/* Desktop styles for hero title underline */
+@media (min-width: 1024px) {
+  .hero-title-with-underline::after {
+    left: 0.8em;
+    bottom: 0.4em;
+    height: 16px;
+  }
+}
+
+.hero-title-with-underline:hover::after {
+  width: 61.8%;
+}
