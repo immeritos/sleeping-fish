@@ -1,21 +1,6 @@
 import { promises as fs } from 'fs'
 import path from 'path'
-
-export interface Photo {
-  id: string
-  title: string
-  date: string
-  imageUrl: string
-  alt: string
-}
-
-export interface PhotoSeries {
-  id: string
-  title: string
-  coverImage: string
-  photos: Photo[]
-  date: string
-}
+import { Photo, PhotoSeries } from '@/types'
 
 // Helper function to convert folder names to readable titles
 function toTitleCase(str: string): string {

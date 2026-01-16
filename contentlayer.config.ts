@@ -5,6 +5,7 @@ import { slug } from 'github-slugger'
 import path from 'path'
 // Remark packages
 import remarkGfm from 'remark-gfm'
+import remarkMath from 'remark-math'
 import { remarkAlert } from 'remark-github-blockquote-alert'
 import {
   remarkExtractFrontmatter,
@@ -14,6 +15,9 @@ import {
 } from 'pliny/mdx-plugins/index.js'
 // Rehype packages
 import rehypeSlug from 'rehype-slug'
+import rehypeAutolinkHeadings from 'rehype-autolink-headings'
+import rehypeKatex from 'rehype-katex'
+import rehypeCitation from 'rehype-citation'
 import rehypePrismPlus from 'rehype-prism-plus'
 import siteMetadata from './data/siteMetadata'
 import { allCoreContent, sortPosts } from 'pliny/utils/contentlayer.js'
@@ -113,17 +117,27 @@ export const Project = defineDocumentType(() => ({
 export default makeSource({
   contentDirPath: 'data',
   documentTypes: [Blog, Project],
+  contentDirExclude: ['bibliography.json', 'tag-data.json'],
   mdx: {
     cwd: process.cwd(),
     remarkPlugins: [
       remarkExtractFrontmatter,
       remarkGfm,
+      remarkMath,
       remarkCodeTitles,
       remarkImgToJsx,
       remarkAlert,
     ],
     rehypePlugins: [
       rehypeSlug,
+      [rehypeAutolinkHeadings, {
+        behavior: 'wrap',
+        properties: {
+          className: ['anchor'],
+        },
+      }],
+      rehypeKatex,
+      [rehypeCitation, { bibliography: 'data/bibliography.json' }],
       [rehypePrismPlus, { defaultLanguage: 'js', ignoreMissing: true }],
     ],
   },
