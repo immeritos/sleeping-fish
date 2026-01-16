@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "cross-env INIT_CWD=$PWD next dev",
+    "prebuild": "npx browserslist@latest --update-db",
     "build": "cross-env INIT_CWD=$PWD next build",
     "start": "next start",
     "lint": "next lint --fix --dir pages --dir app --dir components --dir lib --dir layouts --dir scripts",
