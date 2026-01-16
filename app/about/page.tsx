@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import { GitHubLogoIcon, LinkedInLogoIcon, EnvelopeClosedIcon } from '@radix-ui/react-icons'
-import Footer from '@/components/Footer'
+import Footer from '@/components/common/Footer'
 
 export const metadata = {
   title: 'About Me - Sleeping Fish',
@@ -14,7 +14,7 @@ export default function About() {
         <div className="flex flex-col items-center space-y-8">
         {/* Portrait */}
         <Image
-          src="/portrait.png"
+          src="/images/portrait.png"
           alt="Portrait"
           width={192}
           height={192}

@@ -3,28 +3,33 @@
 import { allCoreContent, sortPosts } from 'pliny/utils/contentlayer';
 import { allBlogs } from 'contentlayer/generated';
 import { useEffect, useState } from "react";
-import { HeroContent } from "@/components/home-hero";
+import { HeroContent } from "@/components/home/home-hero";
+import { HeroSkeleton } from "@/components/skeleton/HeroSkeleton";
 
 export default function Home() {
   const [latestPost, setLatestPost] = useState<any>(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const posts = allCoreContent(sortPosts(allBlogs));
     if (posts.length > 0) {
       setLatestPost(posts[0]);
     }
+    setIsLoading(false);
   }, []);
 
   return (
     <section className="container mx-auto px-4 min-h-[calc(100vh-3.5rem)] mt-16 pt-4 md:pt-8 pb-20">
-      {latestPost ? (
+      {isLoading ? (
+        <HeroSkeleton />
+      ) : latestPost ? (
         <HeroContent
           category="Latest Post"
           title={latestPost.title}
           summary={latestPost.summary}
           date={latestPost.date}
           titleHref={`/blog/${latestPost.slug}`}
-          imageSrc="/landingpage.png"
+          imageSrc="/landingpage.jpg"
           imageAlt="Featured"
         />
       ) : (
@@ -32,7 +37,7 @@ export default function Home() {
           category="Welcome"
           title="Sleeping Fish"
           summary="This is where I put the things I'm working on, the thoughts I'm exploring, and the moments I would like to remember."
-          imageSrc="/landingpage.png"
+          imageSrc="/landingpage.jpg"
           imageAlt="Featured"
         />
       )}

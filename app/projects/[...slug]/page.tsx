@@ -1,8 +1,9 @@
 import 'css/prism.css'
+import 'css/content.css'
 import 'katex/dist/katex.css'
 
 import React from 'react'
-import { components } from '@/components/MDXComponents'
+import { components } from '@/components/mdx/MDXComponents'
 import { MDXLayoutRenderer } from 'pliny/mdx-components'
 import { allProjects } from 'contentlayer/generated'
 import type { Project } from 'contentlayer/generated'

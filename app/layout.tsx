@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter, Outfit, Fraunces } from 'next/font/google'
 import './globals.css'
-import { Navigation } from '@/components/navigation'
+import { Navigation } from '@/components/navigation/navigation'
 import siteMetadata from '@/data/siteMetadata'
 
 const inter = Inter({ 
@@ -26,8 +26,8 @@ export const metadata: Metadata = {
   title: 'Sleeping Fish | HOME',
   description: 'A personal website with blog and photography',
   icons: {
-    icon: '/logo.png',
-    apple: '/logo.png',
+    icon: '/images/logo.png',
+    apple: '/images/logo.png',
   },
 }
 

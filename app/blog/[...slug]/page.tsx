@@ -1,9 +1,10 @@
 import 'css/prism.css'
+import 'css/content.css'
 import 'katex/dist/katex.css'
 
 import React from 'react'
 import PageTitle from '@/components/blog/PageTitle'
-import { components } from '@/components/MDXComponents'
+import { components } from '@/components/mdx/MDXComponents'
 import { MDXLayoutRenderer } from 'pliny/mdx-components'
 import { sortPosts, coreContent, allCoreContent } from 'pliny/utils/contentlayer'
 import { allBlogs } from 'contentlayer/generated'

@@ -1,5 +1,5 @@
 import { allProjects } from 'contentlayer/generated'
-import ProjectCard from '@/components/ProjectCard'
+import ProjectCard from '@/components/project/ProjectCard'
 
 export const metadata = {
   title: 'Projects Archives - Sleeping Fish',
