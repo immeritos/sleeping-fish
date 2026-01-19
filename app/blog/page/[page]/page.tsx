@@ -1,5 +1,5 @@
 import ListLayout from '@/components/layouts/ListLayout'
-import { allCoreContent, sortPosts } from 'pliny/utils/contentlayer'
+import { allCoreContent, sortPosts } from 'pliny/utils/contentlayer.js'
 import { allBlogs } from 'contentlayer/generated'
 import { notFound } from 'next/navigation'
 import { Metadata } from 'next'

@@ -4,7 +4,7 @@ import 'katex/dist/katex.css'
 
 import React from 'react'
 import { components } from '@/components/mdx/MDXComponents'
-import { MDXLayoutRenderer } from 'pliny/mdx-components'
+import { MDXLayoutRenderer } from 'pliny/mdx-components.js'
 import { allProjects } from 'contentlayer/generated'
 import type { Project } from 'contentlayer/generated'
 import { Metadata } from 'next'

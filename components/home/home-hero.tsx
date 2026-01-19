@@ -1,7 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import { cn } from "@/lib/utils/utils"
-import { formatDate } from 'pliny/utils/formatDate'
+import { formatDate } from 'pliny/utils/formatDate.js'
 import siteMetadata from '@/data/siteMetadata'
 import { 
   CategoryTagProps, 

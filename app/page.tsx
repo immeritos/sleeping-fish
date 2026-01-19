@@ -1,4 +1,4 @@
-import { allCoreContent, sortPosts } from 'pliny/utils/contentlayer';
+import { allCoreContent, sortPosts } from 'pliny/utils/contentlayer.js';
 import { allBlogs } from 'contentlayer/generated';
 import { HeroContent } from "@/components/home/home-hero";
 
