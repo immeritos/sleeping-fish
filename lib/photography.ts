@@ -52,14 +52,30 @@ export async function getAllPhotoSeries(): Promise<PhotoSeries[]> {
             }
           })
         
-        // Create series object (no description for minimal design)
-        const seriesTitle = toTitleCase(seriesId)
+        // Read metadata.json if exists
+        let metadata = {
+          title: toTitleCase(seriesId),
+          date: '2023',
+          description: undefined
+        }
+        
+        try {
+          const metadataPath = path.join(seriesDir, 'metadata.json')
+          const metadataContent = await fs.readFile(metadataPath, 'utf-8')
+          const parsedMetadata = JSON.parse(metadataContent)
+          metadata = { ...metadata, ...parsedMetadata }
+        } catch (error) {
+          // No metadata file, use defaults
+        }
+        
+        // Create series object
         series.push({
           id: seriesId,
-          title: seriesTitle,
+          title: metadata.title,
           coverImage: `/photography/covers/${coverFile}`,
           photos,
-          date: '2023'
+          date: metadata.date,
+          description: metadata.description
         })
       } catch (error) {
         // Series directory doesn't exist, skip

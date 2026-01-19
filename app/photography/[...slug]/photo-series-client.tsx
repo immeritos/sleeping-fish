@@ -1,90 +1,50 @@
 'use client'
 
-import { useState } from 'react'
 import Image from 'next/image'
-import { ChevronLeftIcon, ChevronRightIcon } from '@radix-ui/react-icons'
-import { PhotoSeries, PhotoSeriesClientProps } from '@/types'
+import { PhotoSeriesClientProps } from '@/types'
 
 export function PhotoSeriesClient({ series }: PhotoSeriesClientProps) {
-  const [currentPhotoIndex, setCurrentPhotoIndex] = useState(0)
-
-  const currentPhoto = series.photos[currentPhotoIndex]
-  const totalPhotos = series.photos.length
-
-  const goToPrevious = () => {
-    setCurrentPhotoIndex((prev) => (prev - 1 + totalPhotos) % totalPhotos)
-  }
-
-  const goToNext = () => {
-    setCurrentPhotoIndex((prev) => (prev + 1) % totalPhotos)
-  }
-
   return (
-    <div className="h-screen flex flex-col pt-24 md:pt-32 overflow-hidden">
-      {/* Main Photo Display - Centered between navigation and thumbnails */}
-      <div className="flex-1 flex items-center justify-center px-4 min-h-0">
-        <div className="flex items-center justify-center gap-1 md:gap-8 w-full h-full">
-          {/* Left Arrow - Fixed size */}
-          <button
-            onClick={goToPrevious}
-            className="w-12 h-12 md:w-16 md:h-16 flex items-center justify-center text-muted-foreground hover:text-foreground transition-colors flex-shrink-0"
-            aria-label="Previous photo"
-          >
-            <ChevronLeftIcon className="h-6 w-6" />
-          </button>
-
-          {/* Square Container - Centered and responsive to available space */}
-          <div className="aspect-square max-h-full max-w-full flex items-center justify-center overflow-hidden">
-            <div className="w-full h-full flex items-center justify-center">
-              <Image
-                src={currentPhoto.imageUrl}
-                alt={currentPhoto.alt}
-                width={800}
-                height={800}
-                className="max-w-full max-h-full object-contain"
-                quality={100}
-                priority
-              />
-            </div>
+    <div className="min-h-screen flex flex-col md:flex-row">
+      {/* Left Sidebar - Fixed Info */}
+      <div className="md:w-2/5 lg:w-2/5 md:fixed md:h-screen pt-24 md:pt-32 pb-12 px-6 md:px-12 flex flex-col">
+        <div className="space-y-3 md:space-y-4">
+          <h1 className="text-2xl md:text-3xl font-light tracking-tight">
+            {series.title}
+          </h1>
+          
+          <div className="space-y-1 text-sm md:text-base text-muted-foreground">
+            <div>Photography</div>
+            <div>{series.date}</div>
           </div>
-
-          {/* Right Arrow - Fixed size */}
-          <button
-            onClick={goToNext}
-            className="w-12 h-12 md:w-16 md:h-16 flex items-center justify-center text-muted-foreground hover:text-foreground transition-colors flex-shrink-0"
-            aria-label="Next photo"
-          >
-            <ChevronRightIcon className="h-6 w-6" />
-          </button>
         </div>
+        
+        {series.description && (
+          <p className="mt-8 md:mt-12 text-sm md:text-base text-foreground/70 leading-relaxed">
+            {series.description}
+          </p>
+        )}
       </div>
 
-      {/* Thumbnail Gallery - Fixed at bottom with consistent spacing */}
-      <div className="flex gap-1 overflow-x-auto pb-6 pt-6 justify-center px-4 flex-shrink-0 scrollbar-hide" style={{ 
-        scrollbarWidth: 'none', 
-        msOverflowStyle: 'none', 
-        WebkitOverflowScrolling: 'touch',
-        overflowX: 'auto',
-        overflowY: 'hidden'
-      }}>
-        {series.photos.map((photo, index) => (
-          <button
-            key={photo.id}
-            onClick={() => setCurrentPhotoIndex(index)}
-            className={`flex-shrink-0 w-16 h-16 overflow-hidden transition-all ${
-              index === currentPhotoIndex ? 'opacity-100' : 'opacity-50 hover:opacity-75'
-            }`}
-          >
-            <Image
-              src={photo.imageUrl}
-              alt={photo.alt}
-              width={64}
-              height={64}
-              className="w-full h-full object-cover"
-              quality={75}
-            />
-          </button>
-        ))}
+      {/* Right Side - Scrollable Photos */}
+      <div className="md:ml-[45%] lg:ml-[45%] md:w-[55%] lg:w-[55%]">
+        <div className="pt-6 md:pt-32 pb-16 px-3 md:px-6 space-y-8 md:space-y-12">
+          {series.photos.map((photo) => (
+            <div key={photo.id} className="w-full">
+              <div className="relative w-full max-w-3xl bg-gray-100 dark:bg-gray-900">
+                <Image
+                  src={photo.imageUrl}
+                  alt={photo.alt}
+                  width={1200}
+                  height={800}
+                  className="w-full h-auto"
+                  quality={100}
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   )
