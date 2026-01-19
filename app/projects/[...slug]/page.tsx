@@ -99,7 +99,7 @@ export default async function Page({ params }: { params: { slug: string[] } }) {
 
         {/* MDX Content - matched to blog layout typography */}
         <article
-          className="prose max-w-none text-lg font-light dark:prose-invert
+          className="prose max-w-none text-lg font-inter font-light dark:prose-invert
                      prose-headings:font-medium prose-h1:text-xl prose-h2:text-xl prose-h3:text-[18px]
                      prose-h2:font-medium prose-h3:font-medium
                      prose-a:underline prose-a:decoration-1 prose-a:text-inherit prose-a:font-light

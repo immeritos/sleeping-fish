@@ -30,7 +30,7 @@ export default function PostSimple({ content, next, prev, children }: LayoutProp
           </header>
           {/* MDX Typography */}
           <div
-            className="prose max-w-none text-lg font-light dark:prose-invert
+            className="prose max-w-none text-lg font-inter font-light dark:prose-invert
                        prose-headings:font-medium prose-h1:text-xl prose-h2:text-xl prose-h3:text-xl
                        prose-h2:font-medium prose-h3:font-medium
                        prose-p:leading-relaxed prose-p:mb-6

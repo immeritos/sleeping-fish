@@ -51,8 +51,8 @@ export default function About() {
           </div>
 
           {/* Bio text */}
-          <div className="max-w-none">
-            <p className="text-sm leading-loose text-foreground">
+          <div className="max-w-none font-inter font-light">
+            <p className="text-sm md:text-base leading-loose text-foreground">
               This is where I put the thoughts I&apos;m exploring, the things I&apos;m working on, and the moments I would like to remember. I hope that in sharing them, I can grow a little myself, and it may be helpful to others.
             </p>
           </div>

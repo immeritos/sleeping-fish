@@ -9,12 +9,12 @@ export function CardSkeleton({ count = 5, layout = "list" }: CardSkeletonProps) 
   // Photo grid layout (for photography page)
   if (layout === "photo") {
     return (
-      <div className="grid grid-cols-2 sm:grid-cols-3 gap-1.5 max-w-4xl mx-auto animate-pulse animate-in fade-in duration-300">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 md:gap-4 animate-pulse animate-in fade-in duration-300">
         {skeletons.map((i) => (
-          <div
-            key={i}
-            className="aspect-square bg-muted rounded"
-          />
+          <div key={i} className="space-y-2 md:space-y-3">
+            <div className="w-full bg-muted rounded" style={{ aspectRatio: i % 3 === 0 ? '4/5' : i % 3 === 1 ? '3/4' : '1/1' }} />
+            <div className="h-4 w-3/4 bg-muted/70 rounded" />
+          </div>
         ))}
       </div>
     )
