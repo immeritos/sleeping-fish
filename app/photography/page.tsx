@@ -2,6 +2,9 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { getAllPhotoSeries } from '@/lib/photography'
 
+// 启用 ISR，每60秒重新验证一次
+export const revalidate = 60
+
 export const metadata = {
   title: 'Photography Archives - Sleeping Fish',
   description: 'Photo series and collections',
@@ -19,14 +22,17 @@ export default async function PhotographyPage() {
             href={`/photography/${series.id}`}
             className="block group"
           >
-            <div className="relative w-full overflow-hidden bg-gray-100 dark:bg-gray-900">
+            <div className="relative w-full overflow-hidden bg-muted rounded-lg">
               <Image
                 src={series.coverImage}
                 alt={series.title}
                 width={400}
                 height={400}
                 className="w-full h-auto transition-all duration-500 ease-out group-hover:scale-105 group-hover:opacity-90"
-                quality={100}
+                quality={75}
+                loading="lazy"
+                placeholder="blur"
+                blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgZmlsbD0iI2YzZjRmNiIvPjwvc3ZnPg=="
                 sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, (max-width: 1024px) 25vw, 20vw"
               />
             </div>

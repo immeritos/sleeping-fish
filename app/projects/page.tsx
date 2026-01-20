@@ -1,6 +1,9 @@
 import { allProjects } from 'contentlayer/generated'
 import ProjectCard from '@/components/project/ProjectCard'
 
+// 启用 ISR，每60秒重新验证一次
+export const revalidate = 60
+
 export const metadata = {
   title: 'Projects Archives - Sleeping Fish',
   description: 'A collection of projects I have worked on',

@@ -2,6 +2,9 @@ import { allCoreContent, sortPosts } from 'pliny/utils/contentlayer.js';
 import { allBlogs } from 'contentlayer/generated';
 import { HeroContent } from "@/components/home/home-hero";
 
+// 启用 ISR，每60秒重新验证一次
+export const revalidate = 60
+
 export default function Home() {
   const posts = allCoreContent(sortPosts(allBlogs));
   const latestPost = posts.length > 0 ? posts[0] : null;

@@ -4,6 +4,9 @@ import ListLayout from '@/components/layouts/ListLayout'
 
 const POSTS_PER_PAGE = 5
 
+// 启用 ISR，每60秒重新验证一次
+export const revalidate = 60
+
 export const metadata = {
   title: 'Blog Archives - Sleeping Fish',
   description: 'Thoughts, ideas, and writings',

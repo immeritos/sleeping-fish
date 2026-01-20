@@ -75,7 +75,7 @@ export function HeroContent({ category, title, summary, date, titleHref, imageSr
       {/* Mobile Layout - Vertical */}
       <div className="flex lg:hidden flex-col w-full space-y-8">
         {/* Hero Image - First on mobile */}
-        <div className="relative w-full overflow-hidden rounded-lg">
+        <div className="relative w-full overflow-hidden rounded-lg bg-muted">
           <Image
             src={imageSrc}
             alt={imageAlt}
@@ -83,6 +83,9 @@ export function HeroContent({ category, title, summary, date, titleHref, imageSr
             height={900}
             className="w-full h-auto object-contain"
             priority
+            placeholder="blur"
+            blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwMCIgaGVpZ2h0PSI5MDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjEyMDAiIGhlaWdodD0iOTAwIiBmaWxsPSIjZjNmNGY2Ii8+PC9zdmc+"
+            sizes="100vw"
           />
         </div>
         
@@ -120,13 +123,16 @@ export function HeroContent({ category, title, summary, date, titleHref, imageSr
           )}
         </div>
         
-        <div className="relative w-[60%] aspect-square overflow-hidden rounded-lg">
+        <div className="relative w-[60%] aspect-square overflow-hidden rounded-lg bg-muted">
           <Image
             src={imageSrc}
             alt={imageAlt}
             fill
             className="object-cover"
             priority
+            placeholder="blur"
+            blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwMCIgaGVpZ2h0PSIxMjAwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMjAwIiBoZWlnaHQ9IjEyMDAiIGZpbGw9IiNmM2Y0ZjYiLz48L3N2Zz4="
+            sizes="60vw"
           />
         </div>
       </div>
