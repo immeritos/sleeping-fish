@@ -2,7 +2,7 @@
 
 A minimalist personal website featuring blog, photography, and project portfolios.
 
-🌐 **Live Site:** [https://sleepingfish.blog/](https://sleepingfish.blog/)
+🌐 **Live Site:** [https://www.sleepingfish.blog/](https://www.sleepingfish.blog/)
 
 ## Design Philosophy
 
@@ -123,4 +123,5 @@ npm run build
 
 # Start production server
 npm start
+
 ```
