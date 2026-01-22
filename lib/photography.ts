@@ -40,7 +40,12 @@ export async function getAllPhotoSeries(): Promise<PhotoSeries[]> {
         const photoFiles = await fs.readdir(seriesDir)
         const photos = photoFiles
           .filter(file => /\.(jpg|jpeg|png)$/i.test(file))
-          .sort() // Sort files alphabetically
+          .sort((a, b) => {
+            // Extract numbers from filenames for proper numerical sorting
+            const numA = parseInt(a.match(/\d+/)?.[0] || '0', 10)
+            const numB = parseInt(b.match(/\d+/)?.[0] || '0', 10)
+            return numA - numB
+          })
           .map((file, index) => {
             const photoId = file.replace(/\.(jpg|jpeg|png)$/i, '')
             return {
