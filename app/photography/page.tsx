@@ -2,9 +2,6 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { getAllPhotoSeries } from '@/lib/photography'
 
-// 启用 ISR，每60秒重新验证一次
-export const revalidate = 60
-
 export const metadata = {
   title: 'Photography Archives - Sleeping Fish',
   description: 'Photo series and collections',
