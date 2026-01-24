@@ -14,7 +14,7 @@ export default function About() {
         <div className="flex flex-col items-center space-y-8">
         {/* Portrait */}
         <Image
-          src="/images/portrait.png"
+          src="/images/portrait.JPG"
           alt="Portrait"
           width={192}
           height={192}
